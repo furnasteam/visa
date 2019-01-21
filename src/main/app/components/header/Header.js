@@ -1,9 +1,10 @@
 import React from 'react';
 import './header.scss';
 import classNames from 'classnames';
-import {string, func, bool} from 'prop-types';
-import {Button} from '../button/Button';
+import {bool, func, string} from 'prop-types';
 import {MediumText} from '../medium-text/MediumText';
+import {AbsoluteLink} from '../absolute-link/AbsoluteLink';
+import {createHomeRoute} from '../../helpers/appRoutes';
 
 export class Header extends React.Component {
 
@@ -14,7 +15,7 @@ export class Header extends React.Component {
   };
 
   static defaultProps = {
-    onContactClick(){
+    onContactClick() {
     }
   };
 
@@ -37,26 +38,27 @@ export class Header extends React.Component {
 
   render() {
     const {scrollY} = this.state;
-    const {className, onContactClick, contactPopupShown} = this.props;
+    const {className} = this.props;
     return (
-      <div className={classNames('header', {'header_header-without-shadow': scrollY === 0 || contactPopupShown}, className)}>
+      <div className={classNames('header', {'header_header-without-shadow': scrollY === 0}, className)}>
         <div className="header__container">
           <div className="header__title-with-logo">
             <div className="header__logo-image">
             </div>
             <MediumText className="header__title">
-              Blog.Furnas
+              <AbsoluteLink href="https://visa.furnas.ru">
+                Visa.Furnas
+              </AbsoluteLink>
             </MediumText>
           </div>
           <div>
-            {contactPopupShown &&
-            <div className="header__close-contact-popup-button"
-                 onClick={onContactClick}>
-            </div>}
-            {!contactPopupShown &&
-            <Button onClick={onContactClick}>
-              Связаться
-            </Button>}
+            <AbsoluteLink href={createHomeRoute()}>
+              Наш блог
+            </AbsoluteLink>
+            <AbsoluteLink href="http://furnas.ru"
+                          className="header__furnas-link">
+              Наш сайт
+            </AbsoluteLink>
           </div>
         </div>
       </div>

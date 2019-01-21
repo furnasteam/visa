@@ -2,60 +2,38 @@ import React from 'react';
 import './home.scss';
 import {Helmet} from 'react-helmet';
 import {Header} from '../../components/header/Header';
-import {ContactScreen} from './screens/contact/ContactScreen';
-import {Popup} from '../../components/Popup/Popup';
-import {WorkerVisaDocumentsCard} from '../../articles/worker-visa-documents/WorkerVisaDocumentsCard';
-import {FaviconArticleCard} from '../../articles/favicon-article/FaviconArticleCard';
+import {Button} from '../../components/button/Button';
+import {Link} from 'react-router-dom';
+import {createFullDocumentsListRoute} from '../../helpers/appRoutes';
 
 export class HomePage extends React.Component {
 
-  state = {
-    userContact: '',
-    contactPopupShown: false,
-    requestSent: false
-  };
-
-  handleContactClick = () => {
-    window.mixpanel.track(
-      "Furnas | user clicked contact button"
-    );
-    this.setState({contactPopupShown: !this.state.contactPopupShown, requestSent: false});
-  };
-
-  handleSendContactClick = contact => {
-    if (contact) {
-      window.mixpanel.track(
-        "Furnas | added user contact",
-        {contact}
-      );
-      this.setState({contactPopupShown: true, requestSent: true});
-    }
-  };
-
-  handleCloseButtonClick = () => {
-    this.setState({contactPopupShown: false, requestSent: false});
-  };
-
   render() {
-    const {contactPopupShown, requestSent} = this.state;
     return (
       [
         <Helmet>
-          <title>Блог | Furnas</title>
-          <meta name="description" content="Рассказываем о том, как мы работает, что делаем сейчас, какие допускаем ошибки и делимся своими знаниями."/>
+          <title>Документы на визу в Испанию 2019</title>
+          <meta name="description" content="Заполнение анкеты на визу онлайн. Актуальный список документов для самостоятельного получения визы в визовом центре Испании."/>
         </Helmet>,
         <div className="home">
-          <Header onContactClick={this.handleContactClick}
-                  contactPopupShown={contactPopupShown}/>
+          <Header/>
           <div className="home__content">
-            <WorkerVisaDocumentsCard/>
-            <FaviconArticleCard/>
+            <h1>Список документов на визу в Испанию</h1>
+            <ul>
+              <li>
+                актуальный перечень документов для визы
+              </li>
+              <li>
+                бесплатно получаете заполненную анкету
+              </li>
+              <li>
+                разбор всех пунктов анкеты
+              </li>
+            </ul>
+            <Link to={createFullDocumentsListRoute()}>
+              <Button>Список документов</Button>
+            </Link>
           </div>
-          <Popup shown={contactPopupShown}>
-            <ContactScreen requestSent={requestSent}
-                           onCloseButtonClick={this.handleCloseButtonClick}
-                           onSendContactClick={this.handleSendContactClick}/>
-          </Popup>
         </div>
       ]
     );

@@ -3,7 +3,7 @@ import './contact-screen.scss';
 import {Input} from '../../../../components/input/Input';
 import {SectionTitle} from '../../../../components/screen-title/ScreenTitle';
 import {BlockText} from '../../../../components/block-text/BlockText';
-import {Link} from '../../../../components/link/Link';
+import {AbsoluteLink} from '../../../../components/absolute-link/AbsoluteLink';
 import {Button, ButtonStyle} from '../../../../components/button/Button';
 import {bool, func} from 'prop-types';
 import ReactDOM from 'react-dom';
@@ -84,15 +84,15 @@ export class ContactScreen extends React.Component {
             Контакты
           </SectionTitle>
           <div className="contact-screen__link">
-            <Link href="tel:+7(915)682-19-55"
-                  onClick={this.handlePhoneClick}>
+            <AbsoluteLink href="tel:+7(915)682-19-55"
+                          onClick={this.handlePhoneClick}>
               +7(915) 682-19-55
-            </Link>
+            </AbsoluteLink>
           </div>
           <div className="contact-screen__link">
-            <Link onClick={this.handleEmailClick}>
+            <AbsoluteLink onClick={this.handleEmailClick}>
               furnasteam@gmail.com
-            </Link>
+            </AbsoluteLink>
           </div>
         </div>}
       </div>

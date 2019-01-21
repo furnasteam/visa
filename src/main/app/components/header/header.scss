@@ -32,25 +32,16 @@
 
   &__title {
     font-family: $font-family;
-    font-size: 18px;
-    @include for-tablet-portrait-up {
-      font-family: $font-family-alternative;
-      font-size: 24px;
-    }
+    font-size: 16px;
   }
 
   &__logo-image {
     background: url('images/logo.png') no-repeat;
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     margin-right: 8px;
+    margin-top: 1px;
     background-size: contain;
-    @include for-tablet-portrait-up {
-      width: 25px;
-      height: 25px;
-      margin-right: 11px;
-      margin-top: 1px;
-    }
   }
 
   &__title-with-logo {
@@ -63,6 +54,10 @@
     width: 16px;
     height: 16px;
     background-size: contain;
+  }
+
+  &__furnas-link {
+    margin-left: 88px;
   }
 
 }

@@ -13,7 +13,6 @@ window.mixpanel = {
 //yandex metrika
 window.yaCounter = new Ya.Metrika({id: 51501746});
 
-
 hydrate((
   <BrowserRouter>
     <App/>

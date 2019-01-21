@@ -1,7 +1,7 @@
 @import "../../common/vars";
 @import "../../common/mixins";
 
-.home {
+.full-documents-list {
   height: 100%;
   width: 100%;
   display: flex;
@@ -9,7 +9,7 @@
   align-items: center;
 }
 
-.home__content {
+.full-documents-list__content {
   margin-top: 100px;
   max-width: 700px;
   padding: 0 20px;

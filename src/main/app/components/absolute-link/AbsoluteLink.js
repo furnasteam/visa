@@ -1,9 +1,9 @@
 import React from 'react';
-import './link.scss';
+import './absolute-link.scss';
 import classNames from 'classnames';
 import {string, any, func} from 'prop-types';
 
-Link.propTypes = {
+AbsoluteLink.propTypes = {
   className: string,
   href: string,
   children: any,
@@ -11,13 +11,13 @@ Link.propTypes = {
   onClick: func
 };
 
-Link.defaultProps = {
+AbsoluteLink.defaultProps = {
   onClick(){
 
   }
 };
 
-export function Link({className, children, href, target, onClick}) {
+export function AbsoluteLink({className, children, href, target, onClick}) {
 
   return (
     <a className={classNames('link', className)}

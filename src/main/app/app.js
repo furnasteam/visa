@@ -4,8 +4,8 @@ import {Route, Switch} from 'react-router-dom'
 import './seo/sitemap.xml';
 import './seo/robots.txt';
 import {Helmet} from 'react-helmet';
-import {Article, ArticlePath} from './models/ArticleModel';
-import {ArticlePage} from './pages/article/ArticlePage';
+import {FullDocumentsListPage} from './pages/full-documents-list/FullDocumentsListPage';
+import {createFullDocumentsListRoute, createHomeRoute} from './helpers/appRoutes';
 
 
 export class App extends React.Component {
@@ -14,11 +14,10 @@ export class App extends React.Component {
 
     return ([
       <Switch>
-        <Route exact path={`/${ArticlePath[Article.WORKER_VISA_DOCUMENTS]}`}
-               render={(props) => <ArticlePage article={Article.WORKER_VISA_DOCUMENTS}/>}/>
-        <Route exact path={`/${ArticlePath[Article.FAVICON_ARTICLE]}`}
-               render={(props) => <ArticlePage article={Article.FAVICON_ARTICLE}/>}/>
-        <Route path='/' component={HomePage}/>
+        <Route exact path={createFullDocumentsListRoute()}
+               component={FullDocumentsListPage}/>
+        <Route path={createHomeRoute()}
+               component={HomePage}/>
       </Switch>,
       <Helmet key="2">
         <link rel="icon" sizes="192x192" href={require('./images/favicon-192x192.png')}/>

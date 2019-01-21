@@ -34,14 +34,13 @@ app.get("*", (req, res) => {
       {helmet.title.toComponent()}
       {helmet.meta.toComponent()}
       {helmet.link.toComponent()}
-      <link href="https://fonts.googleapis.com/css?family=Lora:400,700&amp;subset=cyrillic" rel="stylesheet"/>
       <link rel="stylesheet" type="text/css" href="/styles.css"/>
     </head>
     <body>
     <div id="root" dangerouslySetInnerHTML={ {__html: appString} }>
     </div>
     <script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript"></script>
-    <script src="/blog.client.js.gz"></script>
+    <script src="/visa.client.js"></script>
     </body>
     </html>));
   res.end();
