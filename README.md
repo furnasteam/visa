@@ -10,6 +10,9 @@ npm run watch //for development
 
 pm2 start server/visa.server.js
 
+
+
+
 Useful
 
 
