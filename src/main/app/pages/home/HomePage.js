@@ -5,6 +5,7 @@ import {Header} from '../../components/header/Header';
 import {Button} from '../../components/button/Button';
 import {Link} from 'react-router-dom';
 import {createFullDocumentsListRoute} from '../../helpers/appRoutes';
+import {Title} from '../../components/title/Title';
 
 export class HomePage extends React.Component {
 
@@ -18,7 +19,7 @@ export class HomePage extends React.Component {
         <div className="home">
           <Header/>
           <div className="home__content">
-            <h1>Список документов на визу в Испанию</h1>
+            <Title>Список документов на визу в Испанию</Title>
             <ul>
               <li>
                 актуальный перечень документов для визы

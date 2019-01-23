@@ -3,15 +3,11 @@
 
 .title {
   font-family: $font-family;
-  font-size: $font-title-size;
-  text-transform: uppercase;
+  font-size: 28px;
   color: $font-color-black;
   font-weight: normal;
+  text-align: center;
   @include for-phone-only {
-    font-size: $font-title-mobile-size;
-  }
-
-  @include for-tablet-portrait-up {
-    font-family: $font-family-alternative;
+    font-size: 16px;
   }
 }

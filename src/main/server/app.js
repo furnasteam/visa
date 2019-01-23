@@ -34,6 +34,7 @@ app.get("*", (req, res) => {
       {helmet.title.toComponent()}
       {helmet.meta.toComponent()}
       {helmet.link.toComponent()}
+      <link href="https://fonts.googleapis.com/css?family=PT+Sans+Caption|Raleway:400,600&amp;subset=cyrillic" rel="stylesheet"/>
       <link rel="stylesheet" type="text/css" href="/styles.css"/>
     </head>
     <body>

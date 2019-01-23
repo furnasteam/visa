@@ -3,7 +3,7 @@ import './header.scss';
 import classNames from 'classnames';
 import {bool, func, string} from 'prop-types';
 import {MediumText} from '../medium-text/MediumText';
-import {AbsoluteLink} from '../absolute-link/AbsoluteLink';
+import {UniversalLink} from '../universal-link/UniversalLink';
 import {createHomeRoute} from '../../helpers/appRoutes';
 
 export class Header extends React.Component {
@@ -46,19 +46,19 @@ export class Header extends React.Component {
             <div className="header__logo-image">
             </div>
             <MediumText className="header__title">
-              <AbsoluteLink href="https://visa.furnas.ru">
+              <UniversalLink href={createHomeRoute()}>
                 Visa.Furnas
-              </AbsoluteLink>
+              </UniversalLink>
             </MediumText>
           </div>
           <div>
-            <AbsoluteLink href={createHomeRoute()}>
+            <UniversalLink href="https://blog.furnas.ru">
               Наш блог
-            </AbsoluteLink>
-            <AbsoluteLink href="http://furnas.ru"
-                          className="header__furnas-link">
+            </UniversalLink>
+            <UniversalLink href="http://furnas.ru"
+                           className="header__furnas-link">
               Наш сайт
-            </AbsoluteLink>
+            </UniversalLink>
           </div>
         </div>
       </div>
