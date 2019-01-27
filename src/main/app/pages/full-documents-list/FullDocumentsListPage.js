@@ -161,6 +161,91 @@ export class FullDocumentsListPage extends React.Component {
                   9.9 Контракт аренды автомобиля;
                 </p>
               </li>
+              <li className="full-documents-list__list-item">
+                <p className="full-documents-list__list-item-text">
+                  10. <b>Профессиональный статус (экономические гарантии):</b>
+                </p>
+              </li>
+              <li className="full-documents-list__list-item">
+                <p className="full-documents-list__list-item-text">
+                  10.1 Справка с места работы, оригинал на фирменном бланке с указанием названия, адреса и телефона организации, ФИО, должности и заработной платы работника, заверенная печатью и подписью руководителя и бухгалтерии (справка действительна в течение 1 месяца со дня выдачи) (или допустимо предоставить форму 2НДФЛ, пример справки в прикреплённых файлах);
+                </p>
+              </li>
+              <li className="full-documents-list__list-item">
+                <p className="full-documents-list__list-item-text">
+                  10.2 Оригинал справки с места учёбы с синей печатью (пример в прикреплённых файлах);
+                </p>
+              </li>
+              <li className="full-documents-list__list-item">
+                <p className="full-documents-list__list-item-text">
+                  10.3 Копия свидетельства о регистрации предприятия или уведомление о постановке на учет физического лица в налоговом органе;
+                </p>
+              </li>
+              <li className="full-documents-list__list-item">
+                <p className="full-documents-list__list-item-text">
+                  10.4 Копия документа индивидуального номера налогоплательщика (ИНН);
+                </p>
+              </li>
+              <li className="full-documents-list__list-item">
+                <p className="full-documents-list__list-item-text">
+                  10.5 Справка из пенсионного фонда;
+                </p>
+              </li>
+              <li className="full-documents-list__list-item">
+                <p className="full-documents-list__list-item-text">
+                  10.6 Копия пенсионного удостоверения;
+                </p>
+              </li>
+              <li className="full-documents-list__list-item">
+                <p className="full-documents-list__list-item-text">
+                  10.7 При подаче предоставить пенсионного удостоверения;
+                </p>
+              </li>
+              <li className="full-documents-list__list-item">
+                <p className="full-documents-list__list-item-text">
+                  10.8 Спонсорское письмо в печатном виде;
+                </p>
+              </li>
+              <li className="full-documents-list__list-item">
+                <p className="full-documents-list__list-item-text">
+                  10.9 Оригинал справки с места работы спонсора;
+                </p>
+              </li>
+              <li className="full-documents-list__list-item">
+                <p className="full-documents-list__list-item-text">
+                  10.10 Финансовые гарантии спонсора (выписка со счета из банка или справка о 	покупке валюты);
+                </p>
+              </li>
+              <li className="full-documents-list__list-item">
+                <p className="full-documents-list__list-item-text">
+                  10.11 Ксерокопия общегражданского  паспорта спонсора (1-й разворот с 	данными спонсора и разворот с пропиской).
+                </p>
+              </li>
+              <li className="full-documents-list__list-item">
+                <p className="full-documents-list__list-item-text">
+                  11. <b>Финансовые гарантии</b> (73,59 € на каждый день пребывания и минимум 661,50 евро на поездку за человека). Один или несколько пунктов:
+                </p>
+              </li>
+              <li className="full-documents-list__list-item">
+                <p className="full-documents-list__list-item-text">
+                  11.1 Оригинал выписки с банковского счета на бланке банка с синей печатью (73,59 € на каждый день пребывания и минимум 661,50 евро на поездку за человека)
+                </p>
+              </li>
+              <li className="full-documents-list__list-item">
+                <p className="full-documents-list__list-item-text">
+                  11.2 Дорожные чеки (73,59 € на каждый день пребывания и минимум 661,50 евро на поездку за человека);
+                </p>
+              </li>
+              <li className="full-documents-list__list-item">
+                <p className="full-documents-list__list-item-text">
+                  11.3 Справка о покупке валюты (73,59 € на каждый день пребывания и минимум 661,50 евро на поездку за человека);
+                </p>
+              </li>
+              <li className="full-documents-list__list-item">
+                <p className="full-documents-list__list-item-text">
+                  11.4 Кредитная карта, сопровождаемая кратким содержанием банковского счета (73,59 € на каждый день пребывания и минимум 661,50 евро на поездку за человека);
+                </p>
+              </li>
             </ul>
           </div>
         </div>

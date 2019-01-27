@@ -58,6 +58,9 @@
 
   &__furnas-link {
     margin-left: 88px;
+    @include for-phone-only {
+      margin-left: 16px;
+    }
   }
 
 }
