@@ -20,20 +20,22 @@ export class HomePage extends React.Component {
           <Header/>
           <div className="home__content">
             <Title>Список документов на визу в Испанию</Title>
-            <ul>
+            <ul className="list-item">
               <li>
-                актуальный перечень документов для визы
+                  <span>актуальный перечень документов для визы</span>
               </li>
               <li>
-                бесплатно получаете заполненную анкету
+                  <span>бесплатно получаете заполненную анкету</span>
               </li>
               <li>
-                разбор всех пунктов анкеты
+                  <span> разбор всех пунктов анкеты</span>
               </li>
             </ul>
-            <Link to={createFullDocumentsListRoute()}>
-              <Button>Список документов</Button>
-            </Link>
+              <span className="home__doc-list-btn">
+                <Link to={createFullDocumentsListRoute()}>
+                  <Button>Список документов</Button>
+                </Link>
+              </span>
           </div>
         </div>
       ]

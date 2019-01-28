@@ -13,4 +13,25 @@
   margin-top: 100px;
   max-width: 700px;
   padding: 0 20px;
+
+  & ul.list-item li {
+    color: #39ccb0;
+    padding-bottom: 30px;
+
+    & span {
+      color: #2E2E31;
+    }
+  }
+
+  & ul.list-item li:last-child {
+    padding-bottom: 23px;
+  }
+}
+
+.home__doc-list-btn {
+  padding-left: 25px;
+
+  & button{
+    border-radius: 25px;
+  }
 }
