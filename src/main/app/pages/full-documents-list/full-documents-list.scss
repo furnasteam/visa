@@ -16,10 +16,15 @@
 
   &__list {
     list-style: none;
+    padding: 0;
+    margin-top: 64px;
   }
 
   &__list-item {
     margin-bottom: 16px;
+    @include for-phone-only {
+      margin-bottom: 64px;
+    }
   }
 
   &__list-item-text {
