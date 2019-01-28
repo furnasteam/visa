@@ -26,6 +26,40 @@
   & ul.list-item li:last-child {
     padding-bottom: 23px;
   }
+
+  &__flex-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 940px;
+  }
+
+  &__rectangle-2 {
+    margin: 16px 32px;
+    padding: 16px 32px;
+    //height: 278px;
+    width: 30%;
+    //width: 364px;
+    border: 1px solid #39CCB0;
+    border-radius: 18px;
+  }
+
+  &__tourist-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 940px;
+  }
+
+  &__tourist-item{
+    margin: 16px 32px;
+    padding: 16px 32px;
+
+    width: 18%;
+
+    border: 1px solid #39CCB0;
+    border-radius: 18px;
+  }
 }
 
 .home__doc-list-btn {

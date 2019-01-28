@@ -6,6 +6,10 @@ import {Button} from '../../components/button/Button';
 import {Link} from 'react-router-dom';
 import {createFullDocumentsListRoute} from '../../helpers/appRoutes';
 import {Title} from '../../components/title/Title';
+import {HomeScreen1} from "./screens/HomeScreen1";
+import {HomeScreen2} from "./screens/HomeScreen2";
+import {HomeScreen4} from "./screens/HomeScreen4";
+import {HomeScreen3} from "./screens/HomeScreen3";
 
 export class HomePage extends React.Component {
 
@@ -18,25 +22,10 @@ export class HomePage extends React.Component {
         </Helmet>,
         <div className="home">
           <Header/>
-          <div className="home__content">
-            <Title>Список документов на визу в Испанию</Title>
-            <ul className="list-item">
-              <li>
-                  <span>актуальный перечень документов для визы</span>
-              </li>
-              <li>
-                  <span>бесплатно получаете заполненную анкету</span>
-              </li>
-              <li>
-                  <span> разбор всех пунктов анкеты</span>
-              </li>
-            </ul>
-              <span className="home__doc-list-btn">
-                <Link to={createFullDocumentsListRoute()}>
-                  <Button>Список документов</Button>
-                </Link>
-              </span>
-          </div>
+          <HomeScreen1 />
+            <HomeScreen2 />
+            <HomeScreen3 />
+            <HomeScreen4 />
         </div>
       ]
     );
