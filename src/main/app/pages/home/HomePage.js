@@ -2,10 +2,6 @@ import React from 'react';
 import './home.scss';
 import {Helmet} from 'react-helmet';
 import {Header} from '../../components/header/Header';
-import {Button} from '../../components/button/Button';
-import {Link} from 'react-router-dom';
-import {createFullDocumentsListRoute} from '../../helpers/appRoutes';
-import {Title} from '../../components/title/Title';
 import {HomeScreen1} from "./screens/HomeScreen1";
 import {HomeScreen2} from "./screens/HomeScreen2";
 import {HomeScreen4} from "./screens/HomeScreen4";
@@ -22,10 +18,10 @@ export class HomePage extends React.Component {
         </Helmet>,
         <div className="home">
           <Header/>
-          <HomeScreen1 />
-            <HomeScreen2 />
-            <HomeScreen3 />
-            <HomeScreen4 />
+          <HomeScreen1/>
+          <HomeScreen2/>
+          <HomeScreen3/>
+          <HomeScreen4/>
         </div>
       ]
     );
