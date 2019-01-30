@@ -10,67 +10,52 @@ export class HomeScreen3 extends React.Component {
           на туристическую визу</Title>
         <div className="home__content__tourist-container">
           <div className="home__content__tourist-item">
-            <div>
-
+            <div className="tourist tourist__icon_employee">
             </div>
             <span>работник</span>
-            <div>______</div>
+            <div className="line"></div>
           </div>
           <div className="home__content__tourist-item">
-            <div>
-
+            <div className="tourist tourist__icon_student">
             </div>
-            <span>работник</span>
-            <div>______</div>
+            <span>студент</span>
+            <div className="line"></div>
           </div>
           <div className="home__content__tourist-item">
-            <div>
-
+            <div className="tourist tourist__icon_business">
             </div>
-            <span>работник</span>
-            <div>______</div>
+            <span>ИП</span>
+            <div className="line"></div>
           </div>
           <div className="home__content__tourist-item">
-            <div>
-
+            <div className="tourist tourist__icon_housewife">
             </div>
-            <span>работник</span>
-            <div>______</div>
+            <span>домохозяйка</span>
+            <div className="line"></div>
           </div>
           <div className="home__content__tourist-item">
-            <div>
-
+            <div className="tourist tourist__icon_schoolchild">
             </div>
-            <span>работник</span>
-            <div>______</div>
+            <span>школьник</span>
+            <div className="line"></div>
           </div>
           <div className="home__content__tourist-item">
-            <div>
-
+            <div className="tourist tourist__icon_idle">
             </div>
-            <span>работник</span>
-            <div>______</div>
+            <span>безработный</span>
+            <div className="line"></div>
           </div>
           <div className="home__content__tourist-item">
-            <div>
-
+            <div className="tourist tourist__icon_retiree">
             </div>
-            <span>работник</span>
-            <div>______</div>
+            <span>пенсионер</span>
+            <div className="line"></div>
           </div>
           <div className="home__content__tourist-item">
-            <div>
-
+            <div className="tourist tourist__icon_child">
             </div>
-            <span>работник</span>
-            <div>______</div>
-          </div>
-          <div className="home__content__tourist-item">
-            <div>
-
-            </div>
-            <span>работник</span>
-            <div>______</div>
+            <span>дошкольник</span>
+            <div className="line"></div>
           </div>
         </div>
       </div>
