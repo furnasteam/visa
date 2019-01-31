@@ -58,8 +58,19 @@
     height: 100vh;
     margin-top: -226px;
     background-size: contain;
+    @include for-phone-only-retina {
+      background: url('images/main_mob_2x.png') no-repeat;
+      background-position: bottom;
+      background-size: contain;
+    }
     @include for-tablet-landscape-up {
       background: url('images/main.png') no-repeat;
+      background-position: center;
+      margin-top: -130px;
+      height: 680px;
+    }
+    @include for-tablet-landscape-up-retina {
+      background: url('images/main_2x.png') no-repeat;
       background-position: center;
       margin-top: -130px;
       height: 680px;
@@ -72,7 +83,7 @@
 
   &__title {
     z-index: 1;
-    @include for-phone-only{
+    @include for-phone-only {
       margin-bottom: 32px;
       width: 185px;
     }
