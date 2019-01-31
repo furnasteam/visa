@@ -1,15 +1,15 @@
 import React from 'react';
-import '.././home.scss';
-import {Title} from '../../../components/title/Title';
-import Flamenco from './images/Flamenco.png';
-import Green_line from './images/Green_line.png';
-export class HomeScreen2 extends React.Component {
+import {Title} from '../../../../components/title/Title';
+import Flamenco from '../images/Flamenco.png';
+import Green_line from '../images/Green_line.png';
+
+export class DescriptionScreen extends React.Component {
   render() {
     return (
       <div className="home__content">
-        <img src={Flamenco} style={{position:'absolute', width:'58px', height:'120px', marginTop: '-84px'}} />
+        <img src={Flamenco} style={{position: 'absolute', width: '58px', height: '120px', marginTop: '-84px'}}/>
         <Title>Проект Furnas.Visa включает в себя</Title>
-        <img src={Green_line} />
+        <img src={Green_line}/>
         <div className="home__content__flex-container">
           <div className="home__content__rectangle-2">
             <h3>Актуальный

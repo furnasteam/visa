@@ -16,8 +16,11 @@ export class DocumentsListItem extends React.Component {
     return (
       <li className="full-documents-list__list-item">
         <div className="full-documents-list__tags-container">
-          {map(tags, tag => (
-            <span className={classNames(`full-documents-list__tag full-documents-list__tag-${lowerCase(getTagGroup(tag))}`)}>{DocumentTagTranslation[tag]}</span>
+          {map(tags, (tag, index) => (
+            <span key={index}
+                  className={classNames(`full-documents-list__tag full-documents-list__tag-${lowerCase(getTagGroup(tag))}`)}>
+              {DocumentTagTranslation[tag]}
+              </span>
           ))}
         </div>
         <p className="full-documents-list__list-item-text">

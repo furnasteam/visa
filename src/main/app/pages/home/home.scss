@@ -7,12 +7,28 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  &__content {
+    margin-top: 100px;
+    max-width: 700px;
+    padding: 0 20px;
+
+    @include for-desktop-up {
+      margin-top: 200px;
+    }
+
+    @include for-big-desktop-up {
+      margin-top: 300px;
+    }
+  }
+
+  &__doc-list-btn {
+    padding-left: 25px;
+  }
+
 }
 
 .home__content {
-  margin-top: 100px;
-  max-width: 700px;
-  padding: 0 20px;
 
   & ul.list-item li {
     color: #39ccb0;
@@ -27,7 +43,7 @@
     padding-bottom: 23px;
   }
 
-  &__flex-container{
+  &__flex-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -54,7 +70,7 @@
     }
   }
 
-  &__tourist-container{
+  &__tourist-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -65,7 +81,7 @@
     }
   }
 
-  &__tourist-item{
+  &__tourist-item {
     margin: 16px 32px;
     padding: 16px 32px;
 
@@ -101,31 +117,24 @@
   &__icon_business {
     background: url('screens/images/business.png') no-repeat;
   }
-  &__icon_employee{
+  &__icon_employee {
     background: url('screens/images/employee.png') no-repeat;
   }
-  &__icon_housewife{
+  &__icon_housewife {
     background: url('screens/images/housewife.png') no-repeat;
   }
-  &__icon_idle{
+  &__icon_idle {
     background: url('screens/images/idle.png') no-repeat;
   }
-  &__icon_schoolchild{
+  &__icon_schoolchild {
     background: url('screens/images/schoolchild.png') no-repeat;
   }
-  &__icon_retiree{
+  &__icon_retiree {
     background: url('screens/images/retiree.png') no-repeat;
   }
-  &__icon_student{
+  &__icon_student {
     background: url('screens/images/student.png') no-repeat;
   }
 
-
 }
-.home__doc-list-btn {
-  padding-left: 25px;
 
-  & button{
-    border-radius: 25px;
-  }
-}

@@ -1,8 +1,7 @@
 import React from 'react';
-import '.././home.scss';
-import {Title} from '../../../components/title/Title';
+import {Title} from '../../../../components/title/Title';
 
-export class HomeScreen3 extends React.Component {
+export class ChosePersonScreen extends React.Component {
   render() {
     return (
       <div className="home__content">
