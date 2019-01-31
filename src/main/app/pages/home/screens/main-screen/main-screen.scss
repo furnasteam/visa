@@ -68,12 +68,14 @@
       background-position: center;
       margin-top: -130px;
       height: 680px;
+      background-size: contain;
     }
     @include for-tablet-landscape-up-retina {
       background: url('images/main_2x.png') no-repeat;
       background-position: center;
       margin-top: -130px;
       height: 680px;
+      background-size: contain;
     }
   }
 
