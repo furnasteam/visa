@@ -1,0 +1,133 @@
+@import "../../../../common/vars";
+@import "../../../../common/mixins";
+
+.choose-person-screen {
+  margin-top: 160px;
+  &__persons-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 940px;
+    margin-top: 64px;
+    @include for-phone-only {
+      width: 100%;
+      flex-direction: column;
+    }
+  }
+
+  &__person {
+    margin: 16px 32px;
+    padding: 16px 32px;
+    border: 1px solid #39CCB0;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  &__person-icon {
+    width: 94px;
+    height: 100px;
+    margin-right: 8px;
+    margin-top: 1px;
+    background-size: contain !important;
+    background-position: center !important;
+  }
+  &__person-icon_child {
+    background: url('images/child.png') no-repeat;
+    @include for-phone-only {
+      background: url('images/child_mob.png') no-repeat;
+    }
+    @include for-phone-only-retina {
+      background: url('images/child_mob_2x.png') no-repeat;
+    }
+    @include for-desktop-up-retina {
+      background: url('images/child_2x.png') no-repeat;
+    }
+  }
+  &__person-icon_businessman {
+    background: url('images/businessman.png') no-repeat;
+    @include for-phone-only {
+      background: url('images/businessman_mob.png') no-repeat;
+    }
+    @include for-phone-only-retina {
+      background: url('images/businessman_mob_2x.png') no-repeat;
+    }
+    @include for-desktop-up-retina {
+      background: url('images/businessman_2x.png') no-repeat;
+    }
+  }
+  &__person-icon_employee {
+    background: url('images/employee.png') no-repeat;
+    @include for-phone-only {
+      background: url('images/employee_mob.png') no-repeat;
+    }
+    @include for-phone-only-retina {
+      background: url('images/employee_mob_2x.png') no-repeat;
+    }
+    @include for-desktop-up-retina {
+      background: url('images/employee_2x.png') no-repeat;
+    }
+  }
+  &__person-icon_housewife {
+    background: url('images/housewife.png') no-repeat;
+    @include for-phone-only {
+      background: url('images/housewife_mob.png') no-repeat;
+    }
+    @include for-phone-only-retina {
+      background: url('images/housewife_mob_2x.png') no-repeat;
+    }
+    @include for-desktop-up-retina {
+      background: url('images/housewife_2x.png') no-repeat;
+    }
+  }
+  &__person-icon_idle {
+    background: url('images/idle.png') no-repeat;
+    @include for-phone-only {
+      background: url('images/idle_mob.png') no-repeat;
+    }
+    @include for-phone-only-retina {
+      background: url('images/idle_mob_2x.png') no-repeat;
+    }
+    @include for-desktop-up-retina {
+      background: url('images/idle_2x.png') no-repeat;
+    }
+  }
+  &__person-icon_schoolchild {
+    background: url('images/schoolchild.png') no-repeat;
+    @include for-phone-only {
+      background: url('images/schoolchild_mob.png') no-repeat;
+    }
+    @include for-phone-only-retina {
+      background: url('images/schoolchild_mob_2x.png') no-repeat;
+    }
+    @include for-desktop-up-retina {
+      background: url('images/schoolchild_2x.png') no-repeat;
+    }
+  }
+  &__person-icon_retiree {
+    background: url('images/retiree.png') no-repeat;
+    @include for-phone-only {
+      background: url('images/retiree_mob.png') no-repeat;
+    }
+    @include for-phone-only-retina {
+      background: url('images/retiree_mob_2x.png') no-repeat;
+    }
+    @include for-desktop-up-retina {
+      background: url('images/retiree_2x.png') no-repeat;
+    }
+  }
+  &__person-icon_student {
+    background: url('images/student.png') no-repeat;
+    @include for-phone-only {
+      background: url('images/student_mob.png') no-repeat;
+    }
+    @include for-phone-only-retina {
+      background: url('images/student_mob_2x.png') no-repeat;
+    }
+    @include for-desktop-up-retina {
+      background: url('images/student_2x.png') no-repeat;
+    }
+  }
+}

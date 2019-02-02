@@ -1,57 +1,58 @@
 import React from 'react';
 import {Title} from '../../../../components/title/Title';
+import './choose-person-screen.scss';
 
 export class ChosePersonScreen extends React.Component {
   render() {
     return (
-      <div className="home__content">
+      <div className="choose-person-screen">
         <Title>Выберите для кого нужен список документов
           на туристическую визу</Title>
-        <div className="home__content__tourist-container">
-          <div className="home__content__tourist-item">
-            <div className="tourist tourist__icon_employee">
+        <div className="choose-person-screen__persons-container">
+          <div className="choose-person-screen__person">
+            <div className="choose-person-screen__person-icon choose-person-screen__person-icon_employee">
             </div>
             <span>работник</span>
             <div className="line"></div>
           </div>
-          <div className="home__content__tourist-item">
-            <div className="tourist tourist__icon_student">
+          <div className="choose-person-screen__person">
+            <div className="choose-person-screen__person-icon choose-person-screen__person-icon_student">
             </div>
             <span>студент</span>
             <div className="line"></div>
           </div>
-          <div className="home__content__tourist-item">
-            <div className="tourist tourist__icon_business">
+          <div className="choose-person-screen__person">
+            <div className="choose-person-screen__person-icon choose-person-screen__person-icon_businessman">
             </div>
             <span>ИП</span>
             <div className="line"></div>
           </div>
-          <div className="home__content__tourist-item">
-            <div className="tourist tourist__icon_housewife">
+          <div className="choose-person-screen__person">
+            <div className="choose-person-screen__person-icon choose-person-screen__person-icon_housewife">
             </div>
             <span>домохозяйка</span>
             <div className="line"></div>
           </div>
-          <div className="home__content__tourist-item">
-            <div className="tourist tourist__icon_schoolchild">
+          <div className="choose-person-screen__person">
+            <div className="choose-person-screen__person-icon choose-person-screen__person-icon_schoolchild">
             </div>
             <span>школьник</span>
             <div className="line"></div>
           </div>
-          <div className="home__content__tourist-item">
-            <div className="tourist tourist__icon_idle">
+          <div className="choose-person-screen__person">
+            <div className="choose-person-screen__person-icon choose-person-screen__person-icon_idle">
             </div>
             <span>безработный</span>
             <div className="line"></div>
           </div>
-          <div className="home__content__tourist-item">
-            <div className="tourist tourist__icon_retiree">
+          <div className="choose-person-screen__person">
+            <div className="choose-person-screen__person-icon choose-person-screen__person-icon_retiree">
             </div>
             <span>пенсионер</span>
             <div className="line"></div>
           </div>
-          <div className="home__content__tourist-item">
-            <div className="tourist tourist__icon_child">
+          <div className="choose-person-screen__person">
+            <div className="choose-person-screen__person-icon choose-person-screen__person-icon_child">
             </div>
             <span>дошкольник</span>
             <div className="line"></div>
