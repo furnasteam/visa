@@ -13,49 +13,49 @@ export class ChosePersonScreen extends React.Component {
             <div className="choose-person-screen__person-icon choose-person-screen__person-icon_employee">
             </div>
             <span>работник</span>
-            <div className="line"></div>
+            <div className="choose-person-screen__person-underline"></div>
           </div>
           <div className="choose-person-screen__person">
             <div className="choose-person-screen__person-icon choose-person-screen__person-icon_student">
             </div>
             <span>студент</span>
-            <div className="line"></div>
+            <div className="choose-person-screen__person-underline"></div>
           </div>
           <div className="choose-person-screen__person">
             <div className="choose-person-screen__person-icon choose-person-screen__person-icon_businessman">
             </div>
             <span>ИП</span>
-            <div className="line"></div>
+            <div className="choose-person-screen__person-underline"></div>
           </div>
           <div className="choose-person-screen__person">
             <div className="choose-person-screen__person-icon choose-person-screen__person-icon_housewife">
             </div>
             <span>домохозяйка</span>
-            <div className="line"></div>
+            <div className="choose-person-screen__person-underline"></div>
           </div>
           <div className="choose-person-screen__person">
             <div className="choose-person-screen__person-icon choose-person-screen__person-icon_schoolchild">
             </div>
             <span>школьник</span>
-            <div className="line"></div>
+            <div className="choose-person-screen__person-underline"></div>
           </div>
           <div className="choose-person-screen__person">
             <div className="choose-person-screen__person-icon choose-person-screen__person-icon_idle">
             </div>
             <span>безработный</span>
-            <div className="line"></div>
+            <div className="choose-person-screen__person-underline"></div>
           </div>
           <div className="choose-person-screen__person">
             <div className="choose-person-screen__person-icon choose-person-screen__person-icon_retiree">
             </div>
             <span>пенсионер</span>
-            <div className="line"></div>
+            <div className="choose-person-screen__person-underline"></div>
           </div>
           <div className="choose-person-screen__person">
             <div className="choose-person-screen__person-icon choose-person-screen__person-icon_child">
             </div>
             <span>дошкольник</span>
-            <div className="line"></div>
+            <div className="choose-person-screen__person-underline"></div>
           </div>
         </div>
       </div>
