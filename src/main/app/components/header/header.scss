@@ -41,7 +41,16 @@
     height: 16px;
     margin-right: 8px;
     margin-top: 1px;
-    background-size: contain;
+    background-size: contain !important;
+    @include for-phone-only {
+      background: url('images/logo_mob.png') no-repeat;
+    }
+    @include for-phone-only-retina {
+      background: url('images/logo_mob_2x.png') no-repeat;
+    }
+    @include for-desktop-up-retina {
+      background: url('images/logo_2x.png') no-repeat;
+    }
   }
 
   &__title-with-logo {
