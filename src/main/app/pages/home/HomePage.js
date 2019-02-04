@@ -20,9 +20,9 @@ export class HomePage extends React.Component {
         <div className="home">
           <Header/>
           <MainScreen/>
-          {/*<DescriptionScreen/>*/}
+          <DescriptionScreen/>
           <ChosePersonScreen/>
-          {/*<OtherResourcesScreen/>*/}
+          <OtherResourcesScreen/>
         </div>
       ]
     );

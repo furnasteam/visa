@@ -23,6 +23,7 @@
     width: 30%;
     border: 1px solid #39CCB0;
     border-radius: 18px;
+    font-family: $font-family;
     @include for-phone-only {
       width: 100%;
       margin: 0;
