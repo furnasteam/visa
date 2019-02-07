@@ -29,7 +29,7 @@ app.get("*", (req, res) => {
     <head>
       <meta charSet="utf-8"/>
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-      <meta name="google-site-verification" content="RQAJNgiCCFXuGp9tpWcAWeYCBHnwGZ5O3ubZ1O6mu_0" />
+      <meta name="google-site-verification" content="1mW_65D1liOX9N8PT2g81ybfDbx0kTiIljMcbA-gips" />
       <meta name="yandex-verification" content="62b70bb0d887d1d6" />
       {helmet.title.toComponent()}
       {helmet.meta.toComponent()}
