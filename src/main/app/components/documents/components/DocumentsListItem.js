@@ -1,6 +1,6 @@
 import React from 'react';
 import {array} from 'prop-types';
-import {DocumentTagTranslation, getTagGroup} from '../FullDocumentsListModel';
+import {DocumentTagTranslation, getTagGroup} from '../../../pages/full-documents-list/FullDocumentsListModel';
 import classNames from 'classnames';
 import map from 'lodash/map';
 import lowerCase from 'lodash/lowerCase';
@@ -14,16 +14,16 @@ export class DocumentsListItem extends React.Component {
   render() {
     const {children, tags} = this.props;
     return (
-      <li className="full-documents-list__list-item">
-        <div className="full-documents-list__tags-container">
+      <li className="documents__list-item">
+        <div className="documents__tags-container">
           {map(tags, (tag, index) => (
             <span key={index}
-                  className={classNames(`full-documents-list__tag full-documents-list__tag-${lowerCase(getTagGroup(tag))}`)}>
+                  className={classNames(`documents__tag documents__tag-${lowerCase(getTagGroup(tag))}`)}>
               {DocumentTagTranslation[tag]}
               </span>
           ))}
         </div>
-        <p className="full-documents-list__list-item-text">
+        <p className="documents__list-item-text">
           {children}
         </p>
       </li>

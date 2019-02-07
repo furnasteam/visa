@@ -13,7 +13,7 @@ export class App extends React.Component {
   render() {
 
     return ([
-      <Switch>
+      <Switch key="1">
         <Route exact path={createFullDocumentsListRoute()}
                component={FullDocumentsListPage}/>
         <Route path={createHomeRoute()}

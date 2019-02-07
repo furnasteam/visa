@@ -1,3 +1,5 @@
+@import "../app/common/vars";
+@import "../app/common/mixins";
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
@@ -368,6 +370,7 @@ a{
 body {
   flex-grow: 1;
   -webkit-font-smoothing: antialiased;
+  font-family: $font-family;
 }
 
 #root {
