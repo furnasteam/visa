@@ -37,4 +37,73 @@
       height: 100%;
     }
   }
+
+  &__contents {
+
+  }
+
+  &__contents-item {
+    color: #15B798;
+    margin-bottom: 16px;
+  }
+
+  &__section {
+    padding-top: 90px;
+    margin-top: -62px;
+    margin-bottom: 48px;
+  }
+
+  &__prices-subtitle {
+    margin-bottom: 24px;
+  }
+
+  &__video-subtitle {
+    margin-bottom: 24px;
+  }
+
+  &__paragraph {
+    margin-bottom: 48px;
+    font-family: $font-family;
+    font-size: 16px;
+    color: #333333;
+    line-height: 24px;
+  }
+
+  &__prices-container {
+    border: 1px solid #15B798;
+    border-radius: 5px;
+  }
+
+  &__prices-table {
+    border-collapse: collapse;
+    thead {
+      background: #15B798;
+      color: #FFFFFF;
+      text-align: left;
+      th {
+        padding: 16px 24px;
+        &:first-child {
+          border-right: 1px solid #FFFFFF;
+        }
+      }
+    }
+    tbody {
+      color: #15B798;
+      td {
+        border: 1px solid #15B798;
+        padding: 16px 24px;
+        &:first-child {
+          border-left: none;
+          width: 160px;
+        }
+      }
+      tr {
+        &:last-child {
+          td {
+            border-bottom: none;
+          }
+        }
+      }
+    }
+  }
 }

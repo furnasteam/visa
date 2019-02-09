@@ -23,9 +23,9 @@ export class DocumentsListItem extends React.Component {
               </span>
           ))}
         </div>
-        <p className="documents__list-item-text">
+        <div className="documents__list-item-text">
           {children}
-        </p>
+        </div>
       </li>
     );
   }

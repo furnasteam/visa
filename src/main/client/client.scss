@@ -378,3 +378,8 @@ body {
   min-width: 100%;
   display: flex;
 }
+
+abbr[title] {
+  text-decoration: none;
+  cursor: help;
+}

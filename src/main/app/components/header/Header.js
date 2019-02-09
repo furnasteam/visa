@@ -52,12 +52,12 @@ export class Header extends React.Component {
             </MediumText>
           </div>
           <div>
-            <UniversalLink href="https://blog.furnas.ru">
-              Наш блог
+            <UniversalLink href="http://furnas.ru">
+              О нас
             </UniversalLink>
-            <UniversalLink href="http://furnas.ru"
+            <UniversalLink href="https://www.instagram.com/furnasteam/"
                            className="header__furnas-link">
-              Наш сайт
+              Наш инстаграм
             </UniversalLink>
           </div>
         </div>
