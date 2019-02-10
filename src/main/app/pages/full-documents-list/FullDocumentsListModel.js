@@ -4,16 +4,10 @@ import includes from 'lodash/includes';
 
 export const DocumentTag = {
   OLDER_18: 'OLDER_18',
-  HOTEL: 'HOTEL',
-  HOSTEL: 'HOSTEL',
-  APARTMENT: 'APARTMENT',
-  HOUSE: 'HOUSE',
-  INVITE_RUS: 'INVITE_RUS',
-  INVITE_EU: 'INVITE_EU',
-  PLANE: 'PLANE',
-  TRAIN: 'TRAIN',
-  BUS: 'BUS',
-  SHIP: 'SHIP',
+  YOUNGER_18: 'YOUNGER_18',
+  BOOKING: 'BOOKING',
+  INVITE: 'INVITE',
+  TICKET: 'TICKET',
   CAR: 'CAR',
   DRIVER: 'DRIVER',
   WORKER: 'WORKER',
@@ -26,16 +20,10 @@ export const DocumentTag = {
 
 export const DocumentTagTranslation = {
   [DocumentTag.OLDER_18]: 'старше 18 лет',
-  [DocumentTag.HOTEL]: 'отель',
-  [DocumentTag.HOSTEL]: 'хостел',
-  [DocumentTag.APARTMENT]: 'квартира',
-  [DocumentTag.HOUSE]: 'дома',
-  [DocumentTag.INVITE_RUS]: 'приглашение РФ',
-  [DocumentTag.INVITE_EU]: 'приглашение ЕС',
-  [DocumentTag.PLANE]: 'самолет',
-  [DocumentTag.TRAIN]: 'поезд',
-  [DocumentTag.BUS]: 'автобус',
-  [DocumentTag.SHIP]: 'пароход',
+  [DocumentTag.YOUNGER_18]: 'младше 18 лет',
+  [DocumentTag.BOOKING]: 'бронь размещения',
+  [DocumentTag.INVITE]: 'приглашение',
+  [DocumentTag.TICKET]: 'бронь билета',
   [DocumentTag.CAR]: 'автомобиль',
   [DocumentTag.DRIVER]: 'водитель',
   [DocumentTag.WORKER]: 'работник',
@@ -47,9 +35,9 @@ export const DocumentTagTranslation = {
 };
 
 export const DocumentTagGroups = {
-  AGE: [DocumentTag.OLDER_18],
-  ACCOMMODATION: [DocumentTag.HOTEL, DocumentTag.HOSTEL, DocumentTag.APARTMENT, DocumentTag.HOUSE, DocumentTag.INVITE_EU, DocumentTag.INVITE_RUS],
-  TRANSPORT: [DocumentTag.PLANE, DocumentTag.TRAIN, DocumentTag.BUS, DocumentTag.SHIP, DocumentTag.CAR, DocumentTag.DRIVER],
+  AGE: [DocumentTag.OLDER_18, DocumentTag.YOUNGER_18],
+  ACCOMMODATION: [DocumentTag.BOOKING, DocumentTag.INVITE],
+  TRANSPORT: [DocumentTag.TICKET, DocumentTag.CAR, DocumentTag.DRIVER],
   PROFESSION: [DocumentTag.WORKER, DocumentTag.STUDENT, DocumentTag.BUSINESSMAN, DocumentTag.PENSIONER],
   PAYER: [DocumentTag.SPONSOR, DocumentTag.SELF_PAID]
 };

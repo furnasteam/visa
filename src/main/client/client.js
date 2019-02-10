@@ -11,7 +11,7 @@ window.mixpanel = {
 };
 
 //yandex metrika
-window.yaCounter = new Ya.Metrika({id: 51501746});
+window.yaCounter = new Ya.Metrika({id: 52311337});
 
 hydrate((
   <BrowserRouter>

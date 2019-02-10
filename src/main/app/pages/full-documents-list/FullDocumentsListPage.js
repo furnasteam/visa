@@ -7,6 +7,8 @@ import {Title} from '../../components/title/Title';
 import {Documents} from '../../components/documents/Documents';
 import {Subtitle} from '../../components/subtitle/Subtitle';
 import {GreenLink} from '../../components/green-link/GreenLink';
+import {Button} from '../../components/button/Button';
+import {UniversalLink} from '../../components/universal-link/UniversalLink';
 
 export class FullDocumentsListPage extends React.Component {
 
@@ -54,6 +56,9 @@ export class FullDocumentsListPage extends React.Component {
                      className="full-documents-list__section">
               <Subtitle>Список документов</Subtitle>
               <Documents/>
+              <UniversalLink href="https://drive.google.com/file/d/1qmzzGyMELmRSxloTfUWgmHOcBxhl3_GI/view?usp=sharing" noStyle={true}>
+                <Button className="full-documents-list__download-list-button">Скачать список и примеры</Button>
+              </UniversalLink>
             </section>
             <section id="prices"
                      className="full-documents-list__section">
@@ -105,6 +110,13 @@ export class FullDocumentsListPage extends React.Component {
                         height="315" src="https://www.youtube.com/embed/Y6kqpzIwQ9k"
                         frameBorder="0"
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen></iframe>
+              </div>
+              <p className="full-documents-list__paragraph">
+                Во втором видео показано как записаться на подачу документов <b>вместе с семьей, другом, подругой или друзьями (до 8 человек)</b>:
+              </p>
+              <div className="full-documents-list__video-wrapper">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/yd5zEec0rkE" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen></iframe>
               </div>
             </section>

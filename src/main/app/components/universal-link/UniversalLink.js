@@ -1,7 +1,7 @@
 import React from 'react';
 import './universal-link.scss';
 import classNames from 'classnames';
-import {any, func, string} from 'prop-types';
+import {any, func, string, bool} from 'prop-types';
 import startsWith from 'lodash/startsWith'
 import {Link} from 'react-router-dom';
 
@@ -10,7 +10,8 @@ UniversalLink.propTypes = {
   href: string,
   children: any,
   target: string,
-  onClick: func
+  onClick: func,
+  noStyle: bool
 };
 
 UniversalLink.defaultProps = {
@@ -19,11 +20,11 @@ UniversalLink.defaultProps = {
   }
 };
 
-export function UniversalLink({className, children, href, target, onClick}) {
+export function UniversalLink({className, children, href, target, onClick, noStyle}) {
 
   if (startsWith(href, 'http')) {
     return (
-      <a className={classNames('link', className)}
+      <a className={classNames('link', {'link_no-style' : noStyle}, className)}
          target={target}
          onClick={onClick}
          href={href}>
@@ -32,7 +33,7 @@ export function UniversalLink({className, children, href, target, onClick}) {
     );
   } else {
     return (
-      <Link className={classNames('link', className)}
+      <Link className={classNames('link', {'link_no-style' : noStyle}, className)}
             onClick={onClick}
             to={href}>
         {children}
