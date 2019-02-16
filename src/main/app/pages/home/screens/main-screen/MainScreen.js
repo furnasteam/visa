@@ -4,6 +4,7 @@ import {Button} from '../../../../components/button/Button';
 import {Link} from 'react-router-dom';
 import {createFullDocumentsListRoute} from '../../../../helpers/appRoutes';
 import {Title} from '../../../../components/title/Title';
+import {Picture} from '../../../../components/picture/Picture';
 
 export class MainScreen extends React.Component {
   render() {
@@ -28,7 +29,11 @@ export class MainScreen extends React.Component {
             <Button>Список документов</Button>
           </Link>
         </div>
-        <div className="main-screen__main-picture"></div>
+        <Picture className="main-screen__main-picture"
+                 forPhoneOnly={[require('./images/main_mob.png'),require('./images/main_mob.webp')]}
+                 forPhoneOnlyRetina={[require('./images/main_mob_2x.png'),require('./images/main_mob_2x.webp')]}
+                 forTabletPortraitUp={[require('./images/main.png'),require('./images/main.webp')]}
+                 forTabletPortraitUpRetina={[require('./images/main_2x.png'),require('./images/main_2x.webp')]}/>
       </div>
     );
   }
