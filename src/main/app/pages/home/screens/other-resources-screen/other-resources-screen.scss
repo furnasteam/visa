@@ -8,16 +8,21 @@
     align-items: center;
     width: 100%;
 
-
   &__container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     width:400px;
   }
+  &__resources-col3 {
+    width: 33%;
+  }
+
+  &__resources-col2 {
+    width: 50%;
+  }
 
   &__item {
-    width: 30%;
     margin: 40px 0px;
     display: flex;
     flex-direction: column;
@@ -31,5 +36,29 @@
     height: 3px;
     cursor: pointer;
     width: 100%;
+  }
+
+  &__arrow-green-icon {
+    height: 56px;
+    width: 26px;
+    margin-left: -380px;
+
+    //width: 94px;
+    //height: 100px;
+    margin-right: 8px;
+    margin-top: 1px;
+    background-size: contain !important;
+    background-position: center !important;
+
+    background: url('../images/Arrow_green.png') no-repeat;
+    @include for-phone-only {
+      background: url('../images/Arrow_green.png') no-repeat;
+    }
+    @include for-phone-only-retina {
+      background: url('../images/Arrow_green.png') no-repeat;
+    }
+    @include for-desktop-up-retina {
+      background: url('../images/Arrow_green.png') no-repeat;
+    }
   }
 }
