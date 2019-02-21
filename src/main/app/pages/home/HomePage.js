@@ -13,9 +13,10 @@ export class HomePage extends React.Component {
     return (
       [
         <Helmet>
-          <title>Документы на визу в Испанию 2019</title>
+          <title>Заполение анкеты на визу в Испанию</title>
           <meta name="description"
-                content="Заполнение анкеты на визу онлайн. Актуальный список документов для самостоятельного получения визы в визовом центре Испании."/>
+                content="Заполнение анкеты на визу онлайн. Беспллатное формирование пакета документов для самостоятельного получения визы в визовом центре Испании."/>
+          <link rel="canonical" href="https://visa.furnas.ru" />
         </Helmet>,
         <div className="home">
           <Header/>

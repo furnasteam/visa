@@ -30,9 +30,9 @@ export class App extends React.Component {
         <link rel="apple-touch-icon" sizes="152x152" href={require('./images/favicon-152x152.png')}/>
         <meta name="msapplication-square310x310logo" content={require('./images/favicon-310x310.png')}/>
         <meta property="og:type" content="website"/>
-        <meta property="og:site_name" content="Попробовать себя в разных профессиях"/>
-        <meta property="og:title" content="Анкета и список документов на визу в Испанию"/>
-        <meta property="og:description" content="Заполнение анкеты на визу онлайн. Актуальный список документов для самостоятельного получения визы в визовом центре Испании."/>
+        <meta property="og:site_name" content="Visa.Furnas"/>
+        <meta property="og:title" content="Заполение анкеты на визу в Испанию"/>
+        <meta property="og:description" content="Заполнение анкеты на визу онлайн. Беспллатное формирование пакета документов для самостоятельного получения визы в визовом центре Испании."/>
         <meta property="og:url" content="https://visa.furnas.ru"/>
         <meta property="og:locale" content="ru_RU"/>
         <meta property="og:image" content={require('./images/share-facebook.png')}/>

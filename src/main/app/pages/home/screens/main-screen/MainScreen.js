@@ -10,7 +10,7 @@ export class MainScreen extends React.Component {
   render() {
     return (
       <div className="main-screen">
-        <Title className="main-screen__title">Список документов на визу в Испанию</Title>
+        <Title className="main-screen__title">Заполнение анкеты на визу в Испанию</Title>
         <ul className="main-screen__list">
           <li className="main-screen__list-item">
             <span className="main-screen__list-item-text">актуальный перечень документов для визы</span>

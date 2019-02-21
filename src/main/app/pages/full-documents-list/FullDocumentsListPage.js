@@ -17,7 +17,11 @@ export class FullDocumentsListPage extends React.Component {
       [
         <Helmet key="1">
           <title>Документы на визу в Испанию 2019</title>
-          <meta name="description" content="Актуальный список документов для самостоятельного получения визы в официальном визовом центре Испании в 2019 году."/>
+          <meta name="description" content="Актуальный полный список документов для самостоятельного получения визы в официальном визовом центре Испании в 2019 году."/>
+          <link rel="canonical" href="https://visa.furnas.ru/spisok-dokumentov-na-vizu-v-ispaniyu-2019" />
+          <meta property="og:url" content="https://visa.furnas.ru/spisok-dokumentov-na-vizu-v-ispaniyu-2019"/>
+          <meta property="og:title" content="Документы на визу в Испанию 2019"/>
+          <meta property="og:description" content="Актуальный полный список документов для самостоятельного получения визы в официальном визовом центре Испании в 2019 году."/>
         </Helmet>,
         <div className="full-documents-list"
              key="2">
