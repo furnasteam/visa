@@ -6,6 +6,7 @@ import {MainScreen} from "./screens/main-screen/MainScreen";
 import {DescriptionScreen} from "./screens/description-screen/DescriptionScreen";
 import {OtherResourcesScreen} from "./screens/other-resources-screen/OtherResourcesScreen";
 import {ChosePersonScreen} from "./screens/chose-person-screen/ChosePersonScreen";
+import {Footer} from '../../components/footer/Footer';
 
 export class HomePage extends React.Component {
 
@@ -24,6 +25,7 @@ export class HomePage extends React.Component {
           {/*<DescriptionScreen/>*/}
           {/*<ChosePersonScreen/>*/}
           {/*<OtherResourcesScreen/>*/}
+          <Footer/>
         </div>
       ]
     );
