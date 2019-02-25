@@ -9,6 +9,8 @@ import {Subtitle} from '../../components/subtitle/Subtitle';
 import {GreenLink} from '../../components/green-link/GreenLink';
 import {Button} from '../../components/button/Button';
 import {UniversalLink} from '../../components/universal-link/UniversalLink';
+import {Picture} from '../../components/picture/Picture';
+import {Footer} from '../../components/footer/Footer';
 
 export class FullDocumentsListPage extends React.Component {
 
@@ -22,6 +24,35 @@ export class FullDocumentsListPage extends React.Component {
           <meta property="og:url" content="https://visa.furnas.ru/spisok-dokumentov-na-vizu-v-ispaniyu-2019"/>
           <meta property="og:title" content="Документы на визу в Испанию 2019"/>
           <meta property="og:description" content="Актуальный полный список документов для самостоятельного получения визы в официальном визовом центре Испании в 2019 году."/>
+          <script type="application/ld+json">{`
+        {
+          "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://visa.furnas.ru/spisok-dokumentov-na-vizu-v-ispaniyu-2019"
+  },
+  "image": [
+    "https://visa.furnas.ru/${require('./images/flamenco.png')}",
+   ],
+  "headline": "Документы на визу в Испанию 2019",
+  "datePublished": "2019-02-25T10:21:57+03:00",
+  "dateModified": "2019-02-25T10:21:57+03:00",
+  "author": {
+    "@type": "Person",
+    "name": "Мария Санкина"
+  },
+   "publisher": {
+    "@type": "Organization",
+    "name": "FurnasTeam",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://visa.furnas.ru/${require('../../images/favicon-192x192.png')}"
+    }
+  },
+  "description": "Актуальный полный список документов для самостоятельного получения визы в официальном визовом центре Испании в 2019 году."
+        }
+    `}</script>
         </Helmet>,
         <div className="full-documents-list"
              key="2">
@@ -77,7 +108,7 @@ export class FullDocumentsListPage extends React.Component {
                       Категории
                     </th>
                     <th>
-                      Тарифы на визы для граждан России, Украины, Армении, Македонии, Черногории, Албании, Сербии, Боснии и Герцеговины, Молдовы , Азербайджана и Грузии
+                      Тарифы на визы для граждан России, Украины, Армении, Грузии и <GreenLink target="_blank" className="full-documents-list__other-countries" href="https://blsspain-russia.com/moscow/short_term_visa.php">других стран</GreenLink>.
                     </th>
                   </tr>
                   </thead>
@@ -124,7 +155,16 @@ export class FullDocumentsListPage extends React.Component {
                         allowFullScreen></iframe>
               </div>
             </section>
+            <div className="full-documents-list__flamenco-row">
+              <Picture imgClassName="full-documents-list__flamenco-image"
+                       forPhoneOnly={[require('./images/flamenco.png'), require('./images/flamenco.webp')]}
+                       forPhoneOnlyRetina={[require('./images/flamenco_2x.png'), require('./images/flamenco_2x.webp')]}
+                       forTabletPortraitUp={[require('./images/flamenco.png'), require('./images/flamenco.webp')]}
+                       forTabletPortraitUpRetina={[require('./images/flamenco_2x.png'), require('./images/flamenco_2x.webp')]}
+                       alt="Иллюстрация испанской женщины в национальной одежде"/>
+            </div>
           </div>
+          {/*<Footer/>*/}
         </div>
       ]
     );

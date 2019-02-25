@@ -17,7 +17,7 @@ export class Footer extends React.Component {
           <UniversalLink href="http://furnas.ru" className="link_white-style footer__furnas-item" >
             О нас
           </UniversalLink>
-          <div className="footer__blog-item">Блог</div>
+          {/*<div className="footer__blog-item">Блог</div>*/}
 
         </div>
     </div>);

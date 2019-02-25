@@ -34,6 +34,7 @@ app.get("*", (req, res) => {
       {helmet.title.toComponent()}
       {helmet.meta.toComponent()}
       {helmet.link.toComponent()}
+      {helmet.script.toComponent()}
       <link href="https://fonts.googleapis.com/css?family=PT+Sans+Caption|Raleway:400,600&amp;subset=cyrillic" rel="stylesheet"/>
       <link rel="stylesheet" type="text/css" href="/styles.css"/>
     </head>
@@ -41,7 +42,7 @@ app.get("*", (req, res) => {
     <div id="root" dangerouslySetInnerHTML={ {__html: appString} }>
     </div>
     <script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript"></script>
-    <script src="/visa.client.js.gz"></script>
+    <script src="/visa.client.js"></script>
     </body>
     </html>));
   res.end();
