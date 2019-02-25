@@ -10,7 +10,6 @@ import {GreenLink} from '../../components/green-link/GreenLink';
 import {Button} from '../../components/button/Button';
 import {UniversalLink} from '../../components/universal-link/UniversalLink';
 import {Picture} from '../../components/picture/Picture';
-import {Footer} from '../../components/footer/Footer';
 
 export class FullDocumentsListPage extends React.Component {
 
@@ -33,11 +32,11 @@ export class FullDocumentsListPage extends React.Component {
     "@id": "https://visa.furnas.ru/spisok-dokumentov-na-vizu-v-ispaniyu-2019"
   },
   "image": [
-    "https://visa.furnas.ru/${require('./images/flamenco.png')}",
+    "https://visa.furnas.ru/${require('./images/flamenco.png')}"
    ],
   "headline": "Документы на визу в Испанию 2019",
-  "datePublished": "2019-02-25T10:21:57+03:00",
-  "dateModified": "2019-02-25T10:21:57+03:00",
+  "datePublished": "2019-02-25T18:50:59+03:00",
+  "dateModified": "2019-02-25T18:50:59+03:00",
   "author": {
     "@type": "Person",
     "name": "Мария Санкина"
