@@ -6,6 +6,20 @@
   max-width: 700px;
   padding: 0 20px;
 
+
+  &__green-line{
+    @include for-phone-only {
+      max-width: 400px;
+    }
+  }
+  @include for-desktop-up {
+    margin-top: 200px;
+  }
+
+  @include for-big-desktop-up {
+    margin-top: 300px;
+  }
+
   &__flex-container {
     display: flex;
     flex-direction: row;

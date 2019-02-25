@@ -10,7 +10,7 @@ export class DescriptionScreen extends React.Component {
       <div className="description-screen">
         <img src={Flamenco} style={{position: 'absolute', width: '58px', height: '120px', marginTop: '-84px'}}/>
         <Title>Проект Furnas.Visa включает в себя</Title>
-        <img src={Green_line}/>
+        <img src={Green_line} className="description-screen__green-line"/>
         <div className="description-screen__flex-container">
           <div className="description-screen__content-block">
             <h3>Актуальный

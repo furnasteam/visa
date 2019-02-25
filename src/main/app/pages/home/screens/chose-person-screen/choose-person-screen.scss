@@ -16,6 +16,11 @@
     align-items: center;
     width: 100%;
     font-family: $font-family;
+    @include for-phone-only {
+      width: calc(100% - 32px);
+      //width: 100%;
+    }
+
   }
   &__any-route-container-item{
     padding-bottom: 24px;
@@ -29,10 +34,11 @@
     margin-top: 64px;
     @include for-phone-only {
       width: 100%;
-      flex-direction: column;
+     /* flex-direction: column;*/
+      flex-direction: row;
     }
   }
-
+  /*padding: 0 24px 24px 24px;*/
   .persons-container-col3{
     flex-basis: 33%;
   }

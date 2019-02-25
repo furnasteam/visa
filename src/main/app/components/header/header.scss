@@ -13,6 +13,9 @@
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.20);
   background: #ffffff;
   z-index: 2;
+  @include for-phone-only{
+    height: 36px;
+  }
   @include for-tablet-portrait-up {
     height: 70px;
   }
