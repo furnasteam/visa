@@ -114,4 +114,26 @@
       margin-top: 0;
     }
   }
+
+  &__other-countries {
+    color: #fff !important;
+  }
+
+  &__flamenco-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 160px;
+    margin-top: 160px;
+
+    @include for-phone-only {
+      margin-bottom: 48px;
+      margin-top: 48px;
+    }
+  }
+
+  &__flamenco-image {
+    width: 77px;
+    height: 160px;
+  }
 }
