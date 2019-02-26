@@ -16,6 +16,11 @@
   @include for-tablet-portrait-up {
     height: 70px;
   }
+  &__icon-container{
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+  }
 
   &__container {
     display: flex;
@@ -23,6 +28,7 @@
     align-items: center;
     width: 100%;
     max-width: 936px;
+    justify-content: space-between;
   }
 
   &__furnas-item {
@@ -31,25 +37,22 @@
   &__blog-item {
     padding-left: 36px;
   }
-
-  &__vk-icon_child {
+  &__icon{
     width: 24px;
     height: 24px;
+    padding: 0 8px;
+  }
+  &__vk-icon_child {
+   background-color: white;
     background: url('images/Vk.svg') no-repeat;
   }
   &__facebook-icon_child {
-    width: 24px;
-    height: 24px;
-    background: url('images/Vk.svg') no-repeat;
+    background: url('images/Facebook.svg') no-repeat;
   }
   &__instagram-icon_child {
-    width: 24px;
-    height: 24px;
-    background: url('images/Vk.svg') no-repeat;
+    background: url('images/Instagram.svg') no-repeat;
   }
   &__media-icon_child {
-    width: 24px;
-    height: 24px;
-    background: url('images/Vk.svg') no-repeat;
+    background: url('images/Media.svg') no-repeat;
   }
 }
