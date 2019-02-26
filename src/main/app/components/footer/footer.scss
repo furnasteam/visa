@@ -33,6 +33,9 @@
 
   &__furnas-item {
     padding-left: 156px;
+    @include for-phone-only{
+      padding-left: 0px;
+    }
   }
   &__blog-item {
     padding-left: 36px;
