@@ -2,14 +2,14 @@
 @import "../../../../common/mixins";
 
 .description-screen {
-  margin-top: 100px;
-  max-width: 700px;
+  margin-top: 233px;
+  margin-bottom: 142px;
+  max-width: 936px;
   padding: 0 20px;
 
-
-  &__green-line{
+  &__green-line {
     @include for-phone-only {
-      max-width: 400px;
+      display: none;
     }
   }
   @include for-desktop-up {
@@ -23,26 +23,87 @@
   &__flex-container {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    width: 940px;
+    justify-content: space-between;
+    width: 844px;
+    margin: auto;
+    margin-top: 72px;
     @include for-phone-only {
       width: 100%;
       flex-direction: column;
     }
   }
 
+  &__flex-container_right {
+    justify-content: flex-end;
+  }
+
   &__content-block {
-    margin: 16px 32px;
-    padding: 16px 32px;
-    width: 30%;
+    padding: 24px 32px;
+    width: 364px;
     border: 1px solid #39CCB0;
     border-radius: 18px;
     font-family: $font-family;
+    box-sizing: border-box;
     @include for-phone-only {
       width: 100%;
       margin: 0;
       margin-top: 16px;
       box-sizing: border-box;
     }
+  }
+
+  &__flamenco-image {
+    width: 58px;
+    position: absolute;
+    margin-top: -88px;
+    @include for-phone-only {
+      display: none;
+    }
+  }
+
+  &__title {
+    font-family: $font-family;
+    color: #315A52;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 10px;
+    @include for-phone-only {
+      color: #333333;
+      font-size: 16px;
+      text-align: left;
+    }
+  }
+
+  &__content-title {
+    font-family: $font-family;
+    color: #315A52;
+    margin: 0;
+    font-size: 16px;
+    margin-bottom: 16px;
+    line-height: 24px;
+  }
+
+  &__content-text {
+    font-family: $font-family;
+    color: #315A52;
+    margin: 0;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &__content-block_development {
+    border-style: dashed;
+    border-color: #FB8254;
+  }
+
+  &__content-development-label {
+    position: absolute;
+    font-family: $font-family;
+    font-size: 14px;
+    color: #FB8254;
+    margin-top: -34px;
+    background: #F5F5F5;
+    padding: 0 8px;
+    margin-left: -8px;
   }
 }

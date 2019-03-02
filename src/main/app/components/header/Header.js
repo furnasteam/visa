@@ -28,12 +28,12 @@ export class Header extends React.Component {
   };
 
   componentDidMount() {
-    this.setState({scrollY: window.scrollY});
-    window.addEventListener('scroll', this.handleScroll);
+    //this.setState({scrollY: window.scrollY});
+    //window.addEventListener('scroll', this.handleScroll);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
+    //window.removeEventListener('scroll', this.handleScroll);
   }
 
   render() {
@@ -52,7 +52,7 @@ export class Header extends React.Component {
             </MediumText>
           </div>
           <div>
-            <UniversalLink href="http://furnas.ru">
+            <UniversalLink href="https://furnas.ru">
               О нас
             </UniversalLink>
             <UniversalLink href="https://www.instagram.com/furnasteam/"
