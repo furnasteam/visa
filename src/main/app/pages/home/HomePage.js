@@ -4,6 +4,7 @@ import {Helmet} from 'react-helmet';
 import {Header} from '../../components/header/Header';
 import {MainScreen} from "./screens/main-screen/MainScreen";
 import {DescriptionScreen} from "./screens/description-screen/DescriptionScreen";
+import {MobileExplanationScreen} from './screens/mobile-explanation-screen/MobileExplanationScreen';
 
 export class HomePage extends React.Component {
 
@@ -19,6 +20,7 @@ export class HomePage extends React.Component {
         <div className="home">
           <Header/>
           <MainScreen/>
+          <MobileExplanationScreen/>
           <div className="home__description-screen">
             <DescriptionScreen/>
           </div>

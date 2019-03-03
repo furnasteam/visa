@@ -1,0 +1,70 @@
+@import "../../../../common/vars";
+@import "../../../../common/mixins";
+
+.mobile-explanation-screen {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 32px;
+  @include for-tablet-portrait-up {
+    display: none;
+  }
+
+  &__list {
+    padding-left: 32px;
+    z-index: 1;
+    max-width: 322px;
+  }
+
+  &__list-item {
+    color: #39ccb0;
+    padding-bottom: 32px;
+  }
+
+  &__list-item-inactive {
+    color: rgba(51, 51, 51, 0.3)
+  }
+
+  &__list-item-text {
+    color: #2E2E31;
+    font-family: $font-family;
+  }
+
+  &__list-item-development-mode {
+    font-family: $font-family;
+    font-size: 14px;
+    color: #FF815F;
+    font-weight: 300;
+    letter-spacing: 0.7px;
+  }
+
+  &__mountain-picture {
+    width: 100%;
+    background-position: bottom;
+    height: 100vh;
+    margin-top: -256px;
+    background-size: contain;
+  }
+
+  &__title {
+    color: #333333;
+    font-family: $font-family;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: left;
+    padding-left: 16px;
+    margin-bottom: -6px;
+  }
+
+  &__flamenco-image {
+    width: 29px;
+    position: absolute;
+    margin-top: -55px;
+    margin-left: 264px;
+  }
+
+  &__green-line {
+    width: 278px;
+    margin-left: 16px
+  }
+}
