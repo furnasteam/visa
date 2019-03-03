@@ -61,7 +61,6 @@
 
     @include for-phone-only {
       /*max-width: 420px;*/
-      max-width: 400px;
     }
     @include for-phone-only-retina {
       background-position: bottom;
