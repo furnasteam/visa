@@ -4,6 +4,9 @@ import {Helmet} from 'react-helmet';
 import {Header} from '../../components/header/Header';
 import {MainScreen} from "./screens/main-screen/MainScreen";
 import {DescriptionScreen} from "./screens/description-screen/DescriptionScreen";
+import {ChosePersonScreen} from './screens/chose-person-screen/ChosePersonScreen';
+import {OtherResourcesScreen} from './screens/other-resources-screen/OtherResourcesScreen';
+import {Footer} from '../../components/footer/Footer';
 
 export class HomePage extends React.Component {
 
