@@ -9,8 +9,6 @@ import {OtherResourcesScreen} from './screens/other-resources-screen/OtherResour
 import {Footer} from '../../components/footer/Footer';
 import {MobileExplanationScreen} from './screens/mobile-explanation-screen/MobileExplanationScreen';
 
-import {OtherResourcesScreen} from './screens/other-resources-screen/OtherResourcesScreen';
-import {Footer} from '../../components/footer/Footer';
 
 export class HomePage extends React.Component {
 
