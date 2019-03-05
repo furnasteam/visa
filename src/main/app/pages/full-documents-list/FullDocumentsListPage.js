@@ -88,7 +88,6 @@ export class FullDocumentsListPage extends React.Component {
              key="2">
           <Header/>
           <div className="full-documents-list__content">
-            <canvas id="canvasId"></canvas>
             <Title>
               Полный список документов на визу в Испанию
             </Title>
