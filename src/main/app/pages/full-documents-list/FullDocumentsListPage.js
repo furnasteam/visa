@@ -18,13 +18,24 @@ export class FullDocumentsListPage extends React.Component {
 
   download() {
     window.html2canvas = html2canvas;
-
-    var pdf = new jsPDF('p', 'pt', 'a4');
     var options = {
+
       pagesplit: true
     };
-    pdf.addHTML(document.getElementsByClassName("full-documents-list__content")[0], options, function () {
+
+    //https://rawgit.com/MrRio/jsPDF/master/docs/jsPDF.html
+    var pdf = new jsPDF('p', 'mm', 'a4');
+
+    pdf.internal.scaleFactor = 4.5;//120;
+    var content = document.getElementsByClassName("full-documents-list__content")[0];
+
+    document.getElementById("video").style.display = "none";
+    document.getElementsByClassName("full-documents-list__flamenco-row")[0].style.display = "none";
+
+    pdf.addHTML(content, 22, 20, options,  function () {
       pdf.save('Список документов.pdf')
+      document.getElementById("video").style.display = "";
+      document.getElementsByClassName("full-documents-list__flamenco-row")[0].style.display = "";
     });
   }
 
@@ -72,13 +83,17 @@ export class FullDocumentsListPage extends React.Component {
         }
     `}</script>
         </Helmet>,
+
         <div className="full-documents-list"
              key="2">
           <Header/>
           <div className="full-documents-list__content">
+            <canvas id="canvasId"></canvas>
             <Title>
               Полный список документов на визу в Испанию
             </Title>
+
+            <br/>
             <Button className="button button_big-blue" onClick={this.download.bind(this)}>Скачать документ</Button>
 
             <p className="full-documents-list__intro">
