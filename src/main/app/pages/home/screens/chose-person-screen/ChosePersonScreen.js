@@ -29,14 +29,18 @@ export class ChosePersonScreen extends React.Component {
           </div>
 
           <div className="choose-person-screen__person persons-container-col2">
-            <div className="choose-person-screen__person-icon choose-person-screen__person-icon_housewife">
-            </div>
-            <span>домохозяйка<div className="choose-person-screen__person-underline"></div></span>
+            <span className="choose-person-screen__housewife-wrapper" >
+              <div className="choose-person-screen__person-icon choose-person-screen__person-icon_housewife">
+              </div>
+              <span>домохозяйка<div className="choose-person-screen__person-underline"></div></span>
+            </span>
           </div>
           <div className="choose-person-screen__person persons-container-col2">
-            <div className="choose-person-screen__person-icon choose-person-screen__person-icon_schoolchild">
-            </div>
-            <span>школьник<div className="choose-person-screen__person-underline"></div></span>
+            <span className="choose-person-screen__schoolchild-wrapper" >
+              <div className="choose-person-screen__person-icon choose-person-screen__person-icon_schoolchild">
+              </div>
+              <span>школьник<div className="choose-person-screen__person-underline"></div></span>
+            </span>
           </div>
 
           <div className="choose-person-screen__person persons-container-col3">
