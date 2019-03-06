@@ -16,6 +16,7 @@
   @include for-tablet-portrait-up {
     height: 70px;
   }
+
   &__icon-container{
     display: inline-flex;
     flex-direction: row;
@@ -29,6 +30,11 @@
     width: 100%;
     max-width: 936px;
     justify-content: space-between;
+    & a {
+      @include for-phone-only{
+        font-size: 13px !important;
+      }
+    }
   }
 
   &__furnas-item {

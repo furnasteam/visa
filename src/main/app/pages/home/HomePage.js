@@ -30,7 +30,7 @@ export class HomePage extends React.Component {
           </div>
           <ChosePersonScreen/>
           <OtherResourcesScreen/>
-          {/*<Footer/>*/}
+          <Footer/>
         </div>
       ]
     );
