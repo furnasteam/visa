@@ -7,12 +7,18 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-
+  @include for-phone-only {
+    margin-top: 60px;
+  }
   &__container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    margin-top: -16px;
     width:400px;
+    @include for-phone-only {
+      width:320px;
+    }
   }
   &__resources-col3 {
     width: 33%;
@@ -21,7 +27,12 @@
   &__resources-col2 {
     width: 50%;
   }
-
+  &__facebook-wrapper{
+    margin-left: 32%;
+  }
+  &__media-wrapper{
+    margin-left: -32%;
+  }
   &__item {
     margin: 40px 0px;
     display: flex;
@@ -41,12 +52,12 @@
   &__arrow-green-icon {
     height: 56px;
     width: 26px;
-    margin-left: -380px;
-
+    margin-left: -420px;
+    transform: rotate(22deg);
     //width: 94px;
     //height: 100px;
-    margin-right: 8px;
-    margin-top: 1px;
+    margin-right: 16px;
+    margin-top: 8px;
     background-size: contain !important;
     background-position: center !important;
 

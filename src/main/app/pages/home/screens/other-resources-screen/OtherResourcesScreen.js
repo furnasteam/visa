@@ -20,11 +20,15 @@ export class OtherResourcesScreen extends React.Component {
           <div className="other-resources-screen__item other-resources-screen__resources-col3">
             <span>Vkontakte<div className="other-resources-screen__item-underline"></div></span>
           </div>
-          <div className="other-resources-screen__item other-resources-screen__resources-col2">
-            <span>Facebook<div className="other-resources-screen__item-underline"></div></span>
+          <div className="other-resources-screen__item  other-resources-screen__resources-col2">
+            <span className="other-resources-screen__facebook-wrapper">
+              <span>Facebook<div className="other-resources-screen__item-underline"></div></span>
+            </span>
           </div>
           <div className="other-resources-screen__item other-resources-screen__resources-col2">
-            <span>Media<div className="other-resources-screen__item-underline"></div></span>
+            <span className="other-resources-screen__media-wrapper">
+              <span>Media<div className="other-resources-screen__item-underline"></div></span>
+            </span>
           </div>
         </div>
       </div>

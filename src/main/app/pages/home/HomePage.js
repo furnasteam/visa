@@ -29,7 +29,7 @@ export class HomePage extends React.Component {
             <DescriptionScreen/>
           </div>
           <ChosePersonScreen/>
-          {/*<OtherResourcesScreen/>*/}
+          <OtherResourcesScreen/>
           {/*<Footer/>*/}
         </div>
       ]
