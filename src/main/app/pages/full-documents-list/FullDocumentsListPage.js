@@ -50,8 +50,8 @@ export class FullDocumentsListPage extends React.Component {
           <meta property="og:url" content="https://visa.furnas.ru/spisok-dokumentov-na-vizu-v-ispaniyu-2019"/>
           <meta property="og:title" content="Документы на визу в Испанию 2019"/>
           <meta property="og:description" content="Актуальный полный список документов для самостоятельного получения визы в официальном визовом центре Испании в 2019 году."/>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
+          {/*<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>*/}
+          {/*<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>*/}
 
           <script type="application/ld+json">{`
         {
@@ -92,8 +92,8 @@ export class FullDocumentsListPage extends React.Component {
               Полный список документов на визу в Испанию
             </Title>
 
-            <br/>
-            <Button className="button button_big-blue" onClick={this.download.bind(this)}>Скачать документ</Button>
+            {/*<br/>*/}
+            {/*<Button className="button button_big-blue" onClick={this.download.bind(this)}>Скачать документ</Button>*/}
 
             <p className="full-documents-list__intro">
               Данный список документов подходит для граждан РФ проверен на январь 2019 года.

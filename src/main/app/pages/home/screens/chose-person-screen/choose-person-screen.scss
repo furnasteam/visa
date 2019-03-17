@@ -11,6 +11,20 @@
   @include for-phone-only {
     margin-top: 60px;
   }
+
+  &__title {
+    max-width: 550px;
+    line-height: 29px;
+    font-size: 24px;
+
+    @include for-phone-only {
+      font-size: 16px !important;
+      text-align: left !important;
+      line-height: 24px !important;
+      padding-left: 16px;
+    }
+  }
+
   &__any-route-container {
     padding-top: 100px;
     display: flex;
@@ -21,11 +35,10 @@
     @include for-phone-only {
       width: calc(100% - 32px);
       padding-top: 60px;
-      //width: 100%;
     }
 
   }
-  &__any-route-container-item{
+  &__any-route-container-item {
     padding-bottom: 24px;
   }
 
@@ -38,145 +51,58 @@
     @include for-phone-only {
       width: 100%;
       margin-top: 32px;
-     /* flex-direction: column;*/
       flex-direction: row;
     }
   }
-  /*padding: 0 24px 24px 24px;*/
-  .persons-container-col3{
+  .persons-container-col3 {
     flex-basis: 33%;
   }
 
-  .persons-container-col2{
+  .persons-container-col2 {
     flex-basis: 50%;
+    @include for-phone-only {
+      flex-basis: 33%;
+    }
   }
 
   &__person {
-    margin: 40px 0px;
-    //padding: 16px 32px;
-    //border: 1px solid #39CCB0;
-    //border-radius: 18px;
+    margin: 40px 0;
     display: flex;
     flex-direction: column;
     text-align: center;
     align-items: center;
-  }
 
-  &__person-underline {
-    border: 0;
-    background-color: deeppink;
-    height: 3px;
-    cursor: pointer;
-    width: 100%;
+    @include for-phone-only {
+      margin: 15px 0;
+    }
   }
-  &__housewife-wrapper{
-    margin-left : 32%;
+  &__housewife-wrapper {
+    margin-left: 32%;
+    @include for-phone-only {
+      margin-left: 0;
+    }
   }
   &__schoolchild-wrapper {
-    margin-left : -32%;
+    margin-left: -32%;
+    @include for-phone-only {
+      margin-left: 0;
+    }
   }
   &__person-icon {
-    width: 94px;
     height: 100px;
-    margin-right: 8px;
-    margin-top: 1px;
     background-size: contain !important;
     background-position: center !important;
-  }
-  &__person-icon_child {
-    background: url('images/child.png') no-repeat;
+    margin-bottom: 24px;
+
     @include for-phone-only {
-      background: url('images/child_mob.png') no-repeat;
-    }
-    @include for-phone-only-retina {
-      background: url('images/child_mob_2x.png') no-repeat;
-    }
-    @include for-desktop-up-retina {
-      background: url('images/child_2x.png') no-repeat;
+      height: 55px;
+      margin-bottom: 12px;
     }
   }
-  &__person-icon_businessman {
-    background: url('images/businessman.png') no-repeat;
+
+  &__link {
     @include for-phone-only {
-      background: url('images/businessman_mob.png') no-repeat;
-    }
-    @include for-phone-only-retina {
-      background: url('images/businessman_mob_2x.png') no-repeat;
-    }
-    @include for-desktop-up-retina {
-      background: url('images/businessman_2x.png') no-repeat;
-    }
-  }
-  &__person-icon_employee {
-    background: url('images/employee.png') no-repeat;
-    @include for-phone-only {
-      background: url('images/employee_mob.png') no-repeat;
-    }
-    @include for-phone-only-retina {
-      background: url('images/employee_mob_2x.png') no-repeat;
-    }
-    @include for-desktop-up-retina {
-      background: url('images/employee_2x.png') no-repeat;
-    }
-  }
-  &__person-icon_housewife {
-    background: url('images/housewife.png') no-repeat;
-    @include for-phone-only {
-      background: url('images/housewife_mob.png') no-repeat;
-    }
-    @include for-phone-only-retina {
-      background: url('images/housewife_mob_2x.png') no-repeat;
-    }
-    @include for-desktop-up-retina {
-      background: url('images/housewife_2x.png') no-repeat;
-    }
-  }
-  &__person-icon_idle {
-    background: url('images/idle.png') no-repeat;
-    @include for-phone-only {
-      background: url('images/idle_mob.png') no-repeat;
-    }
-    @include for-phone-only-retina {
-      background: url('images/idle_mob_2x.png') no-repeat;
-    }
-    @include for-desktop-up-retina {
-      background: url('images/idle_2x.png') no-repeat;
-    }
-  }
-  &__person-icon_schoolchild {
-    background: url('images/schoolchild.png') no-repeat;
-    @include for-phone-only {
-      background: url('images/schoolchild_mob.png') no-repeat;
-    }
-    @include for-phone-only-retina {
-      background: url('images/schoolchild_mob_2x.png') no-repeat;
-    }
-    @include for-desktop-up-retina {
-      background: url('images/schoolchild_2x.png') no-repeat;
-    }
-  }
-  &__person-icon_retiree {
-    background: url('images/retiree.png') no-repeat;
-    @include for-phone-only {
-      background: url('images/retiree_mob.png') no-repeat;
-    }
-    @include for-phone-only-retina {
-      background: url('images/retiree_mob_2x.png') no-repeat;
-    }
-    @include for-desktop-up-retina {
-      background: url('images/retiree_2x.png') no-repeat;
-    }
-  }
-  &__person-icon_student {
-    background: url('images/student.png') no-repeat;
-    @include for-phone-only {
-      background: url('images/student_mob.png') no-repeat;
-    }
-    @include for-phone-only-retina {
-      background: url('images/student_mob_2x.png') no-repeat;
-    }
-    @include for-desktop-up-retina {
-      background: url('images/student_2x.png') no-repeat;
+      font-size: 12px !important;
     }
   }
 }
