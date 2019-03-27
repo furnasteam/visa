@@ -31,4 +31,16 @@
       background: transparent;
     }
   }
+
+  &__other-resources-screen {
+    background: #F5F5F5;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+    @include for-phone-only {
+      background: transparent;
+      margin-top: 0;
+    }
+  }
 }

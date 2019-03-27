@@ -1,7 +1,6 @@
 @import "../../common/vars";
 @import "../../common/mixins";
 
-
 .footer {
   display: flex;
   flex-direction: row;
@@ -13,14 +12,20 @@
   background: #15B798;
   color: white;
   z-index: 2;
+  height: 90px;
   @include for-tablet-portrait-up {
     height: 70px;
   }
 
-  &__icon-container{
+  &__icon-container {
     display: inline-flex;
     flex-direction: row;
     align-items: center;
+
+    @include for-phone-only {
+      width: 100%;
+      justify-content: flex-end;
+    }
   }
 
   &__container {
@@ -30,8 +35,13 @@
     width: 100%;
     max-width: 936px;
     justify-content: space-between;
+
+    @include for-phone-only {
+      flex-direction: column;
+    }
+
     & a {
-      @include for-phone-only{
+      @include for-phone-only {
         font-size: 13px !important;
       }
     }
@@ -39,20 +49,20 @@
 
   &__furnas-item {
     padding-left: 156px;
-    @include for-phone-only{
-      padding-left: 0px;
+    @include for-phone-only {
+      padding-left: 20px;
     }
   }
   &__blog-item {
     padding-left: 36px;
   }
-  &__icon{
+  &__icon {
     width: 24px;
     height: 24px;
     padding: 0 8px;
   }
   &__vk-icon_child {
-   background-color: white;
+    background-color: white;
     background: url('images/Vk.svg') no-repeat;
   }
   &__facebook-icon_child {
@@ -63,5 +73,17 @@
   }
   &__media-icon_child {
     background: url('images/Media.svg') no-repeat;
+  }
+
+  &__links-container {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0;
+
+    @include for-phone-only {
+      width: 100%;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
   }
 }

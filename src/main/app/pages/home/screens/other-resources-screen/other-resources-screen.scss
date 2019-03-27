@@ -2,11 +2,11 @@
 @import "../../../../common/mixins";
 
 .other-resources-screen {
-    margin-top: 160px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
+  margin-top: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
   @include for-phone-only {
     margin-top: 60px;
   }
@@ -15,9 +15,10 @@
     flex-direction: row;
     flex-wrap: wrap;
     margin-top: -16px;
-    width:400px;
+    width: 400px;
+    justify-content: center;
     @include for-phone-only {
-      width:320px;
+      width: 320px;
     }
   }
   &__resources-col3 {
@@ -27,10 +28,10 @@
   &__resources-col2 {
     width: 50%;
   }
-  &__facebook-wrapper{
+  &__facebook-wrapper {
     margin-left: 32%;
   }
-  &__media-wrapper{
+  &__media-wrapper {
     margin-left: -32%;
   }
   &__item {
@@ -70,6 +71,17 @@
     }
     @include for-desktop-up-retina {
       background: url('../images/Arrow_green.png') no-repeat;
+    }
+  }
+
+  &__flamenco-image {
+    width: 56px;
+    margin-top: 120px;
+    margin-bottom: 180px;
+    @include for-phone-only {
+      display: none;
+      margin-top: 0;
+      margin-bottom: 0;
     }
   }
 }
