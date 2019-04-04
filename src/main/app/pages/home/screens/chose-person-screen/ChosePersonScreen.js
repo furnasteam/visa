@@ -2,9 +2,10 @@ import React from 'react';
 import {Title} from '../../../../components/title/Title';
 import './choose-person-screen.scss';
 import {Button} from '../../../../components/button/Button';
-import {createFullDocumentsListRoute} from '../../../../helpers/appRoutes';
+import {createDocumentsListRoute, createFullDocumentsListRoute} from '../../../../helpers/appRoutes';
 import {UniversalLink} from '../../../../components/universal-link/UniversalLink';
 import {Picture} from '../../../../components/picture/Picture';
+import {UserType} from '../../../../models/UserTypeModel';
 
 export class ChosePersonScreen extends React.Component {
   render() {
@@ -20,7 +21,7 @@ export class ChosePersonScreen extends React.Component {
                      forTabletPortraitUp={[require('./images/employee.png')]}
                      forTabletPortraitUpRetina={[require('./images/employee_2x.png')]}
                      alt="Работник иллюстрация"/>
-            <UniversalLink href={createFullDocumentsListRoute()}
+            <UniversalLink href={createDocumentsListRoute(UserType.EMPLOYEE)}
                            className="choose-person-screen__link">
               работник
             </UniversalLink>
@@ -33,7 +34,7 @@ export class ChosePersonScreen extends React.Component {
                      forTabletPortraitUp={[require('./images/student.png')]}
                      forTabletPortraitUpRetina={[require('./images/student_2x.png')]}
                      alt="Студент иллюстрация"/>
-            <UniversalLink href={createFullDocumentsListRoute()}
+            <UniversalLink href={createDocumentsListRoute(UserType.STUDENT)}
                            className="choose-person-screen__link">
               студент
             </UniversalLink>
@@ -46,7 +47,7 @@ export class ChosePersonScreen extends React.Component {
                      forTabletPortraitUp={[require('./images/businessman.png')]}
                      forTabletPortraitUpRetina={[require('./images/businessman_2x.png')]}
                      alt="Бизнесмен иллюстрация"/>
-            <UniversalLink href={createFullDocumentsListRoute()}
+            <UniversalLink href={createDocumentsListRoute(UserType.BUSINESSMAN)}
                            className="choose-person-screen__link">
               ИП
             </UniversalLink>
@@ -60,7 +61,7 @@ export class ChosePersonScreen extends React.Component {
                        forTabletPortraitUp={[require('./images/housewife.png')]}
                        forTabletPortraitUpRetina={[require('./images/housewife_2x.png')]}
                        alt="Домохозяйка иллюстрация"/>
-              <UniversalLink href={createFullDocumentsListRoute()}
+              <UniversalLink href={createDocumentsListRoute(UserType.HOUSEWIFE)}
                              className="choose-person-screen__link">
                 домохозяйка
               </UniversalLink>
@@ -75,7 +76,7 @@ export class ChosePersonScreen extends React.Component {
                        forTabletPortraitUp={[require('./images/schoolchild.png')]}
                        forTabletPortraitUpRetina={[require('./images/schoolchild_2x.png')]}
                        alt="Ученик иллюстрация"/>
-              <UniversalLink href={createFullDocumentsListRoute()}
+              <UniversalLink href={createDocumentsListRoute(UserType.SCHOOLCHILD)}
                              className="choose-person-screen__link">
                 школьник
               </UniversalLink>
@@ -89,7 +90,7 @@ export class ChosePersonScreen extends React.Component {
                      forTabletPortraitUp={[require('./images/idle.png')]}
                      forTabletPortraitUpRetina={[require('./images/idle_2x.png')]}
                      alt="Безработный иллюстрация"/>
-            <UniversalLink href={createFullDocumentsListRoute()}
+            <UniversalLink href={createDocumentsListRoute(UserType.IDLE)}
                            className="choose-person-screen__link">
               безработный
             </UniversalLink>
@@ -102,7 +103,7 @@ export class ChosePersonScreen extends React.Component {
                      forTabletPortraitUp={[require('./images/retiree.png')]}
                      forTabletPortraitUpRetina={[require('./images/retiree_2x.png')]}
                      alt="Пенсионер иллюстрация"/>
-            <UniversalLink href={createFullDocumentsListRoute()}
+            <UniversalLink href={createDocumentsListRoute(UserType.RETIREE)}
                            className="choose-person-screen__link">
               пенсионер
             </UniversalLink>
@@ -115,7 +116,7 @@ export class ChosePersonScreen extends React.Component {
                      forTabletPortraitUp={[require('./images/child.png')]}
                      forTabletPortraitUpRetina={[require('./images/child_2x.png')]}
                      alt="Дошкольник иллюстрация"/>
-            <UniversalLink href={createFullDocumentsListRoute()}
+            <UniversalLink href={createDocumentsListRoute(UserType.CHILD)}
                            className="choose-person-screen__link">
               дошкольник
             </UniversalLink>

@@ -10,14 +10,15 @@ export const DocumentTag = {
   TICKET: 'TICKET',
   CAR: 'CAR',
   DRIVER: 'DRIVER',
+  NOT_DRIVER: 'NOT_DRIVER',
   WORKER: 'WORKER',
   STUDENT: 'STUDENT',
   BUSINESSMAN: 'BUSINESSMAN',
   PENSIONER: 'PENSIONER',
   SPONSOR: 'SPONSOR',
-  SELF_PAID: 'SELF_PAID'
+  SELF_PAID: 'SELF_PAID',
+  NO_PROFESSION: 'NO_PROFESSION'
 };
-
 export const DocumentTagTranslation = {
   [DocumentTag.OLDER_18]: 'старше 18 лет',
   [DocumentTag.YOUNGER_18]: 'младше 18 лет',
@@ -26,6 +27,7 @@ export const DocumentTagTranslation = {
   [DocumentTag.TICKET]: 'бронь билета',
   [DocumentTag.CAR]: 'автомобиль',
   [DocumentTag.DRIVER]: 'водитель',
+  [DocumentTag.NOT_DRIVER]: 'пассажир',
   [DocumentTag.WORKER]: 'работник',
   [DocumentTag.STUDENT]: 'студент',
   [DocumentTag.BUSINESSMAN]: 'ИП',
@@ -34,11 +36,28 @@ export const DocumentTagTranslation = {
   [DocumentTag.SELF_PAID]: 'платит сам за себя'
 };
 
+export const DocumentTagQuestionTranslation = {
+  [DocumentTag.OLDER_18]: 'старше 18 лет',
+  [DocumentTag.YOUNGER_18]: 'младше 18 лет',
+  [DocumentTag.BOOKING]: 'отель',
+  [DocumentTag.INVITE]: 'приглашение',
+  [DocumentTag.TICKET]: 'траспорт',
+  [DocumentTag.CAR]: 'автомобиль',
+  [DocumentTag.DRIVER]: 'водитель',
+  [DocumentTag.NOT_DRIVER]: 'пассажир',
+  [DocumentTag.WORKER]: 'работник',
+  [DocumentTag.STUDENT]: 'студент',
+  [DocumentTag.BUSINESSMAN]: 'ИП',
+  [DocumentTag.PENSIONER]: 'пенсионер',
+  [DocumentTag.SPONSOR]: 'спонсор',
+  [DocumentTag.SELF_PAID]: 'я сам'
+};
 export const DocumentTagGroups = {
   AGE: [DocumentTag.OLDER_18, DocumentTag.YOUNGER_18],
   ACCOMMODATION: [DocumentTag.BOOKING, DocumentTag.INVITE],
-  TRANSPORT: [DocumentTag.TICKET, DocumentTag.CAR, DocumentTag.DRIVER],
-  PROFESSION: [DocumentTag.WORKER, DocumentTag.STUDENT, DocumentTag.BUSINESSMAN, DocumentTag.PENSIONER],
+  TRANSPORT: [DocumentTag.TICKET, DocumentTag.CAR],
+  DRIVER: [DocumentTag.DRIVER, DocumentTag.NOT_DRIVER],
+  PROFESSION: [DocumentTag.WORKER, DocumentTag.STUDENT, DocumentTag.BUSINESSMAN, DocumentTag.PENSIONER, DocumentTag.NO_PROFESSION],
   PAYER: [DocumentTag.SPONSOR, DocumentTag.SELF_PAID]
 };
 

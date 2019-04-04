@@ -47,4 +47,32 @@
     }
   }
 
+  &_green-full {
+    background-color: #15B798;
+    border: 1px solid #15B798;
+    color: #ffffff;
+    padding: 9px 18px;
+    line-height: 14px;
+    font-size: 14px;
+    border-radius: 26px;
+    @include for-tablet-portrait-up {
+      padding: 16px 42px;
+      font-size: 16px;
+    }
+  }
+
+  &_green-empty {
+    background-color: #FFFFFF;
+    border: 1px solid #15B798;
+    color: #15B798;
+    padding: 9px 18px;
+    line-height: 14px;
+    font-size: 14px;
+    border-radius: 26px;
+    @include for-tablet-portrait-up {
+      padding: 16px 42px;
+      font-size: 16px;
+    }
+  }
+
 }

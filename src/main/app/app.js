@@ -5,7 +5,8 @@ import './seo/sitemap.xml';
 import './seo/robots.txt';
 import {Helmet} from 'react-helmet';
 import {FullDocumentsListPage} from './pages/full-documents-list/FullDocumentsListPage';
-import {createFullDocumentsListRoute, createHomeRoute} from './helpers/appRoutes';
+import {createDocumentsListRoute, createFullDocumentsListRoute, createHomeRoute} from './helpers/appRoutes';
+import {DocumentsListPage} from './pages/documents-list/DocumentsListPage';
 
 
 export class App extends React.Component {
@@ -15,6 +16,12 @@ export class App extends React.Component {
     return ([
       <Switch key="1">
         <Route exact path={createFullDocumentsListRoute()}
+               component={FullDocumentsListPage}/>
+        <Route path={createDocumentsListRoute(':userType')}
+               render={({match}) => (
+                 <DocumentsListPage userType={match.params.userType}/>
+               )}/>
+        <Route exact path={createDocumentsListRoute('')}
                component={FullDocumentsListPage}/>
         <Route path={createHomeRoute()}
                component={HomePage}/>

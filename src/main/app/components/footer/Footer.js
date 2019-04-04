@@ -18,14 +18,22 @@ export class Footer extends React.Component {
           </UniversalLink>
         </div>
         <div className="footer__icon-container">
-          <div className="footer__vk-icon_child footer__icon">
-          </div>
-          <div className="footer__facebook-icon_child footer__icon">
-          </div>
-          <div className="footer__instagram-icon_child footer__icon">
-          </div>
-          <div className="footer__media-icon_child footer__icon">
-          </div>
+          <UniversalLink noStyle={true} href="https://vk.com/furnas">
+            <div className="footer__vk-icon_child footer__icon">
+            </div>
+          </UniversalLink>
+          <UniversalLink noStyle={true} href="https://www.facebook.com/furnasteam/">
+            <div className="footer__facebook-icon_child footer__icon">
+            </div>
+          </UniversalLink>
+          <UniversalLink noStyle={true} href="https://www.instagram.com/furnasteam/">
+            <div className="footer__instagram-icon_child footer__icon">
+            </div>
+          </UniversalLink>
+          <UniversalLink noStyle={true} href="https://medium.com/@furnasteam">
+            <div className="footer__media-icon_child footer__icon">
+            </div>
+          </UniversalLink>
         </div>
 
       </div>

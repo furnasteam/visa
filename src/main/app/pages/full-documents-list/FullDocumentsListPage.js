@@ -15,6 +15,9 @@ import {Picture} from '../../components/picture/Picture';
 
 export class FullDocumentsListPage extends React.Component {
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
 
   download() {
     window.html2canvas = html2canvas;
@@ -32,7 +35,7 @@ export class FullDocumentsListPage extends React.Component {
     document.getElementById("video").style.display = "none";
     document.getElementsByClassName("full-documents-list__flamenco-row")[0].style.display = "none";
 
-    pdf.addHTML(content, 22, 20, options,  function () {
+    pdf.addHTML(content, 22, 20, options, function () {
       pdf.save('Список документов.pdf')
       document.getElementById("video").style.display = "";
       document.getElementsByClassName("full-documents-list__flamenco-row")[0].style.display = "";
@@ -46,7 +49,7 @@ export class FullDocumentsListPage extends React.Component {
         <Helmet key="1">
           <title>Документы на визу в Испанию 2019</title>
           <meta name="description" content="Актуальный полный список документов для самостоятельного получения визы в официальном визовом центре Испании в 2019 году."/>
-          <link rel="canonical" href="https://visa.furnas.ru/spisok-dokumentov-na-vizu-v-ispaniyu-2019" />
+          <link rel="canonical" href="https://visa.furnas.ru/spisok-dokumentov-na-vizu-v-ispaniyu-2019"/>
           <meta property="og:url" content="https://visa.furnas.ru/spisok-dokumentov-na-vizu-v-ispaniyu-2019"/>
           <meta property="og:title" content="Документы на визу в Испанию 2019"/>
           <meta property="og:description" content="Актуальный полный список документов для самостоятельного получения визы в официальном визовом центре Испании в 2019 году."/>
@@ -132,7 +135,8 @@ export class FullDocumentsListPage extends React.Component {
             <section id="prices"
                      className="full-documents-list__section">
               <Subtitle className="full-documents-list__prices-subtitle">Цены на визы</Subtitle>
-              <p className="full-documents-list__paragraph">Указанные цены — это <b>сумма консульского и сервисного сбора</b>. Больше информации на сайте <GreenLink href="https://blsspain-russia.com/" target="_blank">blsspain-russia.com</GreenLink>
+              <p className="full-documents-list__paragraph">Указанные цены — это <b>сумма консульского и сервисного сбора</b>. Больше информации на сайте <GreenLink href="https://blsspain-russia.com/"
+                                                                                                                                                                     target="_blank">blsspain-russia.com</GreenLink>
               </p>
               <div className="full-documents-list__prices-container">
                 <table className="full-documents-list__prices-table">
@@ -142,7 +146,8 @@ export class FullDocumentsListPage extends React.Component {
                       Категории
                     </th>
                     <th>
-                      Тарифы на визы для граждан России, Украины, Армении, Грузии и <GreenLink target="_blank" className="full-documents-list__other-countries" href="https://blsspain-russia.com/moscow/short_term_visa.php">других стран</GreenLink>.
+                      Тарифы на визы для граждан России, Украины, Армении, Грузии и <GreenLink target="_blank" className="full-documents-list__other-countries"
+                                                                                               href="https://blsspain-russia.com/moscow/short_term_visa.php">других стран</GreenLink>.
                     </th>
                   </tr>
                   </thead>
@@ -170,7 +175,9 @@ export class FullDocumentsListPage extends React.Component {
             <section id="video"
                      className="full-documents-list__section">
               <Subtitle className="full-documents-list__video-subtitle">Как записаться на подачу документов</Subtitle>
-              <p className="full-documents-list__paragraph">В видео показано, как записаться на сайте <GreenLink href="https://blsspain-russia.com/" target="_blank">blsspain-russia.com</GreenLink>  Обязательно <b>распечатайте приглашение</b> на подачу визы, без него не принимают.
+              <p className="full-documents-list__paragraph">В видео показано, как записаться на сайте <GreenLink href="https://blsspain-russia.com/"
+                                                                                                                 target="_blank">blsspain-russia.com</GreenLink> Обязательно <b>распечатайте
+                приглашение</b> на подачу визы, без него не принимают.
                 Если забудете, то его можно распечатать в офисе при визовом центре,
                 но цены на печать завышены.</p>
               <p className="full-documents-list__paragraph">В первом видео показано как записаться на подачу документов <b>одному</b>:</p>

@@ -1,0 +1,29 @@
+@import "../../../../common/vars";
+@import "../../../../common/mixins";
+
+.question {
+  white-space: nowrap;
+  &__label {
+    margin-bottom: 16px;
+    font-size: 16px;
+    @include for-phone-only {
+      margin-bottom: 8px;
+    }
+  }
+
+  &__right-button {
+    margin-left: 16px;
+    min-width: 200px;
+    @include for-phone-only {
+      margin-left: 8px;
+      min-width: 135px;
+    }
+  }
+
+  &__left-button {
+    min-width: 200px;
+    @include for-phone-only {
+      min-width: 135px;
+    }
+  }
+}
