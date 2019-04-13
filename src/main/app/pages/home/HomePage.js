@@ -33,7 +33,9 @@ export class HomePage extends React.Component {
           <div className="home__description-screen">
             <DescriptionScreen/>
           </div>
-          <ChosePersonScreen/>
+          <div id="choose-person">
+            <ChosePersonScreen/>
+          </div>
           <div className="home__other-resources-screen">
             <OtherResourcesScreen/>
           </div>

@@ -22,7 +22,7 @@ UniversalLink.defaultProps = {
 
 export function UniversalLink({className, children, href, target, onClick, noStyle}) {
 
-  if (startsWith(href, 'http')) {
+  if (startsWith(href, 'http') || startsWith(href, '#')) {
     return (
       <a className={classNames('link', {'link_no-style' : noStyle}, className)}
          target={target}

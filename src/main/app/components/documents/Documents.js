@@ -1,6 +1,6 @@
 import React from 'react';
 import {DocumentsListItem} from './components/DocumentsListItem';
-import {DocumentTag} from '../../models/DocumentTagModel';
+import {DocumentTag, DocumentTagGroupName} from '../../models/DocumentTagModel';
 import {DocumentsList} from './components/DocumentsList';
 import './documents.scss';
 import {Quote} from '../quote/Quote';
@@ -73,25 +73,25 @@ export class Documents extends React.Component {
         <DocumentsListItem tags={[DocumentTag.OLDER_18]}>
           <p><DocumentIndex>6.</DocumentIndex> <b>Копия заполненных страниц общегражданского паспорта</b> (формат А4, два разварота паспорта на страницу, четыре разворота паспорта на лист);</p>
         </DocumentsListItem>
-        <DocumentsListItem>
+        <DocumentsListItem documentTagGroupName={DocumentTagGroupName.ACCOMMODATION} tagGroupTitle={true}>
           <p><DocumentIndex>7.</DocumentIndex> <b>Подтверждение размещения</b> на весь период проживания. Бронь отеля/хостела/квартиры/дома. Если бронировать через booking.com, информация о бронировании присылают на указанный
             email:</p>
         </DocumentsListItem>
-        <DocumentsListItem tags={[DocumentTag.BOOKING]}>
+        <DocumentsListItem tags={[DocumentTag.BOOKING]} documentTagGroupName={DocumentTagGroupName.ACCOMMODATION}>
           <p><DocumentIndex>7.1</DocumentIndex> Бронь отеля/хостела/квартиры/дома. Если бронировать через <GreenLink href="https://www.booking.com" target="_blank">booking.com</GreenLink>, информация о бронировании присылают на
             указанный вами
             email (<GreenLink href="https://drive.google.com/file/d/1tEQI7x4YrBksgdl3WdKKfW3iuuhMFgb6/view?usp=sharing" target="_blank">посмотреть пример</GreenLink>)</p>
         </DocumentsListItem>
-        <DocumentsListItem tags={[DocumentTag.INVITE]}>
+        <DocumentsListItem tags={[DocumentTag.INVITE]} documentTagGroupName={DocumentTagGroupName.ACCOMMODATION}>
           <p><DocumentIndex>7.2</DocumentIndex> Приглашение, напечатанное в произвольной форме с указанием сведений о приглашающем лице, приглашенном лице, с датами поездки и месте проживания приглашенного (<GreenLink
             href="https://drive.google.com/file/d/1VzLfoAvDUPwoLdZ9HlhQJeCD1SXEf1KL/view?usp=sharing" target="_blank">посмотреть пример</GreenLink>);</p>
         </DocumentsListItem>
-        <DocumentsListItem tags={[DocumentTag.INVITE]}>
-          <p><DocumentIndex>7.3</DocumentIndex> <b>Копия документа, удостоверяющего личность приглашающего</b> и подтверждение его легального проживания или пребывания в Испании, например, копия DNI (Documento Nacional de
+        <DocumentsListItem tags={[DocumentTag.INVITE]} documentTagGroupName={DocumentTagGroupName.ACCOMMODATION}>
+          <p><DocumentIndex>7.3</DocumentIndex> Копия документа, удостоверяющего личность приглашающего и подтверждение его легального проживания или пребывания в Испании, например, копия DNI (Documento Nacional de
             Identidad)
             — Национальный документ, удостоверяющий личность, либо копия главной страницы загранпаспорта с действующей шенгенской визой;</p>
         </DocumentsListItem>
-        <DocumentsListItem tags={[DocumentTag.INVITE]}>
+        <DocumentsListItem tags={[DocumentTag.INVITE]} documentTagGroupName={DocumentTagGroupName.ACCOMMODATION}>
           <p><DocumentIndex>7.4</DocumentIndex> При проживании у приглашающего – выписка из реестра недвижимости, нота симпле (Nota Simple) <GreenLink
             href="https://drive.google.com/file/d/1zcQs92CnSBXKu7uvXu6olEWYEWLpdNi9/view?usp=sharing" target="_blank">посмотреть пример</GreenLink>;</p>
           <Quote cite="https://espanarusa.com/ru/pedia/article/75888"
@@ -106,83 +106,83 @@ export class Documents extends React.Component {
               постоянно обновляется.</p>
           </Quote>
         </DocumentsListItem>
-        <DocumentsListItem tags={[DocumentTag.INVITE]}>
+        <DocumentsListItem tags={[DocumentTag.INVITE]} documentTagGroupName={DocumentTagGroupName.ACCOMMODATION}>
           <p><DocumentIndex>7.5</DocumentIndex> Копия документа, удостоверяющего личность приглашающего;</p>
         </DocumentsListItem>
         <DocumentsListItem>
           <p><DocumentIndex>8.</DocumentIndex> <b>Полис медицинского страхования</b> на весь период пребывания (не менее 30.000 €). Купить полис можно онлайн, например, на сайте <GreenLink
             href="https://www.renins.com/iris/di/process/travelinsurance/RSF-100219-408#TravelSegmentationStep" target="_blank">renins.com</GreenLink>;</p>
         </DocumentsListItem>
-        <DocumentsListItem>
+        <DocumentsListItem documentTagGroupName={DocumentTagGroupName.TRANSPORT} tagGroupTitle={true}>
           <p><DocumentIndex>9.</DocumentIndex> <b>Как добираться:</b></p>
         </DocumentsListItem>
-        <DocumentsListItem tags={[DocumentTag.TICKET]}>
+        <DocumentsListItem tags={[DocumentTag.TICKET]} documentTagGroupName={DocumentTagGroupName.TRANSPORT}>
           <p><DocumentIndex>9.1</DocumentIndex> Копия или бронь билета на самолет/поезд/автобус/пароход;</p>
         </DocumentsListItem>
-        <DocumentsListItem tags={[DocumentTag.CAR]}>
+        <DocumentsListItem tags={[DocumentTag.CAR]} documentTagGroupName={DocumentTagGroupName.TRANSPORT}>
           <p><DocumentIndex>9.2</DocumentIndex> Копия технического паспорта автомобиля;</p>
         </DocumentsListItem>
-        <DocumentsListItem tags={[DocumentTag.CAR, DocumentTag.DRIVER]}>
+        <DocumentsListItem tags={[DocumentTag.CAR, DocumentTag.DRIVER]} documentTagGroupName={DocumentTagGroupName.TRANSPORT}>
           <p><DocumentIndex>9.3</DocumentIndex> Копия водительских прав;</p>
         </DocumentsListItem>
-        <DocumentsListItem tags={[DocumentTag.CAR]}>
+        <DocumentsListItem tags={[DocumentTag.CAR]} documentTagGroupName={DocumentTagGroupName.TRANSPORT}>
           <p><DocumentIndex>9.4</DocumentIndex> Копия международной страховки автомобиля (Грин Кард);</p>
         </DocumentsListItem>
-        <DocumentsListItem tags={[DocumentTag.CAR]}>
+        <DocumentsListItem tags={[DocumentTag.CAR]} documentTagGroupName={DocumentTagGroupName.TRANSPORT}>
           <p><DocumentIndex>9.5</DocumentIndex> Напечатанный маршрутный лист по планируемой поездке с указанием дат пересечения границ иностранных государств;</p>
         </DocumentsListItem>
-        <DocumentsListItem tags={[DocumentTag.CAR]}>
+        <DocumentsListItem tags={[DocumentTag.CAR]} documentTagGroupName={DocumentTagGroupName.TRANSPORT}>
           <p><DocumentIndex>9.6</DocumentIndex> Контракт аренды автомобиля;</p>
         </DocumentsListItem>
-        <DocumentsListItem>
+        <DocumentsListItem documentTagGroupName={DocumentTagGroupName.PROFESSION} tagGroupTitle={true}>
           <p><DocumentIndex>10.</DocumentIndex> <b>Профессиональный статус (экономические гарантии):</b></p>
         </DocumentsListItem>
-        <DocumentsListItem tags={[DocumentTag.WORKER]}>
+        <DocumentsListItem tags={[DocumentTag.WORKER]} documentTagGroupName={DocumentTagGroupName.PROFESSION}>
           <p><DocumentIndex>10.1</DocumentIndex> Справка с места работы, оригинал на фирменном бланке с указанием названия, адреса и телефона организации, ФИО, должности и заработной платы работника, заверенная печатью и
             подписью руководителя и бухгалтерии (справка действительна в течение 1 месяца со дня выдачи) <GreenLink
               href="https://drive.google.com/file/d/1lFvIt0ZZrq6yQ6sNy-D2_6jOjgsS9SFB/view?usp=sharing" target="_blank">посмотреть пример</GreenLink> или допустимо предоставить форму <abbr
               title="Налог на доходы физических лиц">2НДФЛ</abbr>;</p>
         </DocumentsListItem>
-        <DocumentsListItem tags={[DocumentTag.STUDENT]}>
+        <DocumentsListItem tags={[DocumentTag.STUDENT]} documentTagGroupName={DocumentTagGroupName.PROFESSION}>
           <p><DocumentIndex>10.2</DocumentIndex> Оригинал справки с места учёбы с синей печатью (<GreenLink href="" target="_blank">посмотреть пример</GreenLink>);</p>
         </DocumentsListItem>
-        <DocumentsListItem tags={[DocumentTag.BUSINESSMAN]}>
+        <DocumentsListItem tags={[DocumentTag.BUSINESSMAN]} documentTagGroupName={DocumentTagGroupName.PROFESSION}>
           <p><DocumentIndex>10.3</DocumentIndex> Копия <GreenLink href="https://drive.google.com/file/d/18kg6OR-xFDZis3rIT94CIPhrgdX6utE2/view?usp=sharing" target="_blank">свидетельства о регистрации
             предприятия</GreenLink> или <GreenLink href="https://drive.google.com/file/d/1QImFxwBMEBGSQdMowFh-SEZXthBgfqzR/view?usp=sharing" target="_blank">уведомление о постановке на учет
             физического лица в налоговом органе</GreenLink>;</p>
         </DocumentsListItem>
-        <DocumentsListItem tags={[DocumentTag.BUSINESSMAN]}>
+        <DocumentsListItem tags={[DocumentTag.BUSINESSMAN]} documentTagGroupName={DocumentTagGroupName.PROFESSION}>
           <p><DocumentIndex>10.4</DocumentIndex> Копия документа индивидуального номера налогоплательщика (ИНН) <GreenLink href="https://drive.google.com/file/d/187M61wDi1juKCLXucq-QE2UBa2drLitg/view?usp=sharing" target="_blank">посмотреть
             пример</GreenLink>;</p>
         </DocumentsListItem>
-        <DocumentsListItem tags={[DocumentTag.PENSIONER]}>
+        <DocumentsListItem tags={[DocumentTag.PENSIONER]} documentTagGroupName={DocumentTagGroupName.PROFESSION}>
           <p><DocumentIndex>10.5</DocumentIndex> Справка из пенсионного фонда (<GreenLink href="https://drive.google.com/file/d/1maUnRoRco4OUw338d0H6f4pFfPUfOuDX/view?usp=sharing" target="_blank">посмотреть пример</GreenLink>);</p>
         </DocumentsListItem>
-        <DocumentsListItem tags={[DocumentTag.PENSIONER]}>
+        <DocumentsListItem tags={[DocumentTag.PENSIONER]} documentTagGroupName={DocumentTagGroupName.PROFESSION}>
           <p><DocumentIndex>10.6</DocumentIndex> Копия пенсионного удостоверения (при подаче нужно будет показать оригинал);</p>
         </DocumentsListItem>
-        <DocumentsListItem tags={[DocumentTag.SPONSOR]}>
-          <p><DocumentIndex>10.7</DocumentIndex> Спонсорское письмо в печатном виде (<GreenLink href="https://drive.google.com/file/d/1eQEVsvvEAvnEp8QWb9pJXYLdPj1R_QPJ/view?usp=sharing" target="_blank">скачать бланк</GreenLink>);
-          </p>
-        </DocumentsListItem>
-        <DocumentsListItem tags={[DocumentTag.SPONSOR]}>
-          <p><DocumentIndex>10.8</DocumentIndex> Оригинал справки с места работы спонсора;</p>
-        </DocumentsListItem>
-        <DocumentsListItem tags={[DocumentTag.SPONSOR]}>
-          <p><DocumentIndex>10.9</DocumentIndex> Финансовые гарантии спонсора (выписка со счета из банка или справка о покупке валюты);</p>
-        </DocumentsListItem>
-        <DocumentsListItem tags={[DocumentTag.SPONSOR]}>
-          <p><DocumentIndex>10.10</DocumentIndex> Ксерокопия общегражданского паспорта спонсора (первый разворот с данными спонсора и разворот с пропиской).</p>
-        </DocumentsListItem>
-        <DocumentsListItem>
+        <DocumentsListItem documentTagGroupName={DocumentTagGroupName.PAYER} tagGroupTitle={true}>
           <p><DocumentIndex>11.</DocumentIndex> <b>Финансовые гарантии</b> (73,59 € на каждый день пребывания и минимум 661,50 евро на поездку за человека). Один или несколько пунктов:</p>
         </DocumentsListItem>
-        <DocumentsListItem tags={[DocumentTag.SELF_PAID]}>
+        <DocumentsListItem tags={[DocumentTag.SELF_PAID]} documentTagGroupName={DocumentTagGroupName.PAYER}>
           <p><DocumentIndex>11.1</DocumentIndex> Оригинал выписки с банковского счета на бланке банка с синей печатью. Если не получается получить справку — сделайте в банкомате запрос остатка, прийдите с ним в банк и попросите
             поставить печать;</p>
         </DocumentsListItem>
-        <DocumentsListItem tags={[DocumentTag.SELF_PAID]}>
+        <DocumentsListItem tags={[DocumentTag.SELF_PAID]} documentTagGroupName={DocumentTagGroupName.PAYER}>
           <p><DocumentIndex>11.2</DocumentIndex> Справка о покупке валюты;</p>
+        </DocumentsListItem>
+        <DocumentsListItem tags={[DocumentTag.SPONSOR]} documentTagGroupName={DocumentTagGroupName.PAYER}>
+          <p><DocumentIndex>11.3</DocumentIndex> Спонсорское письмо в печатном виде (<GreenLink href="https://drive.google.com/file/d/1eQEVsvvEAvnEp8QWb9pJXYLdPj1R_QPJ/view?usp=sharing" target="_blank">скачать бланк</GreenLink>);
+          </p>
+        </DocumentsListItem>
+        <DocumentsListItem tags={[DocumentTag.SPONSOR]} documentTagGroupName={DocumentTagGroupName.PAYER}>
+          <p><DocumentIndex>11.4</DocumentIndex> Оригинал справки с места работы спонсора;</p>
+        </DocumentsListItem>
+        <DocumentsListItem tags={[DocumentTag.SPONSOR]} documentTagGroupName={DocumentTagGroupName.PAYER}>
+          <p><DocumentIndex>11.5</DocumentIndex> Финансовые гарантии спонсора (выписка со счета из банка или справка о покупке валюты);</p>
+        </DocumentsListItem>
+        <DocumentsListItem tags={[DocumentTag.SPONSOR]} documentTagGroupName={DocumentTagGroupName.PAYER}>
+          <p><DocumentIndex>11.6</DocumentIndex> Ксерокопия общегражданского паспорта спонсора (первый разворот с данными спонсора и разворот с пропиской).</p>
         </DocumentsListItem>
         <DocumentsListItem tags={[DocumentTag.YOUNGER_18]}>
           <p><DocumentIndex>12.</DocumentIndex> <b>Копия свидетельства о рождении</b></p>
@@ -190,23 +190,22 @@ export class Documents extends React.Component {
         <DocumentsListItem tags={[DocumentTag.YOUNGER_18]}>
           <p><DocumentIndex>13.</DocumentIndex> <b>Загран паспорт родителя/родителей/опекуна</b> с которыми едет за границу;</p>
         </DocumentsListItem>
-        <DocumentsListItem tags={[DocumentTag.YOUNGER_18]}>
+        <DocumentsListItem tags={[DocumentTag.YOUNGER_18]} documentTagGroupName={DocumentTagGroupName.PARENTS_PASSPORT} tagGroupTitle={true}>
           <p><DocumentIndex>14.</DocumentIndex> <b>Копии общегражданского паспорта (российского) родителя/родителей/опекуна:</b></p>
         </DocumentsListItem>
-        <DocumentsListItem tags={[DocumentTag.YOUNGER_18]}>
+        <DocumentsListItem tags={[DocumentTag.YOUNGER_18]} documentTagGroupName={DocumentTagGroupName.PARENTS_PASSPORT}>
           <p><DocumentIndex>14.1</DocumentIndex> Первой страницы и прописки общегражданского паспорта родителя, дающего согласие;</p>
         </DocumentsListItem>
-        <DocumentsListItem tags={[DocumentTag.YOUNGER_18]}>
+        <DocumentsListItem tags={[DocumentTag.YOUNGER_18]} documentTagGroupName={DocumentTagGroupName.PARENTS_PASSPORT}>
           <p><DocumentIndex>14.2</DocumentIndex> Первой страницы и прописки общегражданского паспорта сопровождающего.</p>
         </DocumentsListItem>
         <DocumentsListItem tags={[DocumentTag.YOUNGER_18]}>
-          <p><DocumentIndex>15.</DocumentIndex> Копия <b>нотариально-заверенного согласия другого родителя/родителей</b> и перевод на испанский язык;
+          <p><DocumentIndex>15.</DocumentIndex> <b>Копия нотариально-заверенного согласия другого родителя/родителей</b> и перевод на испанский язык;
             Согласие должно быть оформлено не ранее чем за 1 год до планируемой
             поездки, должно быть четко обозначено, что родитель разрешает вывоз ребенка
             в страны Шенгенского соглашения, в том числе в Испанию. В случае
             невозможности получения согласия, документы, подтверждающие причину
-            отсутствия доверенности (копия свидетельства о смерти, справка матери-
-            одиночки и т.п.);</p>
+            отсутствия доверенности (копия свидетельства о смерти, справка матери-одиночки и т.п.);</p>
         </DocumentsListItem>
       </DocumentsList>
     );

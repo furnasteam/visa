@@ -75,6 +75,7 @@
     font-size: 24px;
     text-align: center;
     margin-bottom: 10px;
+    font-weight: 500;
     @include for-phone-only {
       color: #333333;
       font-size: 16px;
@@ -91,6 +92,7 @@
     font-size: 16px;
     margin-bottom: 16px;
     line-height: 24px;
+    font-weight: 500;
   }
 
   &__content-text {

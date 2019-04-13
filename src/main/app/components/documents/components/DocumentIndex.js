@@ -11,7 +11,7 @@ export class DocumentIndex extends React.Component {
     const {documentIndex, children} = this.props;
     return (
       <span>
-        {documentIndex ? '' : children}
+        {documentIndex ? documentIndex : children}
       </span>
     );
   }

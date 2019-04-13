@@ -25,6 +25,7 @@
     @include for-phone-only {
       width: 100%;
       justify-content: flex-end;
+      margin-right: -30px;
     }
   }
 

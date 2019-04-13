@@ -1,11 +1,9 @@
 import React from 'react';
-import {array, string} from 'prop-types';
+import {array, string, bool} from 'prop-types';
 import {DocumentTagTranslation, getTagGroup} from '../../../models/DocumentTagModel';
 import classNames from 'classnames';
 import map from 'lodash/map';
 import lowerCase from 'lodash/lowerCase';
-import isEmpty from 'lodash/isEmpty';
-import includes from 'lodash/includes';
 import {DocumentIndex} from './DocumentIndex';
 
 export class DocumentsListItem extends React.Component {
@@ -13,7 +11,9 @@ export class DocumentsListItem extends React.Component {
   static propTypes = {
     tags: array,
     selectedTags: array,
-    documentIndex: string
+    documentIndex: string,
+    documentTagGroupName: string,
+    tagGroupTitle: bool
   };
 
   setIndexToChildren(children) {
@@ -31,12 +31,9 @@ export class DocumentsListItem extends React.Component {
 
   render() {
     const {children, tags, selectedTags} = this.props;
-    if (!isEmpty(tags) && !includes(selectedTags, ...tags)) {
-      return null;
-    }
     return (
       <li className="documents__list-item">
-        {isEmpty(selectedTags) &&
+        {!selectedTags &&
         <div className="documents__tags-container">
           {map(tags, (tag, index) => (
             <span key={index}

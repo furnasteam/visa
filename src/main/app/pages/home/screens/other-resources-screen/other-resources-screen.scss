@@ -10,6 +10,14 @@
   @include for-phone-only {
     margin-top: 60px;
   }
+
+  &__title {
+    @include for-phone-only {
+      align-self: flex-start;
+      margin-left: 16px;
+    }
+  }
+
   &__container {
     display: flex;
     flex-direction: row;
@@ -19,10 +27,15 @@
     justify-content: center;
     @include for-phone-only {
       width: 320px;
+      margin-top: 0;
+      margin-bottom: 30px;
     }
   }
   &__resources-col3 {
     width: 33%;
+    @include for-phone-only {
+      width: 50%;
+    }
   }
 
   &__resources-col2 {
@@ -30,16 +43,27 @@
   }
   &__facebook-wrapper {
     margin-left: 32%;
+    @include for-phone-only {
+      margin-left: 0;
+    }
   }
   &__media-wrapper {
     margin-left: -32%;
+    @include for-phone-only {
+      margin-left: -50%;
+    }
   }
   &__item {
-    margin: 40px 0px;
+    margin: 40px 0;
     display: flex;
     flex-direction: column;
     text-align: center;
     align-items: center;
+
+    @include for-phone-only {
+      align-items: flex-start;
+      margin: 16px 0;
+    }
   }
 
   &__item-underline {
@@ -58,12 +82,13 @@
     //width: 94px;
     //height: 100px;
     margin-right: 16px;
-    margin-top: 8px;
+    margin-top: 28px;
     background-size: contain !important;
     background-position: center !important;
 
     background: url('../images/Arrow_green.png') no-repeat;
     @include for-phone-only {
+      display: none;
       background: url('../images/Arrow_green.png') no-repeat;
     }
     @include for-phone-only-retina {
@@ -83,5 +108,8 @@
       margin-top: 0;
       margin-bottom: 0;
     }
+  }
+  &__link {
+    margin-left: 16px;
   }
 }

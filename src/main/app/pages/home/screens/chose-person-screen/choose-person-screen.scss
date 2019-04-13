@@ -40,6 +40,22 @@
   }
   &__any-route-container-item {
     padding-bottom: 24px;
+    color: #2E2E31;
+    @include for-phone-only {
+      font-size: 14px !important;
+      text-align: left !important;
+      line-height: 20px !important;
+    }
+  }
+
+  &__any-route-container-title {
+    @include for-phone-only {
+      align-self: flex-start;
+      font-size: 16px !important;
+      text-align: left !important;
+      line-height: 24px !important;
+      padding-bottom: 8px !important;
+    }
   }
 
   &__persons-container {
@@ -103,6 +119,12 @@
   &__link {
     @include for-phone-only {
       font-size: 12px !important;
+    }
+  }
+
+  &__documents-list-button {
+    @include for-phone-only {
+      align-self: flex-start;
     }
   }
 }

@@ -3,12 +3,12 @@ import './documents-list.scss';
 import {string} from 'prop-types';
 import {Title} from '../../components/title/Title';
 import {UserType} from '../../models/UserTypeModel';
-import {DocumentTag, DocumentTagGroups} from '../../models/DocumentTagModel';
+import {DocumentTag, DocumentTagGroupName, DocumentTagGroups, getTagGroup} from '../../models/DocumentTagModel';
 import {Question} from './components/question/Question';
-import {Button} from '../../components/button/Button';
 import {Documents} from '../../components/documents/Documents';
 import {Header} from '../../components/header/Header';
 import size from 'lodash/size';
+import find from 'lodash/find';
 
 
 const TagByUserTypeDictionary = {
@@ -45,12 +45,36 @@ export class DocumentsListPage extends React.Component {
     this.setState({showLoader: true, showQuestions: false});
     setTimeout(() => {
       this.setState({showDocumentsList: true, showLoader: false})
-    }, 500)
+    }, 1000)
   };
 
   handleChange = (tags) => {
     this.setState({tags});
+    if (size(tags) === 6) {
+      this.handleCreateDocumentsListClick();
+    }
   };
+
+  getProfessionText(professionTag) {
+    switch (professionTag) {
+      case DocumentTag.WORKER:
+        return 'работника';
+      case DocumentTag.STUDENT:
+        return 'студента';
+      case DocumentTag.BUSINESSMAN:
+        return 'ИП';
+      case DocumentTag.PENSIONER:
+        return 'пенсионера';
+      case DocumentTag.NO_PROFESSION:
+        return 'гражданина РФ';
+    }
+  }
+
+  getTitleText() {
+    const {tags} = this.state;
+    const profession = find(tags, tag => getTagGroup(tag) === DocumentTagGroupName.PROFESSION);
+    return `Список документов для ${this.getProfessionText(profession)}, `;
+  }
 
   render() {
     const {showQuestions, showLoader, showDocumentsList, tags} = this.state;
@@ -59,7 +83,7 @@ export class DocumentsListPage extends React.Component {
         <Header/>
         <div className="documents-list__content">
           <Title className="documents-list__title">
-            Автоматически сформируем список документов на визу, который подойдет именно вам
+            {size(tags) !== 6 ? 'Автоматически сформируем список документов на визу, который подойдет именно вам' : this.getTitleText()}
           </Title>
           {showQuestions &&
           <div>
@@ -89,11 +113,6 @@ export class DocumentsListPage extends React.Component {
                       onChange={this.handleChange}
                       tagOptions={DocumentTagGroups.DRIVER}/>
           </div>}
-
-          {showQuestions && size(tags) === 6 &&
-          <Button onClick={this.handleCreateDocumentsListClick}>
-            Сформировать
-          </Button>}
 
           {showLoader && <div className="documents-list__loader"></div>}
 

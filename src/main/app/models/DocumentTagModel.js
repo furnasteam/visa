@@ -52,13 +52,24 @@ export const DocumentTagQuestionTranslation = {
   [DocumentTag.SPONSOR]: 'спонсор',
   [DocumentTag.SELF_PAID]: 'я сам'
 };
+
+export const DocumentTagGroupName = {
+  AGE: 'AGE',
+  ACCOMMODATION: 'ACCOMMODATION',
+  TRANSPORT: 'TRANSPORT',
+  DRIVER: 'DRIVER',
+  PROFESSION: 'PROFESSION',
+  PAYER: 'PAYER',
+  PARENTS_PASSPORT: 'PARENTS_PASSPORT'
+};
+
 export const DocumentTagGroups = {
-  AGE: [DocumentTag.OLDER_18, DocumentTag.YOUNGER_18],
-  ACCOMMODATION: [DocumentTag.BOOKING, DocumentTag.INVITE],
-  TRANSPORT: [DocumentTag.TICKET, DocumentTag.CAR],
-  DRIVER: [DocumentTag.DRIVER, DocumentTag.NOT_DRIVER],
-  PROFESSION: [DocumentTag.WORKER, DocumentTag.STUDENT, DocumentTag.BUSINESSMAN, DocumentTag.PENSIONER, DocumentTag.NO_PROFESSION],
-  PAYER: [DocumentTag.SPONSOR, DocumentTag.SELF_PAID]
+  [DocumentTagGroupName.AGE]: [DocumentTag.OLDER_18, DocumentTag.YOUNGER_18],
+  [DocumentTagGroupName.ACCOMMODATION]: [DocumentTag.BOOKING, DocumentTag.INVITE],
+  [DocumentTagGroupName.TRANSPORT]: [DocumentTag.TICKET, DocumentTag.CAR],
+  [DocumentTagGroupName.DRIVER]: [DocumentTag.DRIVER, DocumentTag.NOT_DRIVER],
+  [DocumentTagGroupName.PROFESSION]: [DocumentTag.WORKER, DocumentTag.STUDENT, DocumentTag.BUSINESSMAN, DocumentTag.PENSIONER, DocumentTag.NO_PROFESSION],
+  [DocumentTagGroupName.PAYER]: [DocumentTag.SPONSOR, DocumentTag.SELF_PAID]
 };
 
 export function getTagGroup(tag) {

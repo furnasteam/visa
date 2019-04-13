@@ -1,10 +1,9 @@
 import React from 'react';
 import './main-screen.scss';
 import {Button} from '../../../../components/button/Button';
-import {Link} from 'react-router-dom';
-import {createFullDocumentsListRoute} from '../../../../helpers/appRoutes';
 import {Title} from '../../../../components/title/Title';
 import {Picture} from '../../../../components/picture/Picture';
+import {UniversalLink} from '../../../../components/universal-link/UniversalLink';
 
 export class MainScreen extends React.Component {
   render() {
@@ -25,9 +24,10 @@ export class MainScreen extends React.Component {
           </li>
         </ul>
         <div className="main-screen__documents-list-button">
-          <Link to={createFullDocumentsListRoute()}>
+          <UniversalLink href="#choose-person"
+                         noStyle={true}>
             <Button>Список документов</Button>
-          </Link>
+          </UniversalLink>
         </div>
         <Picture className="main-screen__main-picture"
                  forPhoneOnly={[require('./images/main_mob.png'),require('./images/main_mob.webp')]}
