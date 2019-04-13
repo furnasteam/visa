@@ -73,7 +73,7 @@ export class DocumentsListPage extends React.Component {
   getTitleText() {
     const {tags} = this.state;
     const profession = find(tags, tag => getTagGroup(tag) === DocumentTagGroupName.PROFESSION);
-    return `Список документов для ${this.getProfessionText(profession)}, `;
+    return `Список документов для ${this.getProfessionText(profession)}`;
   }
 
   render() {
