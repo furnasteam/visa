@@ -32,12 +32,14 @@ const clientConfig = {
         use: [
           {
             loader: 'file-loader',
-            options: {}
+            options: {
+              name: '[name].[ext]'
+            }
           }
         ]
       },
       {
-        test: /\.(xml|txt)$/,
+        test: /\.(xml|txt|html)$/,
         use: [
           {
             loader: 'file-loader',
@@ -90,12 +92,14 @@ const serverConfig = {
         use: [
           {
             loader: 'file-loader',
-            options: {}
+            options: {
+              name: '[name].[ext]'
+            }
           }
         ]
       },
       {
-        test: /\.(xml|txt)$/,
+        test: /\.(xml|txt|html)$/,
         use: [
           {
             loader: 'file-loader',

@@ -1,5 +1,6 @@
 import React from 'react';
 import './full-documents-list.scss';
+import './spisok-dokumentov-na-vizu-v-ispaniyu-2019.amp.html';
 /*import html2canvas from 'html2canvas';
 import * as jsPDF from 'jspdf';*/
 import {Helmet} from 'react-helmet';
@@ -50,6 +51,7 @@ export class FullDocumentsListPage extends React.Component {
           <title>Документы на визу в Испанию 2019</title>
           <meta name="description" content="Актуальный полный список документов для самостоятельного получения визы в официальном визовом центре Испании в 2019 году."/>
           <link rel="canonical" href="https://visa.furnas.ru/spisok-dokumentov-na-vizu-v-ispaniyu-2019"/>
+          <link rel="amphtml" href="https://visa.furnas.ru/spisok-dokumentov-na-vizu-v-ispaniyu-2019.amp.html"/>
           <meta property="og:url" content="https://visa.furnas.ru/spisok-dokumentov-na-vizu-v-ispaniyu-2019"/>
           <meta property="og:title" content="Документы на визу в Испанию 2019"/>
           <meta property="og:description" content="Актуальный полный список документов для самостоятельного получения визы в официальном визовом центре Испании в 2019 году."/>
