@@ -4,6 +4,7 @@ import {Helmet} from 'react-helmet';
 import {Form} from '../../components/form/Form';
 import {InputField} from '../../components/form/fields/input-field/InputField';
 import {VISA_APPLICATION_FORM_FIRST_NAME, VISA_APPLICATION_FORM_LAST_NAME} from './VisaApplicationFormModel';
+import {RadioButtonField} from '../../components/form/fields/radio-button-field/RadioButtonField';
 
 export class VisaApplicationFormPage extends React.Component {
 
@@ -41,6 +42,15 @@ export class VisaApplicationFormPage extends React.Component {
             <InputField label={"2. Фамилия"}
                         fieldName={VISA_APPLICATION_FORM_LAST_NAME}
                         helpText={<div>Фамилия латинскими буквами точно как в загран. паспорте.</div>}/>
+
+            <RadioButtonField label={"2. Фамилия"}
+                        fieldName={VISA_APPLICATION_FORM_LAST_NAME}
+                              buttonNames={["test1", "test2", "test3"]}
+                              name={"Фамилия"}
+                              defaultCheckedIndex={1}
+                        helpText={<div>Фамилия латинскими буквами точно как в загран. паспорте.</div>}/>
+
+
 
           </Form>
         </div>
