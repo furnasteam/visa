@@ -3,7 +3,7 @@ import './visa-application-form.scss';
 import {Helmet} from 'react-helmet';
 import {Form} from '../../components/form/Form';
 import {InputField} from '../../components/form/fields/input-field/InputField';
-import {VISA_APPLICATION_FORM_FIRST_NAME, VISA_APPLICATION_FORM_LAST_NAME} from './VisaApplicationFormModel';
+import {VISA_APPLICATION_FORM_FIRST_NAME, VISA_APPLICATION_FORM_LAST_NAME, VISA_APPLICATION_FORM_BIRTH_CITIZENSHIP, VISA_APPLICATION_FORM_GENDER, VISA_APPLICATION_FORM_MARITAL_STATUS} from './VisaApplicationFormModel';
 import {RadioButtonField} from '../../components/form/fields/radio-button-field/RadioButtonField';
 
 export class VisaApplicationFormPage extends React.Component {
@@ -43,14 +43,22 @@ export class VisaApplicationFormPage extends React.Component {
                         fieldName={VISA_APPLICATION_FORM_LAST_NAME}
                         helpText={<div>Фамилия латинскими буквами точно как в загран. паспорте.</div>}/>
 
-            <RadioButtonField label={"2. Фамилия"}
-                        fieldName={VISA_APPLICATION_FORM_LAST_NAME}
-                              buttonNames={["test1", "test2", "test3"]}
-                              name={"Фамилия"}
+            <RadioButtonField label={"7.2. Гражданство при рождении"}
+                        fieldName={VISA_APPLICATION_FORM_BIRTH_CITIZENSHIP}
+                              buttonNames={["Тоже самое", "другое"]}
                               defaultCheckedIndex={1}
-                        helpText={<div>Фамилия латинскими буквами точно как в загран. паспорте.</div>}/>
+                        helpText={<div>Если вы имеете паспорт Российской Федерации — ваше гражданство
+                          Russian Federation.</div>}/>
 
+            <RadioButtonField label={"8. Пол"}
+                              fieldName={VISA_APPLICATION_FORM_GENDER}
+                              buttonNames={["мужской", "женский"]}
+                              />
 
+            <RadioButtonField label={"9. Семейное положение"}
+                              fieldName={VISA_APPLICATION_FORM_MARITAL_STATUS}
+                              buttonNames={["холост/незамужем", "не проживает с супругой", "вдовец/вдова", "женат/замужем", "разведен(а)", "иное"]}
+            />
 
           </Form>
         </div>
