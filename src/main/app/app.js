@@ -5,8 +5,9 @@ import './seo/sitemap.xml';
 import './seo/robots.txt';
 import {Helmet} from 'react-helmet';
 import {FullDocumentsListPage} from './pages/full-documents-list/FullDocumentsListPage';
-import {createDocumentsListRoute, createFullDocumentsListRoute, createHomeRoute} from './helpers/appRoutes';
+import {createDocumentsListRoute, createFullDocumentsListRoute, createHomeRoute, createVisaApplicationFormRoute} from './helpers/appRoutes';
 import {DocumentsListPage} from './pages/documents-list/DocumentsListPage';
+import {VisaApplicationFormPage} from './pages/visa-application-form/VisaApplicationFormPage';
 
 
 export class App extends React.Component {
@@ -23,6 +24,8 @@ export class App extends React.Component {
                )}/>
         <Route exact path={createDocumentsListRoute('')}
                component={FullDocumentsListPage}/>
+        <Route exact path={createVisaApplicationFormRoute()}
+               component={VisaApplicationFormPage}/>
         <Route path={createHomeRoute()}
                component={HomePage}/>
       </Switch>,

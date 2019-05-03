@@ -9,3 +9,7 @@ export function createFullDocumentsListRoute() {
 export function createDocumentsListRoute(userType) {
   return `/documents/${userType}`;
 }
+
+export function createVisaApplicationFormRoute() {
+  return `/visa-application-form`;
+}

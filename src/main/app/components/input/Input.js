@@ -17,13 +17,18 @@ export class Input extends React.Component {
     }
   };
 
+  handleChange = (event) => {
+    const {onChange} = this.props;
+    onChange(event.target.value);
+  };
+
   render() {
-    const {className, value, onChange, placeholder} = this.props;
+    const {className, value, placeholder} = this.props;
 
     return (
       <input className={classNames('input',  className)}
-             value={value}
-             onChange={onChange}
+             value={value || ''}
+             onChange={this.handleChange}
              placeholder={placeholder}/>
     );
   }
