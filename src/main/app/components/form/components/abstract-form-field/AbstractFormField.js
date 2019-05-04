@@ -1,5 +1,6 @@
 import React from 'react';
 import {string, element} from 'prop-types';
+import './abstract-form-field.scss';
 
 export class AbstractFormField extends React.Component {
 
