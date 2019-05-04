@@ -3,6 +3,7 @@ import {AbstractFormField} from '../../components/abstract-form-field/AbstractFo
 import {element, func, string, array, number} from 'prop-types';
 import {Input} from '../../../input/Input';
 import {RadioButton} from './RadioButton';
+import classNames from 'classnames';
 
 export class RadioButtonField extends React.Component {
 
@@ -19,13 +20,17 @@ export class RadioButtonField extends React.Component {
     const {label, helpText, value, fieldName, buttonNames, defaultCheckedIndex} = this.props;
 
     let radioButtons = buttonNames.map(function(val, i){
-      return  <RadioButton label={val} id={val} name={fieldName} checked={i==defaultCheckedIndex} />
+      return  <RadioButton label={val} id={val} name={fieldName} checked={i==defaultCheckedIndex}  />
     });
 
     return (
       <AbstractFormField label={label}
                          helpText={helpText}>
-        {radioButtons}
+        <div className={"radio-buttons-container"} >
+          {radioButtons}
+        </div>
+
+
       </AbstractFormField>
     );
   }
