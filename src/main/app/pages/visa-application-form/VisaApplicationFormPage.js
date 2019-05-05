@@ -8,11 +8,14 @@ import {
   VISA_APPLICATION_FORM_FIRST_NAME,
   VISA_APPLICATION_FORM_GENDER,
   VISA_APPLICATION_FORM_LAST_NAME,
-  VISA_APPLICATION_FORM_MARITAL_STATUS
+  VISA_APPLICATION_FORM_MARITAL_STATUS,
+  VISA_APPLICATION_FORM_TARGET,
+  VISA_APPLICATION_FORM_ENUMS
 } from './VisaApplicationFormModel';
 import {RadioButtonField} from '../../components/form/fields/radio-button-field/RadioButtonField';
 import {Header} from '../../components/header/Header';
 import {Title} from '../../components/title/Title';
+import {CheckboxField} from '../../components/form/fields/checkbox-field/CheckboxField';
 
 export class VisaApplicationFormPage extends React.Component {
 
@@ -63,12 +66,16 @@ export class VisaApplicationFormPage extends React.Component {
 
               <RadioButtonField label={"8. Пол"}
                                 fieldName={VISA_APPLICATION_FORM_GENDER}
-                                buttonNames={["мужской", "женский"]}
+                                buttonNames={VISA_APPLICATION_FORM_ENUMS.GENDER}
               />
 
               <RadioButtonField label={"9. Семейное положение"}
                                 fieldName={VISA_APPLICATION_FORM_MARITAL_STATUS}
-                                buttonNames={["холост/незамужем", "не проживает с супругой", "вдовец/вдова", "женат/замужем", "разведен(а)", "иное"]}
+                                buttonNames={VISA_APPLICATION_FORM_ENUMS.MARITAL_STATUS}
+              />
+              <CheckboxField label={"10. Главные цели поездки"}
+                                  fieldName={VISA_APPLICATION_FORM_TARGET}
+                                  buttonNames={VISA_APPLICATION_FORM_ENUMS.TARGET}
               />
 
             </Form>

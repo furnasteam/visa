@@ -18,8 +18,7 @@ export class Checkbox extends React.Component {
 
   handleChange = (event) => {
     const {onChange} = this.props;
-    if(event.target.checked)
-      onChange(event.target.id);
+    onChange(event.target.id, event.target.checked);
   };
 
   render() {
