@@ -6,6 +6,7 @@ import {InputField} from '../../components/form/fields/input-field/InputField';
 import {
   VISA_APPLICATION_FORM_BIRTH_CITIZENSHIP,
   VISA_APPLICATION_FORM_FIRST_NAME,
+  VISA_APPLICATION_FORM_BIRTH_DATE,
   VISA_APPLICATION_FORM_GENDER,
   VISA_APPLICATION_FORM_LAST_NAME,
   VISA_APPLICATION_FORM_MARITAL_STATUS,
@@ -16,6 +17,7 @@ import {RadioButtonField} from '../../components/form/fields/radio-button-field/
 import {Header} from '../../components/header/Header';
 import {Title} from '../../components/title/Title';
 import {CheckboxField} from '../../components/form/fields/checkbox-field/CheckboxField';
+import {DateField} from '../../components/form/fields/date-field/DateField';
 
 export class VisaApplicationFormPage extends React.Component {
 
@@ -56,6 +58,10 @@ export class VisaApplicationFormPage extends React.Component {
               <InputField label={"2. Фамилия"}
                           fieldName={VISA_APPLICATION_FORM_LAST_NAME}
                           helpText={<div>Фамилия латинскими буквами точно как в загран. паспорте.</div>}/>
+
+              <DateField label={"1. Дата рождения"}
+                         fieldName={VISA_APPLICATION_FORM_BIRTH_DATE}
+                         helpText={<div>Если была та же самая, оставьте пустым.</div>}/>
 
               <RadioButtonField label={"7.2. Гражданство при рождении"}
                                 fieldName={VISA_APPLICATION_FORM_BIRTH_CITIZENSHIP}

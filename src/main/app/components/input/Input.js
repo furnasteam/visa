@@ -9,7 +9,9 @@ export class Input extends React.Component {
     className: string,
     value: string,
     onChange: func,
-    placeholder: string
+    placeholder: string,
+    inputType :string,
+    dataInputmask: string
   };
 
   static defaultProps = {
@@ -23,11 +25,13 @@ export class Input extends React.Component {
   };
 
   render() {
-    const {className, value, placeholder} = this.props;
+    const {className, value, placeholder, inputType, dataInputmask} = this.props;
 
     return (
       <input className={classNames('input',  className)}
              value={value || ''}
+             type={inputType || ''}
+             data-inputmask = {dataInputmask || ''}
              onChange={this.handleChange}
              placeholder={placeholder}/>
     );
