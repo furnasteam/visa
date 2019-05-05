@@ -1,15 +1,12 @@
 @import "../../../../common/vars";
 @import "../../../../common/mixins";
 
-.radio-button-item {
+.checkbox-item {
   width: 50%;
   padding-bottom: 16px;
 
   &__input {
     font-family: $font-family;
-  /*  width: 16px;
-    height: 16px;*/
-
     font-size: 18px;
     line-height: 21px;
     vertical-align: middle;
@@ -24,7 +21,7 @@
     color: #333333;
   }
 
-  input[type=radio] {
+  input[type=checkbox] {
     position: absolute;
     top: auto;
     overflow: hidden;
@@ -35,14 +32,14 @@
     white-space: nowrap; /* https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe */
   }
 
-  input[type=radio] + label {
+  input[type=checkbox] + label {
     display: block;
     padding: .5em;
     padding-left: 2em;
     max-width: calc(100% - 2em);
   }
 
-  input[type=radio] + label:before {
+  input[type=checkbox] + label:before {
     content: '';
     background: #fff;
     border: 1px solid #333333;
@@ -60,18 +57,27 @@
     transition: all .1s ease-out;
   }
 
-  input[type=radio] + label:before {
-    border-radius: 100%;
-  }
-
-  input[type=radio]:checked + label:before {
+  input[type=checkbox]:checked + label:before{
     background-color: #333333;
     box-shadow: inset 0 0 0 .15em rgba(255, 255, 255, .95);
   }
+
+  input[type=checkbox] + label:before {
+    content: '\002713';
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.15;
+    color: rgba(0, 0, 255, 0);
+  }
+
+  input[type=checkbox]:disabled + label:before {
+    color: rgba(255, 255, 255, 0);
+  }
 }
 
-.radio-buttons-container {
+.checkboxes-container {
   display:flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
