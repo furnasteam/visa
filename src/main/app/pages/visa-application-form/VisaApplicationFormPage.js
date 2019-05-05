@@ -74,8 +74,8 @@ export class VisaApplicationFormPage extends React.Component {
                                 buttonNames={VISA_APPLICATION_FORM_ENUMS.MARITAL_STATUS}
               />
               <CheckboxField label={"10. Главные цели поездки"}
-                                  fieldName={VISA_APPLICATION_FORM_TARGET}
-                                  buttonNames={VISA_APPLICATION_FORM_ENUMS.TARGET}
+                             fieldName={VISA_APPLICATION_FORM_TARGET}
+                             buttons={VISA_APPLICATION_FORM_ENUMS.TARGET}
               />
 
             </Form>
