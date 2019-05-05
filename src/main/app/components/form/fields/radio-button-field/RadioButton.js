@@ -12,7 +12,14 @@ export class RadioButton extends React.Component {
     name: string,
     label: string,
     id: string,
+    onChange: func,
     checked: bool
+  };
+
+  handleChange = (event) => {
+    const {onChange} = this.props;
+    if(event.target.checked)
+      onChange(event.target.id);
   };
 
   render() {
@@ -21,6 +28,7 @@ export class RadioButton extends React.Component {
     return (
       <div className='radio-button-item'>
         <input type="radio"
+               onChange={this.handleChange}
                className={classNames('radio-button-item__input',  className)}
                id={id}
                name={name}
