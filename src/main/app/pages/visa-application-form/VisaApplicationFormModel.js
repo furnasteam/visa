@@ -1,10 +1,18 @@
-export const VISA_APPLICATION_FORM_FIRST_NAME = 'firstName';
-export const VISA_APPLICATION_FORM_LAST_NAME = 'lastName';
-export const VISA_APPLICATION_FORM_BIRTH_DATE = 'birthDate';
-export const VISA_APPLICATION_FORM_BIRTH_CITIZENSHIP = 'birthCitizenship';
-export const VISA_APPLICATION_FORM_GENDER = 'gender';
-export const VISA_APPLICATION_FORM_MARITAL_STATUS = 'maritalStatus';
-export const VISA_APPLICATION_FORM_TARGET = 'target';
+export const VISA_APPLICATION_FORM_FILEDS = {
+  FIRST_NAME : 'firstName',
+  LAST_NAME : 'lastName',
+  BIRTH_LAST_NAME : 'birthLastName',
+  BIRTH_DATE : 'birthDate',
+  CITIZENSHIP : 'citizenship',
+  BIRTH_CITIZENSHIP : 'birthCitizenship',
+  FORM_GENDER : 'gender',
+  MARITAL_STATUS : 'maritalStatus',
+  MARITAL_STATUS_DETAILS: 'maritalStatusDetails',
+  FORM_TARGET : 'target',
+  BIRTH_PLACE : 'birthPlace',
+  BIRTH_COUNTRY: 'birthCountry'
+}
+
 export var VISA_APPLICATION_FORM_ENUMS = {
   GENDER: ["мужской", "женский"],
   MARITAL_STATUS: ["холост/незамужем", "не проживает с супругой", "вдовец/вдова", "женат/замужем", "разведен(а)", "иное"],

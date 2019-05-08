@@ -19,6 +19,8 @@
   width: 100%;
   &::placeholder {
     color: #333333;
+    mix-blend-mode: normal;
+    opacity: 0.3;
   }
 
 }

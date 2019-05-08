@@ -10,18 +10,21 @@ export class InputField extends React.Component {
     helpText: element,
     value: string,
     onChange: func,
+    placeholder : string,
     fieldName: string
   };
 
   render() {
 
-    const {label, helpText, value, onChange} = this.props;
+    const {label, helpText, value, onChange, placeholder} = this.props;
 
     return (
       <AbstractFormField label={label}
                          helpText={helpText}>
         <Input value={value}
-               onChange={onChange}/>
+               onChange={onChange}
+               placeholder={placeholder}
+        />
       </AbstractFormField>
     );
   }

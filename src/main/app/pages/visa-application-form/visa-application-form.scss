@@ -25,4 +25,13 @@
   &__title {
     margin-bottom: 60px;
   }
+
+  &__next-button-container{
+    z-index: 1;
+    padding-top: 80px;
+  }
+
+  &__next-button{
+    width: 500px;
+  }
 }

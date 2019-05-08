@@ -24,7 +24,8 @@ export class DateField extends React.Component {
       <AbstractFormField label={label}
                          helpText={helpText}>
         <DateInput value={value}
-                   onChange={onChange}/>
+                   onChange={onChange}
+                   placeholder={placeholder}/>
       </AbstractFormField>
     );
   }
