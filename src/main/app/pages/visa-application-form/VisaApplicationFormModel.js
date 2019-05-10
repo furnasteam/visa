@@ -1,3 +1,5 @@
+import {SchengenVisa} from './screens/pasport-screen/SchengenVisa';
+
 export const VISA_APPLICATION_FORM_FILEDS = {
   FIRST_NAME : 'firstName',
   LAST_NAME : 'lastName',
@@ -30,6 +32,13 @@ export const VISA_APPLICATION_FORM_FILEDS = {
   EMPLOYER_ADRESS: 'employerAdress',
   EMPLOYER_NUMBER: 'employerNumber',
 
+  INTERNATIONAL_PASSPORT_NUMBER: 'internationalPassportNumber',
+  INTERNATIONAL_PASSPORT_STARTDATE: 'internationalPassportStartDate',
+  INTERNATIONAL_PASSPORT_ENDDATE: 'internationalPassportEndDate',
+  INTERNATIONAL_PASSPORT_DELIVERY_STRUCTURE: 'internationalPassportdeliveryStructure',
+  SCHENGEN_VISA_START_DATE: 'schengenVisaStartDate',
+  SCHENGEN_VISA_END_DATE: 'schengenVisaEndDate',
+  SCHENGEN_VISA_NUMBER: 'schengenVisaNumber',
 }
 
 export var VISA_APPLICATION_FORM_ENUMS = {
