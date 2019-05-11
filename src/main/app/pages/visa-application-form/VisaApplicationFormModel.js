@@ -10,7 +10,13 @@ export const VISA_APPLICATION_FORM_FILEDS = {
   FORM_GENDER : 'gender',
   MARITAL_STATUS : 'maritalStatus',
   MARITAL_STATUS_DETAILS: 'maritalStatusDetails',
-  FORM_TARGET : 'target',
+  TARGET : 'target',
+  TARGET_DETAILS : 'targetDetails',
+  TARGET_COUNTRY : 'targetCountry',
+  ENTRY_COUNTRY : 'entryCountry',
+  ENTRY_TYPE_COUNT : 'entryTypeCount',
+  VISA_START_DATE: 'schengenVisaStartDate',
+  VISA_END_DATE: 'schengenVisaEndDate',
   BIRTH_PLACE : 'birthPlace',
   BIRTH_COUNTRY: 'birthCountry',
   // ----------------
@@ -22,7 +28,7 @@ export const VISA_APPLICATION_FORM_FILEDS = {
   EMAIL:'email',
   ADRESS:'adress',
 
-  TARGET_COUNTRY: 'targetCountry',
+  SCHENGEN_EXISTS: 'schengenExists',
   RESIDENCE_CAPTION: 'residenceCaption',
   RESIDENCE_NUMBER: 'residenceNumber',
   RESIDENCE_ENDDATE: 'residenceEndDate',
@@ -39,11 +45,16 @@ export const VISA_APPLICATION_FORM_FILEDS = {
   SCHENGEN_VISA_START_DATE: 'schengenVisaStartDate',
   SCHENGEN_VISA_END_DATE: 'schengenVisaEndDate',
   SCHENGEN_VISA_NUMBER: 'schengenVisaNumber',
+
+  // TRIP_GOAL:'tripGoal',
+  // TRIP_GOAL_DETAILS:'tripGoalDetails',
 }
 
 export var VISA_APPLICATION_FORM_ENUMS = {
   GENDER: ["мужской", "женский"],
   BOOL: ["Да", "Нет"],
+  ENTRY_TYPE_COUNT:["однократного въезда","двукратного въезда","многократного въезда"],
+
   EMPLOYMENT_STATUS:["unemployed (безработный)","housewife (домохозяйка)","pensioners (пенсионер)","individual businessman (ип)","student (студент)","pupil (школьник)","иное"],
   MARITAL_STATUS: ["холост/незамужем", "не проживает с супругой", "вдовец/вдова", "женат/замужем", "разведен(а)", "иное"],
   TARGET : [
