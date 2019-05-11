@@ -52,9 +52,9 @@ export class VisaApplicationFormPage extends React.Component {
               {/*<ProfileScreen />*/}
               {/*<ContractsScreen/>*/}
               {/*<PasportScreen/>*/}
-              <TripScreen/>
+              {/*<TripScreen/>*/}
               <ShengenScreen/>
-              <EmailScreen/>
+              {/*<EmailScreen/>*/}
             </Form>
           </div>
           <div className="visa-application-form__next-button-container">

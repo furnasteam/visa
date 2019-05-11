@@ -46,9 +46,48 @@ export const VISA_APPLICATION_FORM_FILEDS = {
   SCHENGEN_VISA_END_DATE: 'schengenVisaEndDate',
   SCHENGEN_VISA_NUMBER: 'schengenVisaNumber',
 
-  DOCUMENTS_DATE:'documentsDate',
-  DOCUMENTS_CITY:'documentsCity',
-  DOCUMENTS_EMAIL:'documentsEmail',
+  DOCUMENTS_DATE: 'documentsDate',
+  DOCUMENTS_CITY: 'documentsCity',
+  DOCUMENTS_EMAIL: 'documentsEmail',
+
+  FINGERPRINTS_EXISTS: 'fingerprintsExists',
+  FINGERPRINTS_DATE: 'fingerprintsDate',
+
+  PERMISSION_NAME: 'permissionName',
+  PERMISSION_STARTDATE: 'permissionStartDate',
+  PERMISSION_ENDDATE: 'permissionEndDate',
+
+  PLACEMENT: 'placement',
+  PLACEMENT_NAME: 'placementName',
+  PLACEMENT_ADRESS: 'placementAdress',
+  PLACEMENT_EMAIL: 'placementEmail',
+  PLACEMENT_PHONE: 'placementPhone',
+
+  INVATE_COMPANY: 'invateCompany',
+  INVATE_COMPANY_NAME: 'invateCompanyName',
+  INVATE_COMPANY_ADRESS: 'invateCompanyAdress',
+  INVATE_COMPANY_PHONE: 'invateCompanyPhone',
+  INVATE_COMPANY_CONTACT_NAME: 'invateCompanyContactName',
+  INVATE_COMPANY_CONTACT_FAMILY: 'invateCompanyContactFamily',
+  INVATE_COMPANY_CONTACT_PHONE: 'invateCompanyContactPhone',
+  INVATE_COMPANY_CONTACT_ADRESS: 'invateCompanyContactAdress',
+  INVATE_COMPANY_CONTACT_EMAIL: 'invateCompanyContactEmail',
+
+  PAYER: 'payer',
+  PAYER_SPONSOR: 'payerSponsor',
+  PAYER_SPONSOR_DETAILS: 'payerSponsorDetails',
+
+  FACILITIES: 'facilities',
+  FACILITIES_DETAILS: 'facilitiesDetails',
+
+  RELATIVE_EXISTS: 'relativeExists',
+  RELATIVE_RANK: 'relativeRank',
+  RELATIVE_NAME: 'relativeName',
+  RELATIVE_FAMILY: 'relativeFamily',
+  RELATIVE_BIRTH_DATE: 'relativeBirthDate',
+  RELATIVE_PASSPORT: 'relativePassport',
+  RELATIVE_CITIZENSHIP: 'relativeCitizenship',
+
   // TRIP_GOAL:'tripGoal',
   // TRIP_GOAL_DETAILS:'tripGoalDetails',
 }
@@ -56,6 +95,34 @@ export const VISA_APPLICATION_FORM_FILEDS = {
 export var VISA_APPLICATION_FORM_ENUMS = {
   GENDER: ["мужской", "женский"],
   BOOL: ["Да", "Нет"],
+
+  PAYER: ["Сам заявитель", "Спонсор"],
+  PAYER_SPONSOR: ["Указанные в пункте 4", "Иные"],
+  FACILITIES: [
+    {
+      name: "наличные деньги",
+      selected: false
+    },
+    {
+      name: "обеспечивается место пребывания",
+      selected: false
+    },
+    {
+      name: "оплачиваются все расходы во время пребывания",
+      selected: false
+    },
+    {
+      name: "Оплачивается транспорт",
+      selected: false
+    },
+    {
+      name: "иное",
+      selected: false
+    },
+  ],
+  RELATIVE_RANK: ["супруг/-а", "ребенок", "внук/-чка", "иждивенец"],
+  PLACEMENT: ["Приглашение", "самостоятельное размещение\n" +
+  "(отель/хостел/апартаменты)"],
   ENTRY_TYPE_COUNT:["однократного въезда","двукратного въезда","многократного въезда"],
 
   EMPLOYMENT_STATUS:["unemployed (безработный)","housewife (домохозяйка)","pensioners (пенсионер)","individual businessman (ип)","student (студент)","pupil (школьник)","иное"],
