@@ -46,6 +46,9 @@ export const VISA_APPLICATION_FORM_FILEDS = {
   SCHENGEN_VISA_END_DATE: 'schengenVisaEndDate',
   SCHENGEN_VISA_NUMBER: 'schengenVisaNumber',
 
+  DOCUMENTS_DATE:'documentsDate',
+  DOCUMENTS_CITY:'documentsCity',
+  DOCUMENTS_EMAIL:'documentsEmail',
   // TRIP_GOAL:'tripGoal',
   // TRIP_GOAL_DETAILS:'tripGoalDetails',
 }
