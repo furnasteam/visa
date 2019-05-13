@@ -2,17 +2,22 @@ import React from 'react';
 import {SchengenVisa} from './SchengenVisa';
 import {VISA_APPLICATION_FORM_ENUMS, VISA_APPLICATION_FORM_FILEDS} from '../../VisaApplicationFormModel';
 import {Form} from '../../../../components/form/Form';
-import {func, object} from 'prop-types';
+import {func, object, string} from 'prop-types';
 import {CheckboxField} from '../../../../components/form/fields/checkbox-field/CheckboxField';
 import {DateField} from '../../../../components/form/fields/date-field/DateField';
 import {InputField} from '../../../../components/form/fields/input-field/InputField';
 import {RadioButtonField} from '../../../../components/form/fields/radio-button-field/RadioButtonField';
 
 export class PasportScreen extends React.Component {
-
+  static propTypes ={
+    formData: object,
+    onChange: func,
+  }
   render() {
+    var {formData, onChange} = this.props;
     return (
-      <React.Fragment>
+      <Form onChange={onChange}
+            value={formData}>
         <InputField label={"3. Номер загран. паспорта"}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.INTERNATIONAL_PASSPORT_NUMBER}
                     placeholder="IVANOV"
@@ -41,7 +46,7 @@ export class PasportScreen extends React.Component {
 
         />
         <SchengenVisa/>
-      </React.Fragment>
+      </Form>
     );    
   }
 

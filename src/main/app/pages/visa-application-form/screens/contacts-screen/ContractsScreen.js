@@ -1,6 +1,6 @@
 import React from 'react';
 import {Form} from '../../../../components/form/Form';
-import {func, object} from 'prop-types';
+import {func, object, string} from 'prop-types';
 import {CheckboxField} from '../../../../components/form/fields/checkbox-field/CheckboxField';
 import {DateField} from '../../../../components/form/fields/date-field/DateField';
 import {InputField} from '../../../../components/form/fields/input-field/InputField';
@@ -8,10 +8,15 @@ import {RadioButtonField} from '../../../../components/form/fields/radio-button-
 import {VISA_APPLICATION_FORM_ENUMS, VISA_APPLICATION_FORM_FILEDS} from '../../VisaApplicationFormModel';
 
 export class ContractsScreen extends React.Component {
-
+  static propTypes ={
+    formData: object,
+    onChange: func,
+  }
   render() {
+    var {formData, onChange} = this.props;
     return (
-      <React.Fragment>
+      <Form onChange={onChange}
+            value={formData}>
         <InputField label={"0.1. Имя сопровождающего лица"}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.TRUSTEE_FIRST_NAME}
                     placeholder="MARIA"
@@ -124,7 +129,7 @@ export class ContractsScreen extends React.Component {
 
         />
 
-      </React.Fragment>
+      </Form>
     );    
   }
 

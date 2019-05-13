@@ -2,16 +2,21 @@ import React from 'react';
 import {VISA_APPLICATION_FORM_ENUMS, VISA_APPLICATION_FORM_FILEDS} from '../../VisaApplicationFormModel';
 import {CheckboxField} from '../../../../components/form/fields/checkbox-field/CheckboxField';
 import {Form} from '../../../../components/form/Form';
-import {func, object} from 'prop-types';
+import {func, object, string} from 'prop-types';
 import {DateField} from '../../../../components/form/fields/date-field/DateField';
 import {InputField} from '../../../../components/form/fields/input-field/InputField';
 import {RadioButtonField} from '../../../../components/form/fields/radio-button-field/RadioButtonField';
 
 export class ShengenScreen extends React.Component {
-
+  static propTypes ={
+    formData: object,
+    onChange: func,
+  }
   render() {
+    var {formData, onChange} = this.props;
     return (
-      <React.Fragment>
+      <Form onChange={onChange}
+            value={formData}>
         <RadioButtonField label={"1. Предоставляли отпечатки пальцев?"}
                           fieldName={VISA_APPLICATION_FORM_FILEDS.GENDER}
                           buttonNames={VISA_APPLICATION_FORM_ENUMS.GENDER}
@@ -168,7 +173,7 @@ export class ShengenScreen extends React.Component {
                     fieldName={VISA_APPLICATION_FORM_FILEDS.RELATIVE_CITIZENSHIP}
                     placeholder="SPAIN"
         />
-      </React.Fragment>
+      </Form>
     );    
   }
 

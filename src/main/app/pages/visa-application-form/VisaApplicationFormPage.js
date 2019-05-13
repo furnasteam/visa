@@ -19,7 +19,6 @@ import {ShengenScreen} from './screens/shengen-screen/ShengenScreen';
 import {EmailScreen} from './screens/email-screen/EmailScreen';
 import {Menu} from '../../components/menu/Menu';
 
-
 export const MENU_ITEMS = {
   PROFILE: { url: '#profile', name:'Профиль' },
   CONTACTS: { url: '#contacts', name:'Контакты'  },
@@ -28,7 +27,6 @@ export const MENU_ITEMS = {
   SCHENGEN: { url: '#shengen', name:'Шенгенская зона' },
   EMAIL: { url: '#email', name:'Email'  },
 }
-
 
 export class VisaApplicationFormPage extends React.Component {
 
@@ -42,30 +40,38 @@ export class VisaApplicationFormPage extends React.Component {
     console.log('formData', formData);
     this.setState({formData});
   };
+
   getActiveScreen(){
     var screen = this.props.location.hash;
-
+    const {formData} = this.state;
     switch(screen){
       case(MENU_ITEMS.PROFILE.url):
-        return <ProfileScreen />
+        return <ProfileScreen onChange={this.handleFormChange}
+                              formData={formData}/>
         break;
       case(MENU_ITEMS.CONTACTS.url):
-        return <ContractsScreen />
+        return <ContractsScreen onChange={this.handleFormChange}
+                              formData={formData}/>
         break;
       case(MENU_ITEMS.PASSPORT.url):
-        return <PasportScreen />
+        return <PasportScreen onChange={this.handleFormChange}
+                              formData={formData}/>
         break;
       case(MENU_ITEMS.TRIP.url):
-        return <TripScreen />
+        return <TripScreen onChange={this.handleFormChange}
+                              formData={formData}/>
         break;
       case(MENU_ITEMS.SCHENGEN.url):
-        return <ShengenScreen />
+        return <ShengenScreen onChange={this.handleFormChange}
+                              formData={formData}/>
         break;
       case(MENU_ITEMS.EMAIL.url):
-        return <EmailScreen />
+        return <EmailScreen onChange={this.handleFormChange}
+                              formData={formData}/>
         break;
       default:
-        return <ProfileScreen />
+        return <ProfileScreen onChange={this.handleFormChange}
+                              formData={formData}/>
     }
   }
   render() {
@@ -83,16 +89,7 @@ export class VisaApplicationFormPage extends React.Component {
           <div className="visa-application-form__content">
             <Menu menuData={MENU_ITEMS}/>
             <Title className="visa-application-form__title">Анкета на визу</Title>
-            <Form onChange={this.handleFormChange}
-                  value={formData}>
-              {this.getActiveScreen()}
-              {/*<ProfileScreen />*/}
-              {/*<ContractsScreen/>*/}
-              {/*<PasportScreen/>*/}
-              {/*<TripScreen/>*/}
-              {/*<ShengenScreen/>*/}
-              {/*<EmailScreen/>*/}
-            </Form>
+            {this.getActiveScreen()}
           </div>
           <div className="visa-application-form__next-button-container">
             <UniversalLink href="#"
