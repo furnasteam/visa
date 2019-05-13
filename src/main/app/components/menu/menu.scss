@@ -1,0 +1,44 @@
+@import "../../common/vars";
+@import "../../common/mixins";
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.navbar {
+  overflow: hidden;
+  background-color: transparent;
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+}
+
+.navbar a {
+  float: left;
+  display: block;
+
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+
+  background: #FFE6DF;
+  border-radius: 26px;
+
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+
+  color: #7B7B7B;
+}
+
+.navbar a:hover {
+  background: #FF815F;
+  color: #FFFFFF;
+}
+
+.main {
+  margin-top: 30px; /* Add a top margin to avoid content overlay */
+}

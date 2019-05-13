@@ -17,6 +17,18 @@ import {PasportScreen} from './screens/pasport-screen/PasportScreen';
 import {TripScreen} from './screens/trip-screen/TripScreen';
 import {ShengenScreen} from './screens/shengen-screen/ShengenScreen';
 import {EmailScreen} from './screens/email-screen/EmailScreen';
+import {Menu} from '../../components/menu/Menu';
+
+
+export const MENU_ITEMS = {
+  PROFILE: { url: '#profile', name:'Профиль' },
+  CONTACTS: { url: '#contacts', name:'Контакты'  },
+  PASSPORT: { url: '#passport', name:'Паспорт'},
+  TRIP: { url: '#trip', name:'Поездка'  },
+  SCHENGEN: { url: '#shengen', name:'Шенгенская зона' },
+  EMAIL: { url: '#email', name:'Email'  },
+}
+
 
 export class VisaApplicationFormPage extends React.Component {
 
@@ -30,7 +42,32 @@ export class VisaApplicationFormPage extends React.Component {
     console.log('formData', formData);
     this.setState({formData});
   };
+  getActiveScreen(){
+    var screen = this.props.location.hash;
 
+    switch(screen){
+      case(MENU_ITEMS.PROFILE.url):
+        return <ProfileScreen />
+        break;
+      case(MENU_ITEMS.CONTACTS.url):
+        return <ContractsScreen />
+        break;
+      case(MENU_ITEMS.PASSPORT.url):
+        return <PasportScreen />
+        break;
+      case(MENU_ITEMS.TRIP.url):
+        return <TripScreen />
+        break;
+      case(MENU_ITEMS.SCHENGEN.url):
+        return <ShengenScreen />
+        break;
+      case(MENU_ITEMS.EMAIL.url):
+        return <EmailScreen />
+        break;
+      default:
+        return <ProfileScreen />
+    }
+  }
   render() {
     const {formData} = this.state;
     return (
@@ -44,16 +81,16 @@ export class VisaApplicationFormPage extends React.Component {
         <div key="2" className="visa-application-form">
           <Header/>
           <div className="visa-application-form__content">
+            <Menu menuData={MENU_ITEMS}/>
             <Title className="visa-application-form__title">Анкета на визу</Title>
-
             <Form onChange={this.handleFormChange}
                   value={formData}>
-
+              {this.getActiveScreen()}
               {/*<ProfileScreen />*/}
               {/*<ContractsScreen/>*/}
               {/*<PasportScreen/>*/}
               {/*<TripScreen/>*/}
-              <ShengenScreen/>
+              {/*<ShengenScreen/>*/}
               {/*<EmailScreen/>*/}
             </Form>
           </div>
