@@ -13,19 +13,38 @@ export class TripScreen extends React.Component {
     formData: object,
     onChange: func,
   }
+  state = {
+    showTargetDetails: false
+  };
+  onFormChange(value) {
+    var {formData, onChange} = this.props;
+    if(formData){
+      onChange(value);
+    }
+    if(value.target){
+      var res = value.target.find((el)=>{
+        if(el.name == "иное")
+          return el;
+      });
+      this.setState({showTargetDetails: res.selected})
+    }
+  }
   render() {
+    const {showTargetDetails } = this.state;
     var {formData, onChange} = this.props;
     return (
-      <Form onChange={onChange}
+      <Form onChange={this.onFormChange.bind(this)}
             value={formData}>
         <CheckboxField label={"1. Главные цели поездки"}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.TARGET}
                     buttons={VISA_APPLICATION_FORM_ENUMS.TARGET}
         />
+        {showTargetDetails &&
         <InputField label={""}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.TARGET_DETAILS}
                     placeholder="Уточните цель поездки"
         />
+        }
 
         <InputField label={"2. Страна(ы) назначения"}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.TARGET_COUNTRY}
