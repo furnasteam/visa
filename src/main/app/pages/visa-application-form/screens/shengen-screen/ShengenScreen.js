@@ -12,21 +12,56 @@ export class ShengenScreen extends React.Component {
     formData: object,
     onChange: func,
   }
-  render() {
+  state = {
+    showFingerprintsDate: false,
+    showPlacementDetails: false,
+    showInvateCompany: false
+  };
+  onFormChange(value) {
     var {formData, onChange} = this.props;
+    var res;
+    if(formData){
+      onChange(value);
+    }
+
+    if(value.facilities){
+      res = value.facilities.find((el)=>{
+        if(el.name == "иное")
+          return el;
+      });
+    }
+
+    this.setState({
+      showFingerprintsDate: value.fingerprintsExists == "fingerprintsExists_Да",
+      showPlacementDetails: value.placement == "самостоятельное размещение\n" +
+      "(отель/хостел/апартаменты)",
+      showInvateCompany: value.invateCompany == "invateCompany_Да",
+
+      showPayerSponsor: value.payer == "payer_Спонсор",
+      showPayerSponsorDetails: value.payerSponsor == "payerSponsor_Иные",
+      showFacilitiesDetails: res && res.selected,
+      showRelativeDetails: value.relativeExists == "relativeExists_Да"
+    });
+  }
+  render() {
+    const {showFingerprintsDate, showPlacementDetails, showInvateCompany, showPayerSponsor, showPayerSponsorDetails, showFacilitiesDetails, showRelativeDetails } = this.state;
+
+
+    var {formData, onChange} = this.props;
+    debugger;
     return (
-      <Form onChange={onChange}
+      <Form onChange={this.onFormChange.bind(this)}
             value={formData}>
         <RadioButtonField label={"1. Предоставляли отпечатки пальцев?"}
                           fieldName={VISA_APPLICATION_FORM_FILEDS.FINGERPRINTS_EXISTS}
                           buttonNames={VISA_APPLICATION_FORM_ENUMS.BOOL}
         />
-
-        <InputField label={""}
-                    fieldName={VISA_APPLICATION_FORM_FILEDS.MARITAL_STATUS_DETAILS}
-                    placeholder="Уточните семейное положение"
-                    helpText={<div>Для несовершеннолетних детей — пункт «Холост/не замужем».</div>}
-        />
+        {showFingerprintsDate &&
+        <DateField label={""}
+                    fieldName={VISA_APPLICATION_FORM_FILEDS.FINGERPRINTS_DATE}
+                    placeholder="23.04.2014"
+                    helpText={<div>Укажите дату, если известно</div>}
+        />}
 
         <InputField label={"2. Разрешение на въезд в страну конечно следования"}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.PERMISSION_NAME}
@@ -46,36 +81,38 @@ export class ShengenScreen extends React.Component {
                     helpText={<div>Укажите дату</div>}
         />
 
-
-
         <RadioButtonField label={"3. Где останавливаетесь "}
-                    fieldName={VISA_APPLICATION_FORM_FILEDS.PLACEMENT}
-                    buttonNames={VISA_APPLICATION_FORM_ENUMS.PLACEMENT}
+                          fieldName={VISA_APPLICATION_FORM_FILEDS.PLACEMENT}
+                          buttonNames={VISA_APPLICATION_FORM_ENUMS.PLACEMENT}
         />
-
-        <InputField label={"4. Название отеля/хостела/апартаментов"}
-                    fieldName={VISA_APPLICATION_FORM_FILEDS.PLACEMENT_NAME}
-                    placeholder="VASILII PUPKIN"
-                    helpText={<div>Если у апартаментов нет названия — пропустите.</div>}
-        />
-        <InputField label={"5. Адрес"}
-                    fieldName={VISA_APPLICATION_FORM_FILEDS.PLACEMENT_ADRESS}
-                    placeholder="LATVIA"
-        />
-        <InputField label={"6. Электронная почта"}
-                    fieldName={VISA_APPLICATION_FORM_FILEDS.PLACEMENT_EMAIL}
-                    placeholder="dfsgkftodcgmerwm@gmail.com"
-        />
-        <InputField label={"7. Номер телефона и факса"}
-                    fieldName={VISA_APPLICATION_FORM_FILEDS.PLACEMENT_PHONE}
-                    placeholder="+7 (990) 900-90-90"
-        />
+        {showPlacementDetails &&
+        <span>
+              <InputField label={"4. Название отеля/хостела/апартаментов"}
+                          fieldName={VISA_APPLICATION_FORM_FILEDS.PLACEMENT_NAME}
+                          placeholder="VASILII PUPKIN"
+                          helpText={<div>Если у апартаментов нет названия — пропустите.</div>}
+              />
+              <InputField label={"5. Адрес"}
+                          fieldName={VISA_APPLICATION_FORM_FILEDS.PLACEMENT_ADRESS}
+                          placeholder="LATVIA"
+              />
+              <InputField label={"6. Электронная почта"}
+                          fieldName={VISA_APPLICATION_FORM_FILEDS.PLACEMENT_EMAIL}
+                          placeholder="dfsgkftodcgmerwm@gmail.com"
+              />
+              <InputField label={"7. Номер телефона и факса"}
+                          fieldName={VISA_APPLICATION_FORM_FILEDS.PLACEMENT_PHONE}
+                          placeholder="+7 (990) 900-90-90"
+              />
+        </span>
+        }
 
         <RadioButtonField label={"4. Приглашение от компании?"}
                           fieldName={VISA_APPLICATION_FORM_FILEDS.INVATE_COMPANY}
                           buttonNames={VISA_APPLICATION_FORM_ENUMS.BOOL}
         />
-
+        {showInvateCompany &&
+        <span>
         <InputField label={"5. Название приглашающей компании"}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.INVATE_COMPANY_NAME}
                     placeholder="SKOLCOVO"
@@ -117,28 +154,35 @@ export class ShengenScreen extends React.Component {
                     placeholder="dfsgkftodcgmerwm@gmail.com"
                     helpText={<div>Контактного лица компании</div>}
         />
+        </span>}
+
 
         <RadioButtonField label={"13. Расходы заявителя на проезд и на пребывание покрывает"}
                           fieldName={VISA_APPLICATION_FORM_FILEDS.PAYER}
                           buttonNames={VISA_APPLICATION_FORM_ENUMS.PAYER}
         />
+        {showPayerSponsor &&
         <RadioButtonField label={"14. Кто является спонсором?"}
-                          fieldName={VISA_APPLICATION_FORM_FILEDS.PAYER_SPONSOR}
-                          buttonNames={VISA_APPLICATION_FORM_ENUMS.PAYER_SPONSOR}
-        />
+                           fieldName={VISA_APPLICATION_FORM_FILEDS.PAYER_SPONSOR}
+                           buttonNames={VISA_APPLICATION_FORM_ENUMS.PAYER_SPONSOR}
+        />}
+        {showPayerSponsorDetails &&
         <InputField label={""}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.PAYER_SPONSOR_DETAILS}
                     placeholder="Укажите спонсора"
         />
+        }
 
         <CheckboxField label={"15.  Средства"}
                        fieldName={VISA_APPLICATION_FORM_FILEDS.FACILITIES}
                        buttons={VISA_APPLICATION_FORM_ENUMS.FACILITIES}
         />
+        {showFacilitiesDetails &&
         <InputField label={""}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.FACILITIES_DETAILS}
                     placeholder="Укажите средства"
         />
+        }
 
         <RadioButtonField label={"16. Есть ли родство с гражданином Европейского Союза, \n" +
         "Европейского Экономического Пространства \n" +
@@ -146,6 +190,8 @@ export class ShengenScreen extends React.Component {
                           fieldName={VISA_APPLICATION_FORM_FILEDS.RELATIVE_EXISTS}
                           buttonNames={VISA_APPLICATION_FORM_ENUMS.BOOL}
         />
+        {showRelativeDetails &&
+        <span>
         <RadioButtonField label={"17. Степень родства с гражданином Европейского Союза, \n" +
         "Европейского Экономического Пространства \n" +
         "или Швейцарии"}
@@ -173,6 +219,8 @@ export class ShengenScreen extends React.Component {
                     fieldName={VISA_APPLICATION_FORM_FILEDS.RELATIVE_CITIZENSHIP}
                     placeholder="SPAIN"
         />
+        </span> }
+
       </Form>
     );    
   }

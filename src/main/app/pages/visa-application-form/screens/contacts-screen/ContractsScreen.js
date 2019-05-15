@@ -25,7 +25,7 @@ export class ContractsScreen extends React.Component {
       onChange(value);
     }
     if(value.targetCountry)
-      this.setState({showTargetCountryDetails: value.targetCountry == "Да"})
+      this.setState({showTargetCountryDetails: value.targetCountry == "targetCountry_Да"})
 
     if(value.employmentStatus)
       this.setState({showEmploymentStatusDetails: value.employmentStatus == "иное"})

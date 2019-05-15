@@ -30,7 +30,7 @@ export class PasportScreen extends React.Component {
       onChange(value);
     }
     if(value.schengenExists)
-      this.setState({showSchengenVisa: value.schengenExists == "Да"})
+      this.setState({showSchengenVisa: value.schengenExists == "schengenExists_Да"})
   }
 
   addSchengenVisa(){

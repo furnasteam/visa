@@ -26,7 +26,7 @@ export class TripScreen extends React.Component {
         if(el.name == "иное")
           return el;
       });
-      this.setState({showTargetDetails: res.selected})
+      this.setState({showTargetDetails: res && res.selected})
     }
   }
   render() {

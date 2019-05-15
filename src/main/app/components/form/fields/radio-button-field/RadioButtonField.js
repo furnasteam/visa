@@ -21,7 +21,7 @@ export class RadioButtonField extends React.Component {
     const {label, helpText, value, fieldName, buttonNames, defaultCheckedIndex, onChange} = this.props;
 
     let radioButtons = buttonNames.map(function(val, i){
-      return  <RadioButton label={val} key={val} id={val} name={fieldName} checked={i==defaultCheckedIndex} onChange={onChange}  />
+      return  <RadioButton label={val} key={val} id={fieldName +'_'+ val} name={fieldName} checked={i==defaultCheckedIndex} onChange={onChange}  />
     });
 
     return (
