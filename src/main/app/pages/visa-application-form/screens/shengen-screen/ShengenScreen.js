@@ -18,8 +18,8 @@ export class ShengenScreen extends React.Component {
       <Form onChange={onChange}
             value={formData}>
         <RadioButtonField label={"1. Предоставляли отпечатки пальцев?"}
-                          fieldName={VISA_APPLICATION_FORM_FILEDS.GENDER}
-                          buttonNames={VISA_APPLICATION_FORM_ENUMS.GENDER}
+                          fieldName={VISA_APPLICATION_FORM_FILEDS.FINGERPRINTS_EXISTS}
+                          buttonNames={VISA_APPLICATION_FORM_ENUMS.BOOL}
         />
 
         <InputField label={""}

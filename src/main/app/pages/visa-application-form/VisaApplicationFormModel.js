@@ -94,9 +94,11 @@ export const VISA_APPLICATION_FORM_FILEDS = {
 
 export var VISA_APPLICATION_FORM_ENUMS = {
   GENDER: ["мужской", "женский"],
+
   BOOL: ["Да", "Нет"],
 
   PAYER: ["Сам заявитель", "Спонсор"],
+
   PAYER_SPONSOR: ["Указанные в пункте 4", "Иные"],
   FACILITIES: [
     {
@@ -126,7 +128,7 @@ export var VISA_APPLICATION_FORM_ENUMS = {
   ENTRY_TYPE_COUNT:["однократного въезда","двукратного въезда","многократного въезда"],
 
   EMPLOYMENT_STATUS:["unemployed (безработный)","housewife (домохозяйка)","pensioners (пенсионер)","individual businessman (ип)","student (студент)","pupil (школьник)","иное"],
-  MARITAL_STATUS: ["холост/незамужем", "не проживает с супругой", "вдовец/вдова", "женат/замужем", "разведен(а)", "иное"],
+  MARITAL_STATUS: ["холост/незамужем", "не проживает с супругой", "вдовец/вдова", "женат/замужем", "разведен(а)", "несовершеннолетний", "иное"],
   TARGET : [
     {
       name: "туризм",

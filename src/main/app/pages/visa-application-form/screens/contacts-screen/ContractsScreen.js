@@ -8,37 +8,62 @@ import {RadioButtonField} from '../../../../components/form/fields/radio-button-
 import {VISA_APPLICATION_FORM_ENUMS, VISA_APPLICATION_FORM_FILEDS} from '../../VisaApplicationFormModel';
 
 export class ContractsScreen extends React.Component {
-  static propTypes ={
+  static propTypes = {
     formData: object,
     onChange: func,
   }
+
+  state = {
+    showPupil: this.props.formData.maritalStatus == "несовершеннолетний",
+    showTargetCountryDetails: false,
+    showEmploymentStatusDetails: false
+  };
+
+  onFormChange(value) {
+    var {formData, onChange} = this.props;
+    if(formData){
+      onChange(value);
+    }
+    if(value.targetCountry)
+      this.setState({showTargetCountryDetails: value.targetCountry == "Да"})
+
+    if(value.employmentStatus)
+      this.setState({showEmploymentStatusDetails: value.employmentStatus == "иное"})
+
+  }
+
   render() {
     var {formData, onChange} = this.props;
+    var {showPupil, showTargetCountryDetails, showEmploymentStatusDetails} = this.state;
     return (
-      <Form onChange={onChange}
+      <Form onChange={this.onFormChange.bind(this)}
             value={formData}>
-        <InputField label={"0.1. Имя сопровождающего лица"}
-                    fieldName={VISA_APPLICATION_FORM_FILEDS.TRUSTEE_FIRST_NAME}
-                    placeholder="MARIA"
-        />
-        <InputField label={"0.2. Фамилия сопровождающего лица"}
-                    fieldName={VISA_APPLICATION_FORM_FILEDS.TRUSTEE_LAST_NAME}
-                    placeholder="IVANOVA"
-        />
-        <InputField label={"0.3. Адрес сопровождающего лица"}
-                    fieldName={VISA_APPLICATION_FORM_FILEDS.TRUSTEE_ADRESS}
-                    placeholder="Adress"
-                    helpText={<div>
-                      Указать адрес латинскими буквами, если отличается от адреса заявителя.
-                    </div>}
-        />
-        <InputField label={"0.4. Гражданство сопровождающего лица"}
-                    fieldName={VISA_APPLICATION_FORM_FILEDS.TRUSTEE_CITIZENSHIP}
-                    placeholder="RUSSIAN FEDERATION"
-                    helpText={<div>
-                      Латинскими буквами точно как в загран. паспорте.
-                    </div>}
-        />
+        {showPupil &&
+        <span>
+          <InputField label={"0.1. Имя сопровождающего лица"}
+            fieldName={VISA_APPLICATION_FORM_FILEDS.TRUSTEE_FIRST_NAME}
+            placeholder="MARIA"
+          />
+          < InputField label={"0.2. Фамилия сопровождающего лица"}
+            fieldName={VISA_APPLICATION_FORM_FILEDS.TRUSTEE_LAST_NAME}
+            placeholder="IVANOVA"
+          />
+          <InputField label={"0.3. Адрес сопровождающего лица"}
+            fieldName={VISA_APPLICATION_FORM_FILEDS.TRUSTEE_ADRESS}
+            placeholder="Adress"
+            helpText={<div>
+            Указать адрес латинскими буквами, если отличается от адреса заявителя.
+            </div>}
+          />
+          <InputField label={"0.4. Гражданство сопровождающего лица"}
+            fieldName={VISA_APPLICATION_FORM_FILEDS.TRUSTEE_CITIZENSHIP}
+            placeholder="RUSSIAN FEDERATION"
+            helpText={<div>
+            Латинскими буквами точно как в загран. паспорте.
+          </div>}
+          />
+        </span>
+        }
 
         <InputField label={"1. Номер телефона"}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.NUMBER}
@@ -70,6 +95,8 @@ export class ContractsScreen extends React.Component {
                           </div>}
 
         />
+        { showTargetCountryDetails &&
+        <span>
         <InputField label={"4.1. Вид на жительство или равноценный документ"}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.RESIDENCE_CAPTION}
                     placeholder="Название документа"
@@ -87,6 +114,7 @@ export class ContractsScreen extends React.Component {
                    placeholder="23.07.2023г."
 
         />
+        </span>}
 
         <RadioButtonField label={"5. Профессиональная деятельность в настоящее время"}
                           fieldName={VISA_APPLICATION_FORM_FILEDS.EMPLOYMENT_STATUS}
@@ -96,8 +124,7 @@ export class ContractsScreen extends React.Component {
                           </div>}
 
         />
-
-        <InputField label={""}
+        {showEmploymentStatusDetails &&  <InputField label={""}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.EMPLOYMENT_STATUS_DETAILS}
                     placeholder="WORKER"
                     helpText={<div>Указать полное наименование организации латинскими буквами.
@@ -109,6 +136,7 @@ export class ContractsScreen extends React.Component {
                       Student (Студент) — название учебного заведения и адрес;
                       Pupil (Школьник) — название школы и адрес.</div>}
         />
+        }
 
         <InputField label={"6. Работодатель"}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.EMPLOYER_CAPTION}
