@@ -13,10 +13,24 @@ export class PasportScreen extends React.Component {
     formData: object,
     onChange: func,
   }
+
+  state = {
+    showSchengenVisa: false
+  };
+
+  onFormChange(value) {
+    var {formData, onChange} = this.props;
+    if(formData){
+      onChange(value);
+    }
+    if(value.schengenExists)
+      this.setState({showSchengenVisa: value.schengenExists == "Да"})
+  }
   render() {
     var {formData, onChange} = this.props;
+    var {showSchengenVisa} = this.state;
     return (
-      <Form onChange={onChange}
+      <Form onChange={this.onFormChange.bind(this)}
             value={formData}>
         <InputField label={"3. Номер загран. паспорта"}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.INTERNATIONAL_PASSPORT_NUMBER}
@@ -45,7 +59,10 @@ export class PasportScreen extends React.Component {
                           </div>}
 
         />
-        <SchengenVisa/>
+        {showSchengenVisa &&
+          <SchengenVisa/>
+        }
+
       </Form>
     );    
   }
