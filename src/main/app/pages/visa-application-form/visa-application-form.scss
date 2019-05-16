@@ -10,16 +10,18 @@
   align-items: center;
 
   &__content {
-    margin-top: 100px;
+    margin-top: 80px;
+    //margin-top: 100px;
     max-width: 540px;
     padding: 0 20px;
 
-    @include for-desktop-up {
-      margin-top: 200px;
-    }
+    //@include for-desktop-up {
+    //  margin-top: 200px;
+    //}
 
     @include for-big-desktop-up {
-      margin-top: 300px;
+      margin-top: 180px;
+      //margin-top: 300px;
     }
   }
 

@@ -7,10 +7,11 @@ ul {
   padding: 0;
 }
 .navbar {
-  overflow: hidden;
-  background-color: transparent;
-  top: 0; /* Position the navbar at the top of the page */
-  width: 100%; /* Full width */
+  margin-top: 140px;
+  //overflow: hidden;
+  //background-color: transparent;
+  //top: 0;
+  //width: 100%;
 }
 
 .navbar a {
@@ -18,7 +19,8 @@ ul {
   display: block;
 
   text-align: center;
-  padding: 14px 16px;
+  padding: 8px 16px;
+  margin: 0px 16px;
   text-decoration: none;
 
   background: #FFE6DF;
@@ -34,7 +36,7 @@ ul {
   color: #7B7B7B;
 }
 
-.navbar a:hover {
+.navbar a:hover, .navbar a.active {
   background: #FF815F;
   color: #FFFFFF;
 }

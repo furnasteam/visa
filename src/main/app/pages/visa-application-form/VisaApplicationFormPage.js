@@ -86,8 +86,9 @@ export class VisaApplicationFormPage extends React.Component {
         </Helmet>,
         <div key="2" className="visa-application-form">
           <Header/>
+          <Menu menuData={MENU_ITEMS}/>
           <div className="visa-application-form__content">
-            <Menu menuData={MENU_ITEMS}/>
+
             <Title className="visa-application-form__title">Анкета на визу</Title>
             {this.getActiveScreen()}
           </div>
