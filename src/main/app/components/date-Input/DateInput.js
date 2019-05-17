@@ -31,7 +31,7 @@ export class DateInput extends React.Component {
     return (
       <MaskedInput
         mask={[/\d/, /\d/, '.', /\d/, /\d/, '.', /\d/, /\d/, /\d/, /\d/, '.',, 'г']}
-        class="input"
+        className="input"
         onChange={this.handleChange}
         placeholder="dd.mm.yyyy."
         guide={false}

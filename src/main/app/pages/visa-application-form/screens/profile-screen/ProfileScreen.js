@@ -13,19 +13,19 @@ export class ProfileScreen extends React.Component {
     formData: object,
     onChange: func,
   }
-  state = {
-    showMaritalStatusDetails: false
-  };
+
   onFormChange(value) {
     var {formData, onChange} = this.props;
     if(formData){
       onChange(value);
     }
-    this.setState({showMaritalStatusDetails: value.maritalStatus == "иное"})
+  }
+
+  showMaritalStatusDetails(){
+    return this.props.formData.maritalStatus == "maritalStatus_иное";
   }
 
   render() {
-    const {showMaritalStatusDetails} = this.state;
     var {formData, onChange} = this.props;
 
     return (
@@ -102,7 +102,7 @@ export class ProfileScreen extends React.Component {
                           buttonNames={VISA_APPLICATION_FORM_ENUMS.MARITAL_STATUS}
         />
 
-        { showMaritalStatusDetails && <InputField label={""}
+        { this.showMaritalStatusDetails() && <InputField label={""}
                                                             fieldName={VISA_APPLICATION_FORM_FILEDS.MARITAL_STATUS_DETAILS}
                                                             placeholder="Уточните семейное положение"
                                                             helpText={<div>Для несовершеннолетних детей — пункт «Холост/не замужем».</div>} />

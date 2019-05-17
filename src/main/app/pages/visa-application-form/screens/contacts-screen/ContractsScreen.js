@@ -13,32 +13,29 @@ export class ContractsScreen extends React.Component {
     onChange: func,
   }
 
-  state = {
-    showPupil: this.props.formData.maritalStatus == "несовершеннолетний",
-    showTargetCountryDetails: false,
-    showEmploymentStatusDetails: false
-  };
-
   onFormChange(value) {
     var {formData, onChange} = this.props;
     if(formData){
       onChange(value);
     }
-    if(value.targetCountry)
-      this.setState({showTargetCountryDetails: value.targetCountry == "targetCountry_Да"})
-
-    if(value.employmentStatus)
-      this.setState({showEmploymentStatusDetails: value.employmentStatus == "иное"})
-
+  }
+  showPupil(){
+    return this.props.formData.maritalStatus == "maritalStatus_несовершеннолетний";
+  }
+  showTargetCountryDetails(){
+    return this.props.formData.targetCountry == "targetCountry_Да";
+  }
+  showEmploymentStatusDetails(){
+    return this.props.formData.employmentStatus == "employmentStatus_иное";
   }
 
   render() {
     var {formData, onChange} = this.props;
-    var {showPupil, showTargetCountryDetails, showEmploymentStatusDetails} = this.state;
+
     return (
       <Form onChange={this.onFormChange.bind(this)}
             value={formData}>
-        {showPupil &&
+        {this.showPupil() &&
         <span>
           <InputField label={"0.1. Имя сопровождающего лица"}
             fieldName={VISA_APPLICATION_FORM_FILEDS.TRUSTEE_FIRST_NAME}
@@ -95,7 +92,7 @@ export class ContractsScreen extends React.Component {
                           </div>}
 
         />
-        { showTargetCountryDetails &&
+        { this.showTargetCountryDetails() &&
         <span>
         <InputField label={"4.1. Вид на жительство или равноценный документ"}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.RESIDENCE_CAPTION}
@@ -124,7 +121,7 @@ export class ContractsScreen extends React.Component {
                           </div>}
 
         />
-        {showEmploymentStatusDetails &&  <InputField label={""}
+        {this.showEmploymentStatusDetails() &&  <InputField label={""}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.EMPLOYMENT_STATUS_DETAILS}
                     placeholder="WORKER"
                     helpText={<div>Указать полное наименование организации латинскими буквами.

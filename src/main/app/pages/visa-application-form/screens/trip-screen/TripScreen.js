@@ -3,7 +3,6 @@ import {CheckboxField} from '../../../../components/form/fields/checkbox-field/C
 import {VISA_APPLICATION_FORM_ENUMS, VISA_APPLICATION_FORM_FILEDS} from '../../VisaApplicationFormModel';
 import {Form} from '../../../../components/form/Form';
 import {func, object, string} from 'prop-types';
-// import {CheckboxField} from '../../../../components/form/fields/checkbox-field/CheckboxField';
 import {DateField} from '../../../../components/form/fields/date-field/DateField';
 import {InputField} from '../../../../components/form/fields/input-field/InputField';
 import {RadioButtonField} from '../../../../components/form/fields/radio-button-field/RadioButtonField';
@@ -13,24 +12,23 @@ export class TripScreen extends React.Component {
     formData: object,
     onChange: func,
   }
-  state = {
-    showTargetDetails: false
-  };
   onFormChange(value) {
     var {formData, onChange} = this.props;
     if(formData){
       onChange(value);
     }
-    if(value.target){
-      var res = value.target.find((el)=>{
+  }
+  showTargetDetails(){
+    var res;
+    if(this.props.formData.target){
+      res = this.props.formData.target.find((el)=>{
         if(el.name == "иное")
           return el;
       });
-      this.setState({showTargetDetails: res && res.selected})
     }
+    return res && res.selected;
   }
   render() {
-    const {showTargetDetails } = this.state;
     var {formData, onChange} = this.props;
     return (
       <Form onChange={this.onFormChange.bind(this)}
@@ -39,7 +37,7 @@ export class TripScreen extends React.Component {
                     fieldName={VISA_APPLICATION_FORM_FILEDS.TARGET}
                     buttons={VISA_APPLICATION_FORM_ENUMS.TARGET}
         />
-        {showTargetDetails &&
+        {this.showTargetDetails() &&
         <InputField label={""}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.TARGET_DETAILS}
                     placeholder="Уточните цель поездки"

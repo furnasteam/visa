@@ -12,43 +12,45 @@ export class ShengenScreen extends React.Component {
     formData: object,
     onChange: func,
   }
-  state = {
-    showFingerprintsDate: false,
-    showPlacementDetails: false,
-    showInvateCompany: false
-  };
   onFormChange(value) {
     var {formData, onChange} = this.props;
-    var res;
     if(formData){
       onChange(value);
     }
+  }
+  showFingerprintsDate(){
+    return this.props.formData.fingerprintsExists == "fingerprintsExists_Да";
+  }
+  showPlacementDetails(){
+    return this.props.formData.placement == "placement_самостоятельное размещение\n" +
+      "(отель/хостел/апартаменты)";
+  }
+  showInvateCompany(){
+    return this.props.formData.invateCompany == "invateCompany_Да";
+  }
+  showPayerSponsor(){
+    return this.props.formData.payer == "payer_Спонсор";
+  }
+  showPayerSponsorDetails(){
+    return this.props.formData.payerSponsor == "payerSponsor_Иные";
+  }
+  showFacilitiesDetails(){
+    var res;
+      if(this.props.formData.facilities){
+        res = this.props.formData.facilities.find((el)=>{
+          if(el.name == "иное")
+            return el;
+        });
+      }
+      return res && res.selected;
+  }
 
-    if(value.facilities){
-      res = value.facilities.find((el)=>{
-        if(el.name == "иное")
-          return el;
-      });
-    }
 
-    this.setState({
-      showFingerprintsDate: value.fingerprintsExists == "fingerprintsExists_Да",
-      showPlacementDetails: value.placement == "самостоятельное размещение\n" +
-      "(отель/хостел/апартаменты)",
-      showInvateCompany: value.invateCompany == "invateCompany_Да",
-
-      showPayerSponsor: value.payer == "payer_Спонсор",
-      showPayerSponsorDetails: value.payerSponsor == "payerSponsor_Иные",
-      showFacilitiesDetails: res && res.selected,
-      showRelativeDetails: value.relativeExists == "relativeExists_Да"
-    });
+  showRelativeDetails(){
+    return this.props.formData.relativeExists == "relativeExists_Да";
   }
   render() {
-    const {showFingerprintsDate, showPlacementDetails, showInvateCompany, showPayerSponsor, showPayerSponsorDetails, showFacilitiesDetails, showRelativeDetails } = this.state;
-
-
     var {formData, onChange} = this.props;
-    debugger;
     return (
       <Form onChange={this.onFormChange.bind(this)}
             value={formData}>
@@ -56,7 +58,7 @@ export class ShengenScreen extends React.Component {
                           fieldName={VISA_APPLICATION_FORM_FILEDS.FINGERPRINTS_EXISTS}
                           buttonNames={VISA_APPLICATION_FORM_ENUMS.BOOL}
         />
-        {showFingerprintsDate &&
+        {this.showFingerprintsDate() &&
         <DateField label={""}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.FINGERPRINTS_DATE}
                     placeholder="23.04.2014"
@@ -85,7 +87,7 @@ export class ShengenScreen extends React.Component {
                           fieldName={VISA_APPLICATION_FORM_FILEDS.PLACEMENT}
                           buttonNames={VISA_APPLICATION_FORM_ENUMS.PLACEMENT}
         />
-        {showPlacementDetails &&
+        {this.showPlacementDetails() &&
         <span>
               <InputField label={"4. Название отеля/хостела/апартаментов"}
                           fieldName={VISA_APPLICATION_FORM_FILEDS.PLACEMENT_NAME}
@@ -111,7 +113,7 @@ export class ShengenScreen extends React.Component {
                           fieldName={VISA_APPLICATION_FORM_FILEDS.INVATE_COMPANY}
                           buttonNames={VISA_APPLICATION_FORM_ENUMS.BOOL}
         />
-        {showInvateCompany &&
+        {this.showInvateCompany() &&
         <span>
         <InputField label={"5. Название приглашающей компании"}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.INVATE_COMPANY_NAME}
@@ -161,12 +163,12 @@ export class ShengenScreen extends React.Component {
                           fieldName={VISA_APPLICATION_FORM_FILEDS.PAYER}
                           buttonNames={VISA_APPLICATION_FORM_ENUMS.PAYER}
         />
-        {showPayerSponsor &&
+        {this.showPayerSponsor() &&
         <RadioButtonField label={"14. Кто является спонсором?"}
                            fieldName={VISA_APPLICATION_FORM_FILEDS.PAYER_SPONSOR}
                            buttonNames={VISA_APPLICATION_FORM_ENUMS.PAYER_SPONSOR}
         />}
-        {showPayerSponsorDetails &&
+        {this.showPayerSponsorDetails() &&
         <InputField label={""}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.PAYER_SPONSOR_DETAILS}
                     placeholder="Укажите спонсора"
@@ -177,7 +179,7 @@ export class ShengenScreen extends React.Component {
                        fieldName={VISA_APPLICATION_FORM_FILEDS.FACILITIES}
                        buttons={VISA_APPLICATION_FORM_ENUMS.FACILITIES}
         />
-        {showFacilitiesDetails &&
+        {this.showFacilitiesDetails() &&
         <InputField label={""}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.FACILITIES_DETAILS}
                     placeholder="Укажите средства"
@@ -190,7 +192,7 @@ export class ShengenScreen extends React.Component {
                           fieldName={VISA_APPLICATION_FORM_FILEDS.RELATIVE_EXISTS}
                           buttonNames={VISA_APPLICATION_FORM_ENUMS.BOOL}
         />
-        {showRelativeDetails &&
+        {this.showRelativeDetails() &&
         <span>
         <RadioButtonField label={"17. Степень родства с гражданином Европейского Союза, \n" +
         "Европейского Экономического Пространства \n" +

@@ -16,7 +16,6 @@ export class PasportScreen extends React.Component {
   }
 
   state = {
-    showSchengenVisa: false,
     schengenVisaArr: [{
       schengenVisaNumber: null,
       schengenVisaStartDate: null,
@@ -29,8 +28,6 @@ export class PasportScreen extends React.Component {
     if(formData){
       onChange(value);
     }
-    if(value.schengenExists)
-      this.setState({showSchengenVisa: value.schengenExists == "schengenExists_Да"})
   }
 
   addSchengenVisa(){
@@ -52,9 +49,12 @@ export class PasportScreen extends React.Component {
   onSchengenVisaChange(value){
     // debugger
   }
+  showSchengenVisa(){
+    return this.props.formData.schengenExists == "schengenExists_Да";
+  }
   render() {
     var {formData, onChange} = this.props;
-    var {showSchengenVisa, schengenVisaArr} = this.state;
+    var {schengenVisaArr} = this.state;
 
     var schengenVisaElements = schengenVisaArr.map((schengenVisa, i)=>{ return <SchengenVisa onChange={this.onSchengenVisaChange()} index={i}></SchengenVisa>});
     return (
@@ -88,7 +88,7 @@ export class PasportScreen extends React.Component {
 
         />
         
-        {showSchengenVisa &&
+        {this.showSchengenVisa() &&
           <span>
             {schengenVisaElements}
             <Button onClick={this.addSchengenVisa.bind(this) }>Добавить визу</Button>
