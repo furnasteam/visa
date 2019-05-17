@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import {string, func} from 'prop-types';
-import {Input} from '../input/Input';
+import MaskedInput from 'react-text-mask'
 
 export class DateInput extends React.Component {
 
@@ -10,7 +10,9 @@ export class DateInput extends React.Component {
     className: string,
     value: string,
     onChange: func,
-    placeholder: string
+    placeholder: string,
+    inputType :string,
+    dataInputmask: string
   };
 
   static defaultProps = {
@@ -23,10 +25,19 @@ export class DateInput extends React.Component {
     onChange(event.target.value);
   };
   render() {
+    const {className, value, placeholder, inputType, dataInputmask} = this.props;
+
+    //https://www.npmjs.com/package/react-text-mask
     return (
-      <Input {...this.props}
-             inputType = "date"
-             dataInputmask = "'alias':'mm/dd/yyyy'"/>
+      <MaskedInput
+        mask={[/\d/, /\d/, '.', /\d/, /\d/, '.', /\d/, /\d/, /\d/, /\d/, '.',, 'г']}
+        class="input"
+        onChange={this.handleChange}
+        placeholder="dd.mm.yyyy."
+        guide={false}
+        value={value}
+        id="my-input-id"
+      />
     );
   }
 }
