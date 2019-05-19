@@ -102,7 +102,7 @@ export class ProfileScreen extends React.Component {
                           buttonNames={VISA_APPLICATION_FORM_ENUMS.MARITAL_STATUS}
         />
 
-        { this.showMaritalStatusDetails() && <InputField label={""}
+        { this.showMaritalStatusDetails() && <InputField
                                                             fieldName={VISA_APPLICATION_FORM_FILEDS.MARITAL_STATUS_DETAILS}
                                                             placeholder="Уточните семейное положение"
                                                             helpText={<div>Для несовершеннолетних детей — пункт «Холост/не замужем».</div>} />

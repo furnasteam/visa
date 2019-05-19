@@ -121,7 +121,7 @@ export class ContractsScreen extends React.Component {
                           </div>}
 
         />
-        {this.showEmploymentStatusDetails() &&  <InputField label={""}
+        {this.showEmploymentStatusDetails() &&  <InputField
                     fieldName={VISA_APPLICATION_FORM_FILEDS.EMPLOYMENT_STATUS_DETAILS}
                     placeholder="WORKER"
                     helpText={<div>Указать полное наименование организации латинскими буквами.

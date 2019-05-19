@@ -169,7 +169,7 @@ export class ShengenScreen extends React.Component {
                            buttonNames={VISA_APPLICATION_FORM_ENUMS.PAYER_SPONSOR}
         />}
         {this.showPayerSponsorDetails() &&
-        <InputField label={""}
+        <InputField
                     fieldName={VISA_APPLICATION_FORM_FILEDS.PAYER_SPONSOR_DETAILS}
                     placeholder="Укажите спонсора"
         />
@@ -180,7 +180,7 @@ export class ShengenScreen extends React.Component {
                        buttons={VISA_APPLICATION_FORM_ENUMS.FACILITIES}
         />
         {this.showFacilitiesDetails() &&
-        <InputField label={""}
+        <InputField
                     fieldName={VISA_APPLICATION_FORM_FILEDS.FACILITIES_DETAILS}
                     placeholder="Укажите средства"
         />

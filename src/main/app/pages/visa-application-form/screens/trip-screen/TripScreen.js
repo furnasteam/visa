@@ -38,7 +38,7 @@ export class TripScreen extends React.Component {
                     buttons={VISA_APPLICATION_FORM_ENUMS.TARGET}
         />
         {this.showTargetDetails() &&
-        <InputField label={""}
+        <InputField
                     fieldName={VISA_APPLICATION_FORM_FILEDS.TARGET_DETAILS}
                     placeholder="Уточните цель поездки"
         />
