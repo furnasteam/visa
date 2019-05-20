@@ -5,6 +5,9 @@
   width: 50%;
   padding-bottom: 16px;
 
+  @include for-phone-only {
+    width: 100%;
+  }
   &__input {
     font-family: $font-family;
   /*  width: 16px;

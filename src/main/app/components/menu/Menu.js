@@ -10,6 +10,7 @@ export class Menu extends React.Component {
   state = {
     activeItem: null
   }
+
   setActiveItem(item){
     this.setState({activeItem:item});
   }
@@ -29,10 +30,27 @@ export class Menu extends React.Component {
                  onClick={() => context.setActiveItem(itemValue.url)}
                  className={itemValue.url == activeItem ? "active" : ""}>{itemValue.name}</a>
     });
-    return (
+
+    let moblieMenuItems = Object.entries(menuData).map(function(item, i){
+      var itemValue = item[1];
+      return  <span>
+                <a href={itemValue.url}
+                 key={itemValue.url}
+                 onClick={() => context.setActiveItem(itemValue.url)}
+                 className={itemValue.url == activeItem ? "active" : ""}>{i+1}</a>
+                <label>{itemValue.url == activeItem ? itemValue.name : ""}</label>
+
+              </span>
+    });
+    return (<span>
       <div className="navbar">
         {menuItems}
       </div>
-    );    
+      <div className="navbar-mobile">
+        <div className="line"></div>
+        {moblieMenuItems}
+      </div>
+      </span>
+    );
   }
 }
