@@ -1,14 +1,9 @@
 import React from 'react';
+import {string} from 'prop-types';
 import './visa-application-form.scss';
 import {Helmet} from 'react-helmet';
-import {Form} from '../../components/form/Form';
-import {InputField} from '../../components/form/fields/input-field/InputField';
-import { VISA_APPLICATION_FORM_FILEDS, VISA_APPLICATION_FORM_ENUMS } from './VisaApplicationFormModel';
-import {RadioButtonField} from '../../components/form/fields/radio-button-field/RadioButtonField';
 import {Header} from '../../components/header/Header';
 import {Title} from '../../components/title/Title';
-import {CheckboxField} from '../../components/form/fields/checkbox-field/CheckboxField';
-import {DateField} from '../../components/form/fields/date-field/DateField';
 import {UniversalLink} from '../../components/universal-link/UniversalLink';
 import {Button} from '../../components/button/Button';
 import {ProfileScreen} from './screens/profile-screen/ProfileScreen';
@@ -17,18 +12,33 @@ import {PasportScreen} from './screens/pasport-screen/PasportScreen';
 import {TripScreen} from './screens/trip-screen/TripScreen';
 import {ShengenScreen} from './screens/shengen-screen/ShengenScreen';
 import {EmailScreen} from './screens/email-screen/EmailScreen';
-import {Menu} from '../../components/menu/Menu';
+import {Steps} from '../../components/steps/Steps';
+import {Footer} from '../../components/footer/Footer';
+import find from 'lodash/find';
 
-export const MENU_ITEMS = {
-  PROFILE: { url: '#profile', name:'Профиль' },
-  CONTACTS: { url: '#contacts', name:'Контакты'  },
-  PASSPORT: { url: '#passport', name:'Паспорт'},
-  TRIP: { url: '#trip', name:'Поездка'  },
-  SCHENGEN: { url: '#shengen', name:'Шенгенская зона' },
-  EMAIL: { url: '#email', name:'Email'  },
-}
+const StepName = {
+  PROFILE: 'profile',
+  CONTACTS: 'contacts',
+  PASSPORT: 'passport',
+  TRIP: 'trip',
+  SCHENGEN: 'schengen',
+  EMAIL: 'email',
+};
+
+const StepsData = [
+  {name: StepName.PROFILE, label: 'Профиль', component: ProfileScreen},
+  {name: StepName.CONTACTS, label: 'Контакты', component: ContractsScreen},
+  {name: StepName.PASSPORT, label: 'Паспорт', component: PasportScreen},
+  {name: StepName.TRIP, label: 'Поездка', component: TripScreen},
+  {name: StepName.SCHENGEN, label: 'Шенгенская зона', component: ShengenScreen},
+  {name: StepName.EMAIL, label: 'Email', component: EmailScreen}
+];
 
 export class VisaApplicationFormPage extends React.Component {
+
+  static propTypes = {
+    step: string
+  };
 
   state = {
     formData: {
@@ -41,41 +51,18 @@ export class VisaApplicationFormPage extends React.Component {
     this.setState({formData});
   };
 
-  getActiveScreen(){
-    var screen = this.props.location.hash;
-    const {formData} = this.state;
-    switch(screen){
-      case(MENU_ITEMS.PROFILE.url):
-        return <ProfileScreen onChange={this.handleFormChange}
-                              formData={formData}/>
-        break;
-      case(MENU_ITEMS.CONTACTS.url):
-        return <ContractsScreen onChange={this.handleFormChange}
-                              formData={formData}/>
-        break;
-      case(MENU_ITEMS.PASSPORT.url):
-        return <PasportScreen onChange={this.handleFormChange}
-                              formData={formData}/>
-        break;
-      case(MENU_ITEMS.TRIP.url):
-        return <TripScreen onChange={this.handleFormChange}
-                              formData={formData}/>
-        break;
-      case(MENU_ITEMS.SCHENGEN.url):
-        return <ShengenScreen onChange={this.handleFormChange}
-                              formData={formData}/>
-        break;
-      case(MENU_ITEMS.EMAIL.url):
-        return <EmailScreen onChange={this.handleFormChange}
-                              formData={formData}/>
-        break;
-      default:
-        return <ProfileScreen onChange={this.handleFormChange}
-                              formData={formData}/>
-    }
+  getActiveStep() {
+    const {step} = this.props;
+    return find(StepsData, {name: step}) || StepsData[0];
   }
-  render() {
+
+  getActiveScreen() {
     const {formData} = this.state;
+    const activeStepData = this.getActiveStep();
+    return <activeStepData.component formData={formData} onChange={this.handleFormChange}/>;
+  }
+
+  render() {
     return (
       [
         <Helmet key="1">
@@ -86,7 +73,8 @@ export class VisaApplicationFormPage extends React.Component {
         </Helmet>,
         <div key="2" className="visa-application-form">
           <Header/>
-          <Menu menuData={MENU_ITEMS}/>
+          <Steps stepsData={StepsData}
+                 activeStep={this.getActiveStep()}/>
           <div className="visa-application-form__content">
 
             <Title className="visa-application-form__title">Анкета на визу</Title>
@@ -98,6 +86,7 @@ export class VisaApplicationFormPage extends React.Component {
               <Button className="visa-application-form__next-button">Далее</Button>
             </UniversalLink>
           </div>
+          <Footer/>
         </div>
       ]
     );
