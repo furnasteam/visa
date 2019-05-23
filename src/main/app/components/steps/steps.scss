@@ -4,9 +4,9 @@
 .steps {
   &__mobile {
     display: flex;
-    //flex-direction: column;
     width: 100%;
     margin-top: 100px;
+    justify-content: center;
     @include for-tablet-portrait-up {
       display: none;
     }
@@ -67,6 +67,12 @@
     mix-blend-mode: normal;
     opacity: 0.5;
     border-bottom: 2px dashed #FF815F;
+    @include for-tablet-portrait-up {
+      top: 154px;
+      z-index: -1;
+      width: 550px;
+      margin: auto;
+    }
   }
 
   &__circle {

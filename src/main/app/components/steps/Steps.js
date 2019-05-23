@@ -19,6 +19,7 @@ export class Steps extends React.Component {
     return ([
       <div key="1"
            className="steps__desktop">
+        <div className="steps__line"/>
         {map(stepsData, step => (
           <UniversalLink href={createVisaApplicationFormRoute(step.name)}
                          noStyle={true}

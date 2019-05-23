@@ -15,6 +15,9 @@ import {EmailScreen} from './screens/email-screen/EmailScreen';
 import {Steps} from '../../components/steps/Steps';
 import {Footer} from '../../components/footer/Footer';
 import find from 'lodash/find';
+import findIndex from 'lodash/findIndex';
+import size from 'lodash/size';
+import {createVisaApplicationFormRoute} from '../../helpers/appRoutes';
 
 const StepName = {
   PROFILE: 'profile',
@@ -62,6 +65,13 @@ export class VisaApplicationFormPage extends React.Component {
     return <activeStepData.component formData={formData} onChange={this.handleFormChange}/>;
   }
 
+  getNextStep() {
+    const index = findIndex(StepsData, this.getActiveStep());
+    if ((index + 1) < size(StepsData)) {
+      return StepsData[index + 1];
+    }
+  };
+
   render() {
     return (
       [
@@ -81,10 +91,11 @@ export class VisaApplicationFormPage extends React.Component {
             {this.getActiveScreen()}
           </div>
           <div className="visa-application-form__next-button-container">
-            <UniversalLink href="#"
+            {this.getNextStep() &&
+            <UniversalLink href={createVisaApplicationFormRoute(this.getNextStep().name)}
                            noStyle={true}>
               <Button className="visa-application-form__next-button">Далее</Button>
-            </UniversalLink>
+            </UniversalLink>}
           </div>
           <Footer/>
         </div>
