@@ -28,7 +28,7 @@ const clientConfig = {
         })
       },
       {
-        test: /\.(png|jpg|gif|jpeg|svg|webp)$/,
+        test: /\.(png|jpg|gif|jpeg|pdf|svg|webp)$/,
         use: [
           {
             loader: 'file-loader',
@@ -88,7 +88,7 @@ const serverConfig = {
         }]
       },
       {
-        test: /\.(png|jpg|gif|jpeg|svg|webp)$/,
+        test: /\.(png|jpg|gif|jpeg|pdf|svg|webp)$/,
         use: [
           {
             loader: 'file-loader',

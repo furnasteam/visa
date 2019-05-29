@@ -18,6 +18,7 @@ import {TripScreen} from './screens/trip-screen/TripScreen';
 import {ShengenScreen} from './screens/shengen-screen/ShengenScreen';
 import {EmailScreen} from './screens/email-screen/EmailScreen';
 import {Menu} from '../../components/menu/Menu';
+import PDFPrinter from '../../helpers/PDFPrinter';
 
 export const MENU_ITEMS = {
   PROFILE: { url: '#profile', name:'Профиль' },
@@ -74,6 +75,7 @@ export class VisaApplicationFormPage extends React.Component {
                               formData={formData}/>
     }
   }
+
   render() {
     const {formData} = this.state;
     return (
@@ -83,15 +85,21 @@ export class VisaApplicationFormPage extends React.Component {
           <meta name="description"
                 content="Заполнение анкеты на визу онлайн."/>
           <link rel="canonical" href="https://visa.furnas.ru"/>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.1/jspdf.debug.js"
+                    integrity="sha384-THVO/sM0mFD9h7dfSndI6TS0PgAGavwKvB5hAxRRvc0o9cPLohB0wb/PTA7LdUHs"
+                    crossOrigin="anonymous">
+          </script>
         </Helmet>,
         <div key="2" className="visa-application-form">
           <Header/>
           <Menu menuData={MENU_ITEMS}/>
+          <PDFPrinter formData={formData} />
           <div className="visa-application-form__content">
 
             <Title className="visa-application-form__title">Анкета на визу</Title>
             {this.getActiveScreen()}
           </div>
+
           <div className="visa-application-form__next-button-container">
             <UniversalLink href="#"
                            noStyle={true}>
