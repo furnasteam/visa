@@ -24,8 +24,10 @@ export class App extends React.Component {
                )}/>
         <Route exact path={createDocumentsListRoute('')}
                component={FullDocumentsListPage}/>
-        <Route exact path={createVisaApplicationFormRoute()}
-               component={VisaApplicationFormPage}/>
+        <Route exact path={createVisaApplicationFormRoute(':step?')}
+               render={({match}) => (
+                 <VisaApplicationFormPage step={match.params.step}/>
+               )}/>
         <Route path={createHomeRoute()}
                component={HomePage}/>
       </Switch>,

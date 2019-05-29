@@ -10,6 +10,6 @@ export function createDocumentsListRoute(userType) {
   return `/documents/${userType}`;
 }
 
-export function createVisaApplicationFormRoute() {
-  return `/visa-application-form`;
+export function createVisaApplicationFormRoute(step) {
+  return `/visa-application-form/${step}`;
 }
