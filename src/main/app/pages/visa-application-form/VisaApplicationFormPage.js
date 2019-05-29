@@ -78,6 +78,7 @@ export class VisaApplicationFormPage extends React.Component {
 
   render() {
     const {formData} = this.state;
+    var screen = this.props.location.hash;
     return (
       [
         <Helmet key="1">
@@ -85,17 +86,12 @@ export class VisaApplicationFormPage extends React.Component {
           <meta name="description"
                 content="Заполнение анкеты на визу онлайн."/>
           <link rel="canonical" href="https://visa.furnas.ru"/>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.1/jspdf.debug.js"
-                    integrity="sha384-THVO/sM0mFD9h7dfSndI6TS0PgAGavwKvB5hAxRRvc0o9cPLohB0wb/PTA7LdUHs"
-                    crossOrigin="anonymous">
-          </script>
+          <script src="//cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.1/jspdf.min.js"></script>
         </Helmet>,
         <div key="2" className="visa-application-form">
           <Header/>
           <Menu menuData={MENU_ITEMS}/>
-          <PDFPrinter formData={formData} />
           <div className="visa-application-form__content">
-
             <Title className="visa-application-form__title">Анкета на визу</Title>
             {this.getActiveScreen()}
           </div>
@@ -103,7 +99,11 @@ export class VisaApplicationFormPage extends React.Component {
           <div className="visa-application-form__next-button-container">
             <UniversalLink href="#"
                            noStyle={true}>
-              <Button className="visa-application-form__next-button">Далее</Button>
+              {
+                screen == MENU_ITEMS.EMAIL.url ?
+                  <PDFPrinter formData={formData} /> :
+                  <Button className="visa-application-form__next-button">Далее</Button>
+              }
             </UniversalLink>
           </div>
         </div>

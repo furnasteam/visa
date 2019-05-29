@@ -4,6 +4,7 @@ import getCoords from './pdfCoords';
 import getJSON from './PDF_Test_JSON';
 import {Button} from "../components/button/Button";
 import {object} from "prop-types";
+import {Helmet} from "react-helmet";
 
 export default class PDFPrinter extends React.Component {
     static propTypes = {
@@ -60,14 +61,18 @@ export default class PDFPrinter extends React.Component {
 
     render() {
         return (<div>
-            <script src="//cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.min.js"></script>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.1/jspdf.min.js"></script>
             {this.renderPages()}
             <Button className="visa-application-form__download-PDF-button"
                     onClick={this.download.bind(this)}>Скачать</Button>
             <div id="placer" style={{top: -10000, position: "absolute"}}></div>
         </div>);
     }
-
+// <script src="//cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.min.js"></script>
+// <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.1/jspdf.debug.js"
+// integrity="sha384-THVO/sM0mFD9h7dfSndI6TS0PgAGavwKvB5hAxRRvc0o9cPLohB0wb/PTA7LdUHs"
+// crossOrigin="anonymous">
+// </script>
     addData() {
         var canvasCount = 4;
         for (var pageNumber = 1; pageNumber <= canvasCount; pageNumber++) {
