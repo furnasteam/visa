@@ -18,6 +18,7 @@ import find from 'lodash/find';
 import findIndex from 'lodash/findIndex';
 import size from 'lodash/size';
 import {createVisaApplicationFormRoute} from '../../helpers/appRoutes';
+import PDFPrinter from "../../helpers/PDFPrinter";
 
 const StepName = {
   PROFILE: 'profile',
@@ -71,8 +72,13 @@ export class VisaApplicationFormPage extends React.Component {
       return StepsData[index + 1];
     }
   };
+  isPrintScreen() {
+    const {step} = this.props;
+    return  step == StepName.EMAIL;
+  };
 
   render() {
+    const {formData} = this.state;
     return (
       [
         <Helmet key="1">
@@ -80,6 +86,7 @@ export class VisaApplicationFormPage extends React.Component {
           <meta name="description"
                 content="Заполнение анкеты на визу онлайн."/>
           <link rel="canonical" href="https://visa.furnas.ru"/>
+          <script src="//cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.1/jspdf.min.js"></script>
         </Helmet>,
         <div key="2" className="visa-application-form">
           <Header/>
@@ -94,8 +101,12 @@ export class VisaApplicationFormPage extends React.Component {
             {this.getNextStep() &&
             <UniversalLink href={createVisaApplicationFormRoute(this.getNextStep().name)}
                            noStyle={true}>
+
               <Button className="visa-application-form__next-button">Далее</Button>
             </UniversalLink>}
+            {this.isPrintScreen() &&
+            <PDFPrinter formData={formData} />
+            }
           </div>
           <Footer/>
         </div>
