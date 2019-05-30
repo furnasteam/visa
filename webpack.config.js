@@ -4,10 +4,13 @@ const nodeExternals = require("webpack-node-externals");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const clientConfig = {
-  entry: ["babel-polyfill", "./src/main/client/client.js"],
+  entry: {
+    'visa.client' : ["babel-polyfill", "./src/main/client/client.js"],
+    'pdf.worker': 'pdfjs-dist/build/pdf.worker.entry'
+  },
   output: {
     path: path.resolve(__dirname, "public"),
-    filename: "visa.client.js"
+    filename: "[name].js"
   },
   module: {
     rules: [
