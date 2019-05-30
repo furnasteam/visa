@@ -1,6 +1,7 @@
 const path = require("path");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const CompressionPlugin = require('compression-webpack-plugin');
+const webpack = require("webpack");
 
 const clientConfig = {
   entry: ["babel-polyfill", "./src/main/client/client.js"],
@@ -117,7 +118,12 @@ const serverConfig = {
         use: 'base64-inline-loader?limit=1000&name=[name].[ext]'
       }
     ]
-  }
+  },
+    plugins: [
+        new webpack.DefinePlugin({
+            SERVER: true
+        })
+    ]
 };
 
 module.exports = [clientConfig, serverConfig];

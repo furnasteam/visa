@@ -58,6 +58,9 @@ const clientConfig = {
   },
   plugins: [
     new ExtractTextPlugin("styles.css"),
+      new webpack.DefinePlugin({
+          SERVER: false
+      })
   ]
 };
 
@@ -117,9 +120,8 @@ const serverConfig = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
-        SERVER: false
-    }),
-
+        SERVER: true
+    })
   ]
 };
 
