@@ -116,6 +116,10 @@ const serverConfig = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    new webpack.DefinePlugin({
+        SERVER: false
+    }),
+
   ]
 };
 

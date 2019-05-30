@@ -1,10 +1,17 @@
 import React from 'react';
-import * as PDFJS from 'pdfjs-dist';
+// import * as PDFJS from 'pdfjs-dist';
 import getCoords from './pdfCoords';
 import getJSON from './PDF_Test_JSON';
 import {Button} from "../components/button/Button";
 import {object} from "prop-types";
 import {Helmet} from "react-helmet";
+
+// import * as jsPDF from 'jspdf';
+let PDFJS;
+
+if (!SERVER) {
+    PDFJS = require('pdfjs-dist');
+}
 
 export default class PDFPrinter extends React.Component {
     static propTypes = {
@@ -61,8 +68,7 @@ export default class PDFPrinter extends React.Component {
 
     render() {
         return (<div>
-            <script src="//cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.1/jspdf.min.js"></script>
-            {this.renderPages()}
+            {PDFJS && this.renderPages()}
             <Button className="visa-application-form__download-PDF-button"
                     onClick={this.download.bind(this)}>Скачать</Button>
             <div id="placer" style={{top: -10000, position: "absolute"}}></div>

@@ -86,7 +86,7 @@ export class VisaApplicationFormPage extends React.Component {
           <meta name="description"
                 content="Заполнение анкеты на визу онлайн."/>
           <link rel="canonical" href="https://visa.furnas.ru"/>
-          <script src="//cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.1/jspdf.min.js"></script>
+
         </Helmet>,
         <div key="2" className="visa-application-form">
           <Header/>
