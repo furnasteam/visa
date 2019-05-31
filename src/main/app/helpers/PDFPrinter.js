@@ -4,8 +4,8 @@ import getCoords from './pdfCoords';
 import getJSON from './PDF_Test_JSON';
 import {Button} from "../components/button/Button";
 import {object} from "prop-types";
+import jsPDF from 'jspdf';
 
-// import * as jsPDF from 'jspdf';
 let PDFJS;
 
 if (!SERVER) {
@@ -18,12 +18,12 @@ export default class PDFPrinter extends React.Component {
     formData: object
   };
 
-  renderPages() {
+  renderCanvas() {
     var context = this;
     var currPage = 1; //Pages are 1-based not 0-based
     var numPages = 0;
     var thePDF = null;
-    var url = require('../images/Vaf_EU.pdf');
+    // var url = require('../images/Vaf_EU.pdf');
     //This is where you start
     PDFJS.getDocument('/Vaf_EU.pdf').then(function (pdf) {
       //Set PDFJS global object (so we can easily access in our page functions
@@ -68,18 +68,13 @@ export default class PDFPrinter extends React.Component {
 
   render() {
     return (<div>
-      {PDFJS && this.renderPages()}
+      {PDFJS && this.renderCanvas()}
       <Button className="visa-application-form__download-PDF-button"
               onClick={this.download.bind(this)}>Скачать</Button>
       <div id="placer" style={{top: -10000, position: "absolute"}}></div>
     </div>);
   }
 
-// <script src="//cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.min.js"></script>
-// <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.1/jspdf.debug.js"
-// integrity="sha384-THVO/sM0mFD9h7dfSndI6TS0PgAGavwKvB5hAxRRvc0o9cPLohB0wb/PTA7LdUHs"
-// crossOrigin="anonymous">
-// </script>
   addData() {
     var canvasCount = 4;
     for (var pageNumber = 1; pageNumber <= canvasCount; pageNumber++) {
@@ -145,7 +140,7 @@ export default class PDFPrinter extends React.Component {
     doc.addPage();
     this.addCancvasToPdf(doc, "canvas_4");
 
-    doc.save('MeterPhotosReport.pdf');
+    doc.save('VisaProfile.pdf');
   }
 
   download() {
