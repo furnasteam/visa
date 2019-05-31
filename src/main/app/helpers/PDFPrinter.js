@@ -1,16 +1,17 @@
 import React from 'react';
-// import * as PDFJS from 'pdfjs-dist';
-import getCoords from './pdfCoords';
-import getJSON from './PDF_Test_JSON';
+import getPrintCoords from './pdfCoords';
+import getTestPrintData from './PDF_Test_JSON';
 import {Button} from "../components/button/Button";
 import {object} from "prop-types";
-import jsPDF from 'jspdf';
 
 let PDFJS;
+let jsPDF;
 
 if (!SERVER) {
   PDFJS = require('pdfjs-dist');
   PDFJS.GlobalWorkerOptions.workerSrc = '/pdf.worker.js';
+
+  jsPDF = require('jspdf');
 }
 
 export default class PDFPrinter extends React.Component {
@@ -74,13 +75,16 @@ export default class PDFPrinter extends React.Component {
       <div id="placer" style={{top: -10000, position: "absolute"}}></div>
     </div>);
   }
-
+  getPrintData() {
+      var {formData} = this.props;
+      return JSON.stringify(formData) === JSON.stringify({})? getTestPrintData() : formData;
+  }
   addData() {
     var canvasCount = 4;
     for (var pageNumber = 1; pageNumber <= canvasCount; pageNumber++) {
       var canvas = document.getElementById("canvas_" + pageNumber);
-      var pageCoords = getCoords()[pageNumber - 1];
-      this.addDateToCanvas(canvas, getJSON(), pageCoords);
+      var pageCoords = getPrintCoords()[pageNumber - 1];
+      this.addDateToCanvas(canvas, this.getPrintData(), pageCoords);
     }
   }
 

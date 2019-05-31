@@ -1,7 +1,7 @@
 import { VISA_APPLICATION_FORM_FILEDS, VISA_APPLICATION_FORM_ENUMS } from '../pages/visa-application-form/VisaApplicationFormModel';
 const FIELDS = VISA_APPLICATION_FORM_FILEDS;
 
-export default function getCoords() {
+export default function getPrintCoords() {
   return [{
     [FIELDS.LAST_NAME]: { x: 158, y: 273 },//1_family
     [FIELDS.BIRTH_LAST_NAME]: { x: 375, y: 297 },// '2_previosFamily'

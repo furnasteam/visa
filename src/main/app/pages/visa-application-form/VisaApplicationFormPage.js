@@ -76,7 +76,6 @@ export class VisaApplicationFormPage extends React.Component {
     const {step} = this.props;
     return  step == StepName.EMAIL;
   };
-
   render() {
     const {formData} = this.state;
     return (

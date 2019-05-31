@@ -1,4 +1,4 @@
-export default function getJSON(pageNumber) {
+export default function getTestPrintData(pageNumber) {
   return {
     "firstName": "Sergey",
     "lastName": "Ryabov",
