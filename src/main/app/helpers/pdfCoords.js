@@ -12,34 +12,35 @@ export default function getPrintCoords() {
     [FIELDS.CITIZENSHIP]: { x: 433, y: 369 },//'7_citizenship'
     [FIELDS.BIRTH_CITIZENSHIP]: { x: 433, y: 443 },//'7_birth_Citizenship'
     [FIELDS.FORM_GENDER]: {//'8_gender'
-      0: {
-        x1: 65, y1: 495,
+      "мужской": {
+        x1: 65, y1: 495, //чекушки разные по размеру, эти больше других
         x2: 83, y2: 513,
       },
-      1: {
+      "женский": {
         x1: 120, y1: 495,
         x2: 139, y2: 513,
       },
     },
     [FIELDS.MARITAL_STATUS]: {//'9_maritalStatus'
-      0: {
+      "холост/незамужем": {
         x1: 260, y1: 484,
       },
-      1: {
+      "женат/замужем": {
         x1: 365, y1: 483,
       },
-      2: {
+      "не проживает с супругой": {
         x1: 462, y1: 483,
       },
-      3: {
+      "разведен(а)": {
         x1: 261, y1: 509,
       },
-      4: {
+      "вдовец/вдова": {
         x1: 338, y1: 509,
       },
-      5: {
+      "иное": {
         x1: 425, y1: 509,
       },
+      // "несовершеннолетний" такого поля нет на бланке но есть на веб форме
     },
     [FIELDS.TRUSTEE_FIRST_NAME]: { x: 85, y: 593 },//'10_TRUSTEE'
     '11_personalNumber': { x: 272, y: 661 },//'11_personalNumber'
@@ -71,10 +72,10 @@ export default function getPrintCoords() {
     [FIELDS.EMAIL]: { x: 100, y: 831 },//'17_adress_email'
     [FIELDS.NUMBER]: { x: 435, y: 831 },//'17_telNumber'
     [FIELDS.RESIDENCE_CAPTION]: {//'18_liveCounty'
-      0: {
+      "Да": {
         x1: 70, y1: 871,
       },
-      1: {
+      "Нет": {
         x1: 95, y1: 871,
       },
     },
@@ -86,37 +87,37 @@ export default function getPrintCoords() {
     {
       [FIELDS.EMPLOYER_CAPTION]: { x: 90, y: 125 },//'20_employer'
       [FIELDS.TARGET]: {//'21_target'
-        0: {
+        "туризм": {
           x1: 68, y1: 202,
         },
-        1: {
+        "деловая": {
           x1: 122, y1: 202,
         },
-        2: {
+        "спорт": {
           x1: 173, y1: 202,
         },
-        3: {
+        "культура": {
           x1: 337, y1: 202,
         },
-        4: {
+        "учёба": {
           x1: 389, y1: 202,
         },
-        5: {
+        "официальная": {
           x1: 437, y1: 202,
         },
-        6: {
+        "лечение": {
           x1: 504, y1: 202,
         },
-        7: {
+        "транзит": {
           x1: 69, y1: 227,
         },
-        8: {
+        "посещение родственников или друзей": {
           x1: 119, y1: 227,
         },
-        9: {
+        "транзит через аэропорт": {
           x1: 171, y1: 227,
         },
-        10: {
+        "иное": {
           x1: 288, y1: 227,
         },
       },
@@ -124,22 +125,22 @@ export default function getPrintCoords() {
       [FIELDS.TARGET_COUNTRY]: { x: 90, y: 290 },//'22_targetCountry'
       [FIELDS.ENTRY_COUNTRY]: { x: 350, y: 290 },//'23_enterCountry'
       [FIELDS.ENTRY_TYPE_COUNT]: {//'24_entryCount'
-        0: {
+        "однократного въезда": {
           x1: 70, y1: 339,
         },
-        1: {
+        "двукратного въезда": {
           x1: 148, y1: 339,
         },
-        2: {
+        "многократного въезда": {
           x1: 217, y1: 339,
         },
       },
       '25_duration': { x: 485, y: 365 },//'25_duration'
       [FIELDS.SCHENGEN_EXISTS]: {//'26_schengen'
-        0: {
+        "Да": {
           x1: 69, y1: 398,
         },
-        1: {
+        "Нет": {
           x1: 94, y1: 398,
         },
       },
@@ -147,10 +148,10 @@ export default function getPrintCoords() {
       [FIELDS.SCHENGEN_VISA_START_DATE]: { x: 237, y: 413 },//'26_schengenStart'
       [FIELDS.SCHENGEN_VISA_END_DATE]: { x: 345, y: 415 },//'26_schengenEnd'
       [FIELDS.FINGERPRINTS_EXISTS]: {//'27_prints'
-        0: {
+        "Да": {
           x1: 69, y1: 532,
         },
-        1: {
+        "Нет": {
           x1: 94, y1: 532,
         },
       },
@@ -229,16 +230,16 @@ export default function getPrintCoords() {
       [FIELDS.RELATIVE_CITIZENSHIP]: { x: 275, y: 660 },//'34_ES_citizen_citizenship'
       [FIELDS.RELATIVE_PASSPORT]: { x: 475, y: 680 },//'34_ES_citizen_passport'
       [FIELDS.RELATIVE_RANK]: {//'35_citMarried'
-        0: {
+        "супруг/-а": {
           x1: 68, y1: 721,
         },
-        1: {
+        "ребенок": {
           x1: 127, y1: 721,
         },
-        2: {
+        "внук/-чка": {
           x1: 174, y1: 721,
         },
-        3: {
+        "иждивенец": {
           x1: 226, y1: 721,
         },
       },

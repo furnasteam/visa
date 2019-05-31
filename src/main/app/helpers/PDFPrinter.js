@@ -107,16 +107,25 @@ export default class PDFPrinter extends React.Component {
       if (!value || !json.hasOwnProperty(key) || value == null || value == undefined || value === "")
         continue;
       if (Array.isArray(value)) {
-        // this.drawCheckLineArray(ctx, value, pageCoords[key], getX, getY);
-      } else {
-        ctx.fillText(json[key], getX(pageCoords[key].x), getY(pageCoords[key].y));
+        this.drawCheckLineArray(ctx, value, pageCoords[key], getX, getY);
+      } else
+      {
+        var isRadio = pageCoords[key][value.replace(key + "_","")];
+          if(isRadio){
+              this.drawCheckLine(ctx, value.replace(key + "_",""), pageCoords[key], getX, getY);
+          }
+          else{
+              ctx.fillText(json[key], getX(pageCoords[key].x), getY(pageCoords[key].y));
+          }
       }
     }
   }
 
   drawCheckLineArray(ctx, arrVal, coords, getX, getY) {
-    for (var i = 0; i < arrVal.length; i++) {
-      this.drawCheckLine(ctx, arrVal[i], coords, getX, getY);
+      for (var i = 0; i < arrVal.length; i++) {
+          var el = arrVal[i];
+          if(el.selected)
+            this.drawCheckLine(ctx, el.name, coords, getX, getY);
     }
   }
 
