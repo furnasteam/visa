@@ -1,6 +1,10 @@
 import React from 'react';
 import {SchengenVisa} from './SchengenVisa';
-import {VISA_APPLICATION_FORM_ENUMS, VISA_APPLICATION_FORM_FILEDS} from '../../VisaApplicationFormModel';
+import {
+    VISA_APPLICATION_FORM_ENUMS,
+    VISA_APPLICATION_FORM_ENUMS_NAMES,
+    VISA_APPLICATION_FORM_FILEDS
+} from '../../VisaApplicationFormModel';
 import {Form} from '../../../../components/form/Form';
 import {func, object, string} from 'prop-types';
 import {CheckboxField} from '../../../../components/form/fields/checkbox-field/CheckboxField';
@@ -50,7 +54,7 @@ export class PasportScreen extends React.Component {
     // debugger
   }
   showSchengenVisa(){
-    return this.props.formData.schengenExists == "schengenExists_Да";
+      return this.props.formData.schengenExists == (VISA_APPLICATION_FORM_FILEDS.SCHENGEN_EXISTS + '_' + VISA_APPLICATION_FORM_ENUMS_NAMES.BOOL.YES);
   }
   render() {
     var {formData, onChange} = this.props;

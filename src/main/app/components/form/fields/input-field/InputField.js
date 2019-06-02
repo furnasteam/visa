@@ -16,7 +16,6 @@ export class InputField extends React.Component {
   };
 
   render() {
-
     const {label, helpText, value, onChange, placeholder} = this.props;
 
     return (

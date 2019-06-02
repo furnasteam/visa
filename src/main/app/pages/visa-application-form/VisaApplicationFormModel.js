@@ -7,7 +7,7 @@ export const VISA_APPLICATION_FORM_FILEDS = {
   BIRTH_DATE : 'birthDate',
   CITIZENSHIP : 'citizenship',
   BIRTH_CITIZENSHIP : 'birthCitizenship',
-  FORM_GENDER : 'gender',
+  GENDER : 'gender',
   MARITAL_STATUS : 'maritalStatus',
   MARITAL_STATUS_DETAILS: 'maritalStatusDetails',
   TARGET : 'target',
@@ -92,89 +92,215 @@ export const VISA_APPLICATION_FORM_FILEDS = {
   // TRIP_GOAL_DETAILS:'tripGoalDetails',
 }
 
+
+export const VISA_APPLICATION_FORM_ENUMS_NAMES = {
+  GENDER: {
+    MAN: 'man',
+    WOMAN: 'woman'
+  },
+  BOOL: {
+    YES: 'yes',
+    NO: 'no'
+  },
+  PAYER: {
+    DECLARER: 'declarer',
+    SPONSOR: 'sponsor'
+  },
+  PAYER_SPONSOR: {
+    PUNCT4: 'punct4',
+    OTHER: 'other'
+  },
+  FACILITIES: {
+    CASH: 'cash',
+    PAYHOUSE: 'payHouse',
+    PAYFACILITIES: 'payFacilities',
+    PAYTRANSPORT: 'payTransport',
+    PAYOTHER: 'payOther'
+  },
+  RELATIVE_RANK: {
+    SPOUSE: 'spouse',
+    CHILD: 'child',
+    GRANDSON: 'grandson',
+    DEPENDENT: 'dependent'
+  },
+  PLACEMENT: {
+    INVITATION: 'invitation',
+    ITSELF: 'itself'
+  },
+  ENTRY_TYPE_COUNT: {
+    ONCE: 'once',
+    TWICE: 'twice',
+    MULTI: 'multi'
+  },
+  EMPLOYMENT_STATUS: {
+    UNEMPLOYED: 'unemployed',
+    HOUSEWIFE: 'housewife',
+    RETIREE: 'retiree',
+    INDIVIDUAL_BUSINESSMAN: 'individual businessman',
+    STUDENT: 'student',
+    PUPIL: 'pupil',
+    OTHER: 'other'
+  },
+  MARITAL_STATUS: {
+    ALONE: 'alone',
+    NOTLIVEWITHWIFE: 'notLiveWithWife',
+    WIDOWER: 'widower',
+    MARRIED: 'married',
+    DIVORCED: 'divorced',
+    NOTADULT: 'notAdult',
+    OTHER: 'other'
+  },
+  TARGET: {
+    TOURISM: 'tourism',
+    BUSINESS: 'business',
+    SPORT: 'sport',
+    CULTURE: 'culture',
+    STUDY: 'study',
+    OFFICIAL: 'official',
+    TREATMENT: 'treatment',
+    TRANSIT: 'transit',
+    VISIT: 'visit',
+    AIRPORT: 'airport',
+    OTHER: 'other'
+  }
+}
+
+var ENUMS_NAMES = VISA_APPLICATION_FORM_ENUMS_NAMES;
+
 export var VISA_APPLICATION_FORM_ENUMS = {
-  GENDER: ["мужской", "женский"],
-
-  BOOL: ["Да", "Нет"],
-
-  PAYER: ["Сам заявитель", "Спонсор"],
-
-  PAYER_SPONSOR: ["Указанные в пункте 4", "Иные"],
+  GENDER: [
+    { name: ENUMS_NAMES.GENDER.MAN, label: 'мужской' },
+    { name: ENUMS_NAMES.GENDER.WOMAN, label: 'женский' }
+  ],
+  BOOL: [
+    { name: ENUMS_NAMES.BOOL.YES, label: 'Да' },
+    { name: ENUMS_NAMES.BOOL.NO, label: 'Нет' }
+  ],
+  PAYER: [
+    { name: ENUMS_NAMES.PAYER.DECLARER, label: 'Сам заявитель' },
+    { name: ENUMS_NAMES.PAYER.SPONSOR, label: 'Спонсор' }
+  ],
+  PAYER_SPONSOR: [
+    { name: ENUMS_NAMES.PAYER_SPONSOR.PUNCT4, label: 'Указанные в пункте 4' },
+    { name: ENUMS_NAMES.PAYER_SPONSOR.OTHER, label: 'Иные' }
+  ],
   FACILITIES: [
     {
-      name: "наличные деньги",
+      name: ENUMS_NAMES.FACILITIES.CASH,
+      label: 'наличные деньги',
       selected: false
     },
     {
-      name: "обеспечивается место пребывания",
+      name: ENUMS_NAMES.FACILITIES.PAYHOUSE,
+      label: 'обеспечивается место пребывания',
       selected: false
     },
     {
-      name: "оплачиваются все расходы во время пребывания",
+      name: ENUMS_NAMES.FACILITIES.PAYFACILITIES,
+      label: 'оплачиваются все расходы во время пребывания',
       selected: false
     },
     {
-      name: "Оплачивается транспорт",
+      name: ENUMS_NAMES.FACILITIES.PAYTRANSPORT,
+      label: 'Оплачивается транспорт',
       selected: false
     },
     {
-      name: "иное",
+      name: ENUMS_NAMES.FACILITIES.PAYOTHER,
+      label: 'иное',
       selected: false
     },
   ],
-  RELATIVE_RANK: ["супруг/-а", "ребенок", "внук/-чка", "иждивенец"],
-  PLACEMENT: ["Приглашение", "самостоятельное размещение\n" +
-  "(отель/хостел/апартаменты)"],
-  ENTRY_TYPE_COUNT:["однократного въезда","двукратного въезда","многократного въезда"],
-
-  EMPLOYMENT_STATUS:["unemployed (безработный)","housewife (домохозяйка)","pensioners (пенсионер)","individual businessman (ип)","student (студент)","pupil (школьник)","иное"],
-  MARITAL_STATUS: ["холост/незамужем", "не проживает с супругой", "вдовец/вдова", "женат/замужем", "разведен(а)", "несовершеннолетний", "иное"],
+  RELATIVE_RANK: [
+    { name: ENUMS_NAMES.RELATIVE_RANK.SPOUSE, label: 'супруг/-а' },
+    { name: ENUMS_NAMES.RELATIVE_RANK.CHILD, label: 'ребенок' },
+    { name: ENUMS_NAMES.RELATIVE_RANK.GRANDSON, label: 'внук/-чка' },
+    { name: ENUMS_NAMES.RELATIVE_RANK.DEPENDENT, label: 'иждивенец' }
+  ],
+  PLACEMENT: [
+    { name: ENUMS_NAMES.PLACEMENT.INVITATION, label: 'Приглашение' },
+    { name: ENUMS_NAMES.PLACEMENT.ITSELF, label: "самостоятельное размещение\n" +"(отель/хостел/апартаменты)"}
+  ],
+  ENTRY_TYPE_COUNT: [
+    { name: ENUMS_NAMES.ENTRY_TYPE_COUNT.ONCE, label: 'однократного въезда' },
+    { name: ENUMS_NAMES.ENTRY_TYPE_COUNT.TWICE, label: 'двукратного въезда' },
+    { name: ENUMS_NAMES.ENTRY_TYPE_COUNT.MULTI, label: 'многократного въезда'}
+  ],
+  EMPLOYMENT_STATUS: [
+    { name: ENUMS_NAMES.EMPLOYMENT_STATUS.UNEMPLOYED, label: 'unemployed (безработный)' },
+    { name: ENUMS_NAMES.EMPLOYMENT_STATUS.HOUSEWIFE, label: 'housewife (домохозяйка)' },
+    { name: ENUMS_NAMES.EMPLOYMENT_STATUS.RETIREE, label: 'retiree (пенсионер)' },
+    { name: ENUMS_NAMES.EMPLOYMENT_STATUS.INDIVIDUAL_BUSINESSMAN, label: 'individual businessman (ип)' },
+    { name: ENUMS_NAMES.EMPLOYMENT_STATUS.STUDENT, label: 'student (студент)' },
+    { name: ENUMS_NAMES.EMPLOYMENT_STATUS.PUPIL, label: 'pupil (школьник)' },
+    { name: ENUMS_NAMES.EMPLOYMENT_STATUS.OTHER, label: 'иное' }
+  ],
+  MARITAL_STATUS: [
+    { name: ENUMS_NAMES.MARITAL_STATUS.ALONE, label: 'холост/незамужем' },
+    { name: ENUMS_NAMES.MARITAL_STATUS.NOTLIVEWITHWIFE , label: 'не проживает с супругой' },
+    { name: ENUMS_NAMES.MARITAL_STATUS.WIDOWER, label: 'вдовец/вдова' },
+    { name: ENUMS_NAMES.MARITAL_STATUS.MARRIED, label: 'женат/замужем' },
+    { name: ENUMS_NAMES.MARITAL_STATUS.DIVORCED, label: 'разведен(а)' },
+    { name: ENUMS_NAMES.MARITAL_STATUS.NOTADULT, label: 'несовершеннолетний' },
+    { name: ENUMS_NAMES.MARITAL_STATUS.OTHER, label: 'иное' }
+  ],
   TARGET : [
     {
-      name: "туризм",
+      name: ENUMS_NAMES.TARGET.TOURISM,
+      label: "туризм",
       selected: false
     },
     {
-      name: "деловая",
+      name: ENUMS_NAMES.TARGET.BUSINESS,
+      label: "деловая",
       selected: false
     },
     {
-      name: "спорт",
+      name: ENUMS_NAMES.TARGET.SPORT,
+      label: "спорт",
       selected: false
     },
     {
-      name: "культура",
+      name: ENUMS_NAMES.TARGET.CULTURE,
+      label: "культура",
       selected: false
     },
     {
-      name: "учёба",
+      name: ENUMS_NAMES.TARGET.STUDY,
+      label: "учёба",
       selected: false
     },
     {
-      name: "официальная",
+      name: ENUMS_NAMES.TARGET.OFFICIAL,
+      label: "официальная",
       selected: false
     },
     {
-      name: "лечение",
+      name: ENUMS_NAMES.TARGET.TREATMENT,
+      label: "лечение",
       selected: false
     },
     {
-      name: "транзит",
+      name: ENUMS_NAMES.TARGET.TRANSIT,
+      label: "транзит",
       selected: false
     },
     {
-      name: "посещение родственников или друзей",
+      name: ENUMS_NAMES.TARGET.VISIT,
+      label: "посещение родственников или друзей",
       selected: false
     },
     {
-      name: "транзит через аэропорт",
+      name: ENUMS_NAMES.TARGET.AIRPORT,
+      label: "транзит через аэропорт",
       selected: false
     },
     {
-      name: "иное",
+      name: ENUMS_NAMES.TARGET.OTHER,
+      label: "иное",
       selected: false
     }
-    ]
+  ]
 }
 
 

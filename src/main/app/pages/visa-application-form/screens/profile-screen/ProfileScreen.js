@@ -1,5 +1,5 @@
 import React from 'react';
-import {VISA_APPLICATION_FORM_ENUMS, VISA_APPLICATION_FORM_FILEDS} from '../../VisaApplicationFormModel';
+import {VISA_APPLICATION_FORM_ENUMS, VISA_APPLICATION_FORM_FILEDS, VISA_APPLICATION_FORM_ENUMS_NAMES} from '../../VisaApplicationFormModel';
 import {Form} from '../../../../components/form/Form';
 import {func, object, string} from 'prop-types';
 import {CheckboxField} from '../../../../components/form/fields/checkbox-field/CheckboxField';
@@ -22,7 +22,7 @@ export class ProfileScreen extends React.Component {
   }
 
   showMaritalStatusDetails(){
-    return this.props.formData.maritalStatus == "maritalStatus_иное";
+      return this.props.formData.maritalStatus == (VISA_APPLICATION_FORM_FILEDS.MARITAL_STATUS + '_' + VISA_APPLICATION_FORM_ENUMS_NAMES.MARITAL_STATUS.OTHER);
   }
 
   render() {

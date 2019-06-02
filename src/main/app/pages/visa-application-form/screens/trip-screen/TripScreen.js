@@ -1,6 +1,10 @@
 import React from 'react';
 import {CheckboxField} from '../../../../components/form/fields/checkbox-field/CheckboxField';
-import {VISA_APPLICATION_FORM_ENUMS, VISA_APPLICATION_FORM_FILEDS} from '../../VisaApplicationFormModel';
+import {
+    VISA_APPLICATION_FORM_ENUMS,
+    VISA_APPLICATION_FORM_ENUMS_NAMES,
+    VISA_APPLICATION_FORM_FILEDS
+} from '../../VisaApplicationFormModel';
 import {Form} from '../../../../components/form/Form';
 import {func, object, string} from 'prop-types';
 import {DateField} from '../../../../components/form/fields/date-field/DateField';
@@ -22,7 +26,7 @@ export class TripScreen extends React.Component {
     var res;
     if(this.props.formData.target){
       res = this.props.formData.target.find((el)=>{
-        if(el.name == "иное")
+        if(el.name == VISA_APPLICATION_FORM_ENUMS_NAMES.TARGET.OTHER)
           return el;
       });
     }

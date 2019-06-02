@@ -5,7 +5,11 @@ import {CheckboxField} from '../../../../components/form/fields/checkbox-field/C
 import {DateField} from '../../../../components/form/fields/date-field/DateField';
 import {InputField} from '../../../../components/form/fields/input-field/InputField';
 import {RadioButtonField} from '../../../../components/form/fields/radio-button-field/RadioButtonField';
-import {VISA_APPLICATION_FORM_ENUMS, VISA_APPLICATION_FORM_FILEDS} from '../../VisaApplicationFormModel';
+import {
+    VISA_APPLICATION_FORM_ENUMS,
+    VISA_APPLICATION_FORM_ENUMS_NAMES,
+    VISA_APPLICATION_FORM_FILEDS
+} from '../../VisaApplicationFormModel';
 
 export class ContractsScreen extends React.Component {
   static propTypes = {
@@ -19,14 +23,15 @@ export class ContractsScreen extends React.Component {
       onChange(value);
     }
   }
+
   showPupil(){
-    return this.props.formData.maritalStatus == "maritalStatus_несовершеннолетний";
+      return this.props.formData.maritalStatus == (VISA_APPLICATION_FORM_FILEDS.MARITAL_STATUS + '_' + VISA_APPLICATION_FORM_ENUMS_NAMES.MARITAL_STATUS.NOTADULT);
   }
   showTargetCountryDetails(){
-    return this.props.formData.targetCountry == "targetCountry_Да";
+      return this.props.formData.targetCountry == (VISA_APPLICATION_FORM_FILEDS.TARGET_COUNTRY + '_' + VISA_APPLICATION_FORM_ENUMS_NAMES.BOOL.YES);
   }
   showEmploymentStatusDetails(){
-    return this.props.formData.employmentStatus == "employmentStatus_иное";
+      return this.props.formData.employmentStatus == (VISA_APPLICATION_FORM_FILEDS.EMPLOYMENT_STATUS + '_' + VISA_APPLICATION_FORM_ENUMS_NAMES.EMPLOYMENT_STATUS.OTHER);
   }
 
   render() {

@@ -1,5 +1,5 @@
 import React from 'react';
-import {VISA_APPLICATION_FORM_ENUMS, VISA_APPLICATION_FORM_FILEDS} from '../../VisaApplicationFormModel';
+import {VISA_APPLICATION_FORM_ENUMS, VISA_APPLICATION_FORM_FILEDS, VISA_APPLICATION_FORM_ENUMS_NAMES} from '../../VisaApplicationFormModel';
 import {CheckboxField} from '../../../../components/form/fields/checkbox-field/CheckboxField';
 import {Form} from '../../../../components/form/Form';
 import {func, object, string} from 'prop-types';
@@ -18,33 +18,32 @@ export class ShengenScreen extends React.Component {
       onChange(value);
     }
   }
+
   showFingerprintsDate(){
-    return this.props.formData.fingerprintsExists == "fingerprintsExists_Да";
+      return this.props.formData.fingerprintsExists == (VISA_APPLICATION_FORM_FILEDS.FINGERPRINTS_EXISTS + '_' + VISA_APPLICATION_FORM_ENUMS_NAMES.BOOL.YES);
   }
   showPlacementDetails(){
-    return this.props.formData.placement == "placement_самостоятельное размещение\n" +
-      "(отель/хостел/апартаменты)";
+      return this.props.formData.placement == (VISA_APPLICATION_FORM_FILEDS.PLACEMENT + '_' + VISA_APPLICATION_FORM_ENUMS_NAMES.PLACEMENT.ITSELF);
   }
   showInvateCompany(){
-    return this.props.formData.invateCompany == "invateCompany_Да";
+      return this.props.formData.invateCompany == (VISA_APPLICATION_FORM_FILEDS.INVATE_COMPANY  + '_' + VISA_APPLICATION_FORM_ENUMS_NAMES.BOOL.YES);
   }
   showPayerSponsor(){
-    return this.props.formData.payer == "payer_Спонсор";
+      return this.props.formData.payer == (VISA_APPLICATION_FORM_FILEDS.PAYER  + '_' + VISA_APPLICATION_FORM_ENUMS_NAMES.PAYER.SPONSOR);
   }
   showPayerSponsorDetails(){
-    return this.props.formData.payerSponsor == "payerSponsor_Иные";
+      return this.props.formData.payerSponsor == (VISA_APPLICATION_FORM_FILEDS.PAYER_SPONSOR  + '_' + VISA_APPLICATION_FORM_ENUMS_NAMES.PAYER_SPONSOR.OTHER);
   }
   showFacilitiesDetails(){
     var res;
       if(this.props.formData.facilities){
         res = this.props.formData.facilities.find((el)=>{
-          if(el.name == "иное")
+          if(el.name == VISA_APPLICATION_FORM_ENUMS_NAMES.FACILITIES.PAYOTHER)
             return el;
         });
       }
       return res && res.selected;
   }
-
 
   showRelativeDetails(){
     return this.props.formData.relativeExists == "relativeExists_Да";

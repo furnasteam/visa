@@ -32,7 +32,7 @@ export class CheckboxField extends React.Component {
     const {label, helpText, value, fieldName, buttons, defaultCheckedIndex, onChange} = this.props;
     let context = this;
     let radioButtons = buttons.map(function(btn, i){
-      return  <Checkbox label={btn.name} key={btn.name} id={btn.name} name={fieldName} checked={btn.selected} onChange={context.updateSelectedState.bind(context)}  />
+      return  <Checkbox label={btn.label} key={btn.name} id={btn.name} name={fieldName} checked={btn.selected} onChange={context.updateSelectedState.bind(context)}  />
     });
 
     return (
