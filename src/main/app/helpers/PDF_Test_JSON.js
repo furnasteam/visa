@@ -3,6 +3,7 @@ export default function getTestPrintData(pageNumber) {
     "firstName": "Sergey",
     "lastName": "Ryabov",
     "birthDate": "08.10.1992.г",
+    "gender": "gender_man",
     "undefined": {
       "dispatchConfig": null,
       "_targetInst": null,

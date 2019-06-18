@@ -55,7 +55,7 @@ export class ShengenScreen extends React.Component {
             value={formData}>
         <RadioButtonField label={"1. Предоставляли отпечатки пальцев?"}
                           fieldName={VISA_APPLICATION_FORM_FILEDS.FINGERPRINTS_EXISTS}
-                          buttonNames={VISA_APPLICATION_FORM_ENUMS.BOOL}
+                          buttons={VISA_APPLICATION_FORM_ENUMS.BOOL}
         />
         {this.showFingerprintsDate() &&
         <DateField label={""}
@@ -84,7 +84,7 @@ export class ShengenScreen extends React.Component {
 
         <RadioButtonField label={"3. Где останавливаетесь "}
                           fieldName={VISA_APPLICATION_FORM_FILEDS.PLACEMENT}
-                          buttonNames={VISA_APPLICATION_FORM_ENUMS.PLACEMENT}
+                          buttons={VISA_APPLICATION_FORM_ENUMS.PLACEMENT}
         />
         {this.showPlacementDetails() &&
         <span>
@@ -110,7 +110,7 @@ export class ShengenScreen extends React.Component {
 
         <RadioButtonField label={"4. Приглашение от компании?"}
                           fieldName={VISA_APPLICATION_FORM_FILEDS.INVATE_COMPANY}
-                          buttonNames={VISA_APPLICATION_FORM_ENUMS.BOOL}
+                          buttons={VISA_APPLICATION_FORM_ENUMS.BOOL}
         />
         {this.showInvateCompany() &&
         <span>
@@ -160,12 +160,12 @@ export class ShengenScreen extends React.Component {
 
         <RadioButtonField label={"13. Расходы заявителя на проезд и на пребывание покрывает"}
                           fieldName={VISA_APPLICATION_FORM_FILEDS.PAYER}
-                          buttonNames={VISA_APPLICATION_FORM_ENUMS.PAYER}
+                          buttons={VISA_APPLICATION_FORM_ENUMS.PAYER}
         />
         {this.showPayerSponsor() &&
         <RadioButtonField label={"14. Кто является спонсором?"}
                            fieldName={VISA_APPLICATION_FORM_FILEDS.PAYER_SPONSOR}
-                           buttonNames={VISA_APPLICATION_FORM_ENUMS.PAYER_SPONSOR}
+                           buttons={VISA_APPLICATION_FORM_ENUMS.PAYER_SPONSOR}
         />}
         {this.showPayerSponsorDetails() &&
         <InputField
@@ -189,7 +189,7 @@ export class ShengenScreen extends React.Component {
         "Европейского Экономического Пространства \n" +
         "или Швейцарии?"}
                           fieldName={VISA_APPLICATION_FORM_FILEDS.RELATIVE_EXISTS}
-                          buttonNames={VISA_APPLICATION_FORM_ENUMS.BOOL}
+                          buttons={VISA_APPLICATION_FORM_ENUMS.BOOL}
         />
         {this.showRelativeDetails() &&
         <span>
@@ -197,7 +197,7 @@ export class ShengenScreen extends React.Component {
         "Европейского Экономического Пространства \n" +
         "или Швейцарии"}
                           fieldName={VISA_APPLICATION_FORM_FILEDS.RELATIVE_RANK}
-                          buttonNames={VISA_APPLICATION_FORM_ENUMS.RELATIVE_RANK}
+                          buttons={VISA_APPLICATION_FORM_ENUMS.RELATIVE_RANK}
         />
 
         <InputField label={"18. Имя"}

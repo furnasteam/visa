@@ -54,7 +54,7 @@ export class ProfileScreen extends React.Component {
 
         <RadioButtonField label={"4. Пол"}
                           fieldName={VISA_APPLICATION_FORM_FILEDS.GENDER}
-                          buttonNames={VISA_APPLICATION_FORM_ENUMS.GENDER}
+                          buttons={VISA_APPLICATION_FORM_ENUMS.GENDER}
         />
 
         <InputField label={"5. Фамилия при рождении"}
@@ -99,7 +99,7 @@ export class ProfileScreen extends React.Component {
 
         <RadioButtonField label={"9. Семейное положение"}
                           fieldName={VISA_APPLICATION_FORM_FILEDS.MARITAL_STATUS}
-                          buttonNames={VISA_APPLICATION_FORM_ENUMS.MARITAL_STATUS}
+                          buttons={VISA_APPLICATION_FORM_ENUMS.MARITAL_STATUS}
         />
 
         { this.showMaritalStatusDetails() && <InputField

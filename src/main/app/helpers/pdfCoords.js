@@ -1,5 +1,6 @@
-import { VISA_APPLICATION_FORM_FILEDS, VISA_APPLICATION_FORM_ENUMS } from '../pages/visa-application-form/VisaApplicationFormModel';
+import { VISA_APPLICATION_FORM_FILEDS, VISA_APPLICATION_FORM_ENUMS, VISA_APPLICATION_FORM_ENUMS_NAMES } from '../pages/visa-application-form/VisaApplicationFormModel';
 const FIELDS = VISA_APPLICATION_FORM_FILEDS;
+const ENUMS_NAMES = VISA_APPLICATION_FORM_ENUMS_NAMES;
 
 export default function getPrintCoords() {
   return [{
@@ -11,33 +12,33 @@ export default function getPrintCoords() {
     [FIELDS.BIRTH_COUNTRY]: { x: 268, y: 427 },//'6_birth_Country'
     [FIELDS.CITIZENSHIP]: { x: 433, y: 374 },//'7_citizenship'
     [FIELDS.BIRTH_CITIZENSHIP]: { x: 433, y: 445 },//'7_birth_Citizenship'
-    [FIELDS.FORM_GENDER]: {//'8_gender'
-      "мужской": {
+    [FIELDS.GENDER]: {//'8_gender'
+      [ENUMS_NAMES.GENDER.MAN]: {
         x1: 65, y1: 495, //чекушки разные по размеру, эти больше других
         x2: 83, y2: 513,
       },
-      "женский": {
+      [ENUMS_NAMES.GENDER.WOMAN]: {
         x1: 120, y1: 495,
         x2: 139, y2: 513,
       },
     },
     [FIELDS.MARITAL_STATUS]: {//'9_maritalStatus'
-      "холост/незамужем": {
+      [ENUMS_NAMES.MARITAL_STATUS.ALONE]: {
         x1: 260, y1: 484,
       },
-      "женат/замужем": {
+      [ENUMS_NAMES.MARITAL_STATUS.MARRIED]: {
         x1: 365, y1: 483,
       },
-      "не проживает с супругой": {
+      [ENUMS_NAMES.MARITAL_STATUS.NOTLIVEWITHWIFE]: {
         x1: 462, y1: 483,
       },
-      "разведен(а)": {
+      [ENUMS_NAMES.MARITAL_STATUS.DIVORCED]: {
         x1: 261, y1: 509,
       },
-      "вдовец/вдова": {
+      [ENUMS_NAMES.MARITAL_STATUS.WIDOWER]: {
         x1: 338, y1: 509,
       },
-      "иное": {
+      [ENUMS_NAMES.MARITAL_STATUS.OTHER]: {
         x1: 425, y1: 509,
       },
       // "несовершеннолетний" такого поля нет на бланке но есть на веб форме

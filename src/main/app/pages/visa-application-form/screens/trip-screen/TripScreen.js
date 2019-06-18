@@ -60,7 +60,7 @@ export class TripScreen extends React.Component {
         />
         <RadioButtonField label={"4. Виза запрашивается для"}
                           fieldName={VISA_APPLICATION_FORM_FILEDS.ENTRY_TYPE_COUNT}
-                          buttonNames={VISA_APPLICATION_FORM_ENUMS.ENTRY_TYPE_COUNT}
+                          buttons={VISA_APPLICATION_FORM_ENUMS.ENTRY_TYPE_COUNT}
                           helpText={<div>Если хотите, чтобы визу предоставили на дольший срок — указывайте пункт «многократного въезда».</div>}
         />
 

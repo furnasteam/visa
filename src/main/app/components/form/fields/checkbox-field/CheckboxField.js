@@ -19,10 +19,11 @@ export class CheckboxField extends React.Component {
   updateSelectedState(name, selected) {
     if(name){
       const { onChange, buttons} = this.props;
-      
-      var found = buttons.find(function(el, i) {
+
+      var found = buttons.find((el) => {
         return el.name == name;
       });
+
       found.selected = selected;
       onChange(buttons);
     }

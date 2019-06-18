@@ -91,7 +91,7 @@ export class ContractsScreen extends React.Component {
 
         <RadioButtonField label={"4. Страна пребывания, если не является страной гражданства"}
                           fieldName={VISA_APPLICATION_FORM_FILEDS.TARGET_COUNTRY}
-                          buttonNames={VISA_APPLICATION_FORM_ENUMS.BOOL}
+                          buttons={VISA_APPLICATION_FORM_ENUMS.BOOL}
                           helpText={<div>
                             Если гражданин РФ и проживает в РФ, то напишите нет.
                           </div>}
@@ -120,7 +120,7 @@ export class ContractsScreen extends React.Component {
 
         <RadioButtonField label={"5. Профессиональная деятельность в настоящее время"}
                           fieldName={VISA_APPLICATION_FORM_FILEDS.EMPLOYMENT_STATUS}
-                          buttonNames={VISA_APPLICATION_FORM_ENUMS.EMPLOYMENT_STATUS}
+                          buttons={VISA_APPLICATION_FORM_ENUMS.EMPLOYMENT_STATUS}
                           helpText={<div>
                             Если гражданин РФ и проживает в РФ, то напишите нет.
                           </div>}

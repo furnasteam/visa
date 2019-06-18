@@ -85,7 +85,7 @@ export class PasportScreen extends React.Component {
         "    три года (2016 — 2018)" +
         "Есть шенгенские визы?"}
                           fieldName={VISA_APPLICATION_FORM_FILEDS.SCHENGEN_EXISTS}
-                          buttonNames={VISA_APPLICATION_FORM_ENUMS.BOOL}
+                          buttons={VISA_APPLICATION_FORM_ENUMS.BOOL}
                           helpText={<div>
                             Если гражданин РФ и проживает в РФ, то напишите нет.
                           </div>}

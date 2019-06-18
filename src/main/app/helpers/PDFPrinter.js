@@ -72,9 +72,10 @@ export default class PDFPrinter extends React.Component {
       {PDFJS && this.renderCanvas()}
       <Button className="visa-application-form__download-PDF-button"
               onClick={this.download.bind(this)}>Скачать</Button>
-      <div id="placer" style={{top: -10000, position: "absolute"}}></div>
+      <div id="placer" ></div>
     </div>);
   }
+    // style={{top: -10000, position: "absolute"}}
   getPrintData() {
       var {formData} = this.props;
       return JSON.stringify(formData) === JSON.stringify({})? getTestPrintData() : formData;
@@ -110,13 +111,14 @@ export default class PDFPrinter extends React.Component {
         this.drawCheckLineArray(ctx, value, pageCoords[key], getX, getY);
       } else
       {
-          var isRadio = value.replace && pageCoords[key][value.replace(key + "_","")];
-          if(isRadio){
-              this.drawCheckLine(ctx, value.replace(key + "_",""), pageCoords[key], getX, getY);
-          }
-          else{
+          // var isRadio = value.replace && pageCoords[key][value.replace(key + "_","")];
+          // if(isRadio){
+          //     debugger
+          //     this.drawCheckLine(ctx, value.replace(key + "_",""), pageCoords[key], getX, getY);
+          // }
+          // else{
               ctx.fillText(json[key], getX(pageCoords[key].x), getY(pageCoords[key].y));
-          }
+          // }
       }
     }
   }
@@ -158,7 +160,7 @@ export default class PDFPrinter extends React.Component {
 
   download() {
     this.addData();
-    this.generatePDF();
+    // this.generatePDF();
   }
 
   addCancvasToPdf(doc, canvasId) {
