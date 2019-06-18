@@ -110,7 +110,7 @@ export default class PDFPrinter extends React.Component {
         this.drawCheckLineArray(ctx, value, pageCoords[key], getX, getY);
       } else
       {
-        var isRadio = pageCoords[key][value.replace(key + "_","")];
+          var isRadio = value.replace && pageCoords[key][value.replace(key + "_","")];
           if(isRadio){
               this.drawCheckLine(ctx, value.replace(key + "_",""), pageCoords[key], getX, getY);
           }

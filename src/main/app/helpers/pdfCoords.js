@@ -3,14 +3,14 @@ const FIELDS = VISA_APPLICATION_FORM_FILEDS;
 
 export default function getPrintCoords() {
   return [{
-    [FIELDS.LAST_NAME]: { x: 158, y: 273 },//1_family
-    [FIELDS.BIRTH_LAST_NAME]: { x: 375, y: 297 },// '2_previosFamily'
-    [FIELDS.FIRST_NAME]: { x: 158, y: 324 },//'3_name'
+    [FIELDS.LAST_NAME]: { x: 145, y: 271 },//1_family
+    [FIELDS.BIRTH_LAST_NAME]: { x: 355, y: 300 },// '2_previosFamily'
+    [FIELDS.FIRST_NAME]: { x: 158, y: 325 },//'3_name'
     [FIELDS.BIRTH_DATE]: { x: 90, y: 374 },//'4_birthDate'
-    [FIELDS.BIRTH_PLACE]: { x: 268, y: 378 },//'5_birthPlace'
-    [FIELDS.BIRTH_COUNTRY]: { x: 275, y: 428 },//'6_birth_Country'
-    [FIELDS.CITIZENSHIP]: { x: 433, y: 369 },//'7_citizenship'
-    [FIELDS.BIRTH_CITIZENSHIP]: { x: 433, y: 443 },//'7_birth_Citizenship'
+    [FIELDS.BIRTH_PLACE]: { x: 268, y: 375 },//'5_birthPlace'
+    [FIELDS.BIRTH_COUNTRY]: { x: 268, y: 427 },//'6_birth_Country'
+    [FIELDS.CITIZENSHIP]: { x: 433, y: 374 },//'7_citizenship'
+    [FIELDS.BIRTH_CITIZENSHIP]: { x: 433, y: 445 },//'7_birth_Citizenship'
     [FIELDS.FORM_GENDER]: {//'8_gender'
       "мужской": {
         x1: 65, y1: 495, //чекушки разные по размеру, эти больше других
@@ -69,8 +69,8 @@ export default function getPrintCoords() {
     [FIELDS.INTERNATIONAL_PASSPORT_STARTDATE]: { x: 241, y: 785 },//'14_docStartDate'
     [FIELDS.INTERNATIONAL_PASSPORT_ENDDATE]: { x: 359, y: 785 },//'15_docEndDate'
     [FIELDS.INTERNATIONAL_PASSPORT_DELIVERY_STRUCTURE]: { x: 464, y: 785 },//'16_docIssuedBy'
-    [FIELDS.EMAIL]: { x: 100, y: 831 },//'17_adress_email'
-    [FIELDS.NUMBER]: { x: 435, y: 831 },//'17_telNumber'
+    [FIELDS.EMAIL]: { x: 100, y: 833 },//'17_adress_email'
+    [FIELDS.NUMBER]: { x: 435, y: 833 },//'17_telNumber'
     [FIELDS.RESIDENCE_CAPTION]: {//'18_liveCounty'
       "Да": {
         x1: 70, y1: 871,
@@ -156,9 +156,9 @@ export default function getPrintCoords() {
         },
       },
       [FIELDS.FINGERPRINTS_DATE]: { x: 260, y: 550 },//'27_printsDate'
-      [FIELDS.PERMISSION_NAME]: { x: 150, y: 620 },//'28_permExpired'
-      [FIELDS.PERMISSION_STARTDATE]: { x: 413, y: 620 },//'28_permStartDate'
-      [FIELDS.PERMISSION_ENDDATE]: { x: 511, y: 620 },//'28_permEndDate'
+      [FIELDS.PERMISSION_NAME]: { x: 135, y: 615 },//'28_permExpired'
+      [FIELDS.PERMISSION_STARTDATE]: { x: 413, y: 615 },//'28_permStartDate'
+      [FIELDS.PERMISSION_ENDDATE]: { x: 511, y: 615 },//'28_permEndDate'
       '29_entryStartDate': { x: 90, y: 665 },//'29_entryStartDate'
       '30_entryEndDate': { x: 360, y: 665 },//'30_entryEndDate'
 
