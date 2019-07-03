@@ -7,6 +7,7 @@ import {DateField} from '../../../../components/form/fields/date-field/DateField
 import {InputField} from '../../../../components/form/fields/input-field/InputField';
 import {RadioButtonField} from '../../../../components/form/fields/radio-button-field/RadioButtonField';
 import size from 'lodash/size';
+import {xlp} from "../../../../helpers/helper";
 
 export class ProfileScreen extends React.Component {
   static propTypes = {
@@ -22,7 +23,7 @@ export class ProfileScreen extends React.Component {
   }
 
   showMaritalStatusDetails(){
-      return this.props.formData.maritalStatus == (VISA_APPLICATION_FORM_FILEDS.MARITAL_STATUS + '_' + VISA_APPLICATION_FORM_ENUMS_NAMES.MARITAL_STATUS.OTHER);
+      return xlp.isSelected(this.props.formData.maritalStatus, VISA_APPLICATION_FORM_ENUMS_NAMES.MARITAL_STATUS.OTHER);
   }
 
   render() {

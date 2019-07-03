@@ -52,6 +52,7 @@ export class VisaApplicationFormPage extends React.Component {
 
   handleFormChange = (formData) => {
     console.log('formData', formData);
+    console.log('formData2', JSON.stringify(formData));
     this.setState({formData});
   };
 

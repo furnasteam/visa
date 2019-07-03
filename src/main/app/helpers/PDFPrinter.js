@@ -103,22 +103,15 @@ export default class PDFPrinter extends React.Component {
     var ctx = canvas.getContext("2d");
     ctx.font = font;
     ctx.fillStyle = 'blue';
+
     for (var key in pageCoords) {
       var value = json[key];
       if (!value || !json.hasOwnProperty(key) || value == null || value == undefined || value === "")
         continue;
       if (Array.isArray(value)) {
         this.drawCheckLineArray(ctx, value, pageCoords[key], getX, getY);
-      } else
-      {
-          // var isRadio = value.replace && pageCoords[key][value.replace(key + "_","")];
-          // if(isRadio){
-          //     debugger
-          //     this.drawCheckLine(ctx, value.replace(key + "_",""), pageCoords[key], getX, getY);
-          // }
-          // else{
-              ctx.fillText(json[key], getX(pageCoords[key].x), getY(pageCoords[key].y));
-          // }
+      } else {
+        ctx.fillText(json[key], getX(pageCoords[key].x), getY(pageCoords[key].y));
       }
     }
   }

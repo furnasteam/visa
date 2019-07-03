@@ -6,6 +6,7 @@ import {func, object, string} from 'prop-types';
 import {DateField} from '../../../../components/form/fields/date-field/DateField';
 import {InputField} from '../../../../components/form/fields/input-field/InputField';
 import {RadioButtonField} from '../../../../components/form/fields/radio-button-field/RadioButtonField';
+import {xlp} from "../../../../helpers/helper";
 
 export class ShengenScreen extends React.Component {
   static propTypes ={
@@ -20,42 +21,55 @@ export class ShengenScreen extends React.Component {
   }
 
   showFingerprintsDate(){
-      return this.props.formData.fingerprintsExists == (VISA_APPLICATION_FORM_FILEDS.FINGERPRINTS_EXISTS + '_' + VISA_APPLICATION_FORM_ENUMS_NAMES.BOOL.YES);
+      return xlp.isSelected(this.props.formData.fingerprintsExists, VISA_APPLICATION_FORM_ENUMS_NAMES.BOOL.YES);
   }
   showPlacementDetails(){
-      return this.props.formData.placement == (VISA_APPLICATION_FORM_FILEDS.PLACEMENT + '_' + VISA_APPLICATION_FORM_ENUMS_NAMES.PLACEMENT.ITSELF);
+      return xlp.isSelected(this.props.formData.placement, VISA_APPLICATION_FORM_ENUMS_NAMES.PLACEMENT.ITSELF);
   }
   showInvateCompany(){
-      return this.props.formData.invateCompany == (VISA_APPLICATION_FORM_FILEDS.INVATE_COMPANY  + '_' + VISA_APPLICATION_FORM_ENUMS_NAMES.BOOL.YES);
+      return xlp.isSelected(this.props.formData.invateCompany, VISA_APPLICATION_FORM_ENUMS_NAMES.BOOL.YES);
+      // return this.props.formData.invateCompany == (VISA_APPLICATION_FORM_FILEDS.INVATE_COMPANY  + '_' + VISA_APPLICATION_FORM_ENUMS_NAMES.BOOL.YES);
   }
   showPayerSponsor(){
-      return this.props.formData.payer == (VISA_APPLICATION_FORM_FILEDS.PAYER  + '_' + VISA_APPLICATION_FORM_ENUMS_NAMES.PAYER.SPONSOR);
+      return xlp.isSelected(this.props.formData.payer, VISA_APPLICATION_FORM_ENUMS_NAMES.PAYER.SPONSOR);
+      // return this.props.formData.payer == (VISA_APPLICATION_FORM_FILEDS.PAYER  + '_' + VISA_APPLICATION_FORM_ENUMS_NAMES.PAYER.SPONSOR);
   }
   showPayerSponsorDetails(){
-      return this.props.formData.payerSponsor == (VISA_APPLICATION_FORM_FILEDS.PAYER_SPONSOR  + '_' + VISA_APPLICATION_FORM_ENUMS_NAMES.PAYER_SPONSOR.OTHER);
+      return xlp.isSelected(this.props.formData.payerSponsor, VISA_APPLICATION_FORM_ENUMS_NAMES.PAYER_SPONSOR.OTHER);
+      // return this.props.formData.payerSponsor == (VISA_APPLICATION_FORM_FILEDS.PAYER_SPONSOR  + '_' + VISA_APPLICATION_FORM_ENUMS_NAMES.PAYER_SPONSOR.OTHER);
   }
   showFacilitiesDetails(){
-    var res;
-      if(this.props.formData.facilities){
-        res = this.props.formData.facilities.find((el)=>{
-          if(el.name == VISA_APPLICATION_FORM_ENUMS_NAMES.FACILITIES.PAYOTHER)
-            return el;
-        });
-      }
-      return res && res.selected;
+      return xlp.isSelected(this.props.formData.facilities, VISA_APPLICATION_FORM_ENUMS_NAMES.FACILITIES.PAYOTHER);
+    // var res;
+    //   if(this.props.formData.facilities){
+    //     res = this.props.formData.facilities.find((el)=>{
+    //       if(el.name == VISA_APPLICATION_FORM_ENUMS_NAMES.FACILITIES.PAYOTHER)
+    //         return el;
+    //     });
+    //   }
+    //   return res && res.selected;
   }
 
   showRelativeDetails(){
-    return this.props.formData.relativeExists == "relativeExists_Да";
+    // return this.props.formData.relativeExists == "relativeExists_Да";
+      return xlp.isSelected(this.props.formData.relativeExists, VISA_APPLICATION_FORM_ENUMS_NAMES.BOOL.YES);
   }
   render() {
     var {formData, onChange} = this.props;
+    debugger;
+    // var bool1 = [
+    //     { name: 'yes', label: 'Да' },
+    //     { name: 'no', label: 'Нет' }
+    // ]
+    //   vare v
+      var bool1 = JSON.parse(JSON.stringify(VISA_APPLICATION_FORM_ENUMS.BOOL));//[...VISA_APPLICATION_FORM_ENUMS.BOOL];//VISA_APPLICATION_FORM_ENUMS.BOOL.slice()
+      var bool2 = JSON.parse(JSON.stringify(VISA_APPLICATION_FORM_ENUMS.BOOL));//[...VISA_APPLICATION_FORM_ENUMS.BOOL];
     return (
       <Form onChange={this.onFormChange.bind(this)}
             value={formData}>
         <RadioButtonField label={"1. Предоставляли отпечатки пальцев?"}
                           fieldName={VISA_APPLICATION_FORM_FILEDS.FINGERPRINTS_EXISTS}
-                          buttons={VISA_APPLICATION_FORM_ENUMS.BOOL}
+                          buttons={bool1}
         />
         {this.showFingerprintsDate() &&
         <DateField label={""}
@@ -110,7 +124,7 @@ export class ShengenScreen extends React.Component {
 
         <RadioButtonField label={"4. Приглашение от компании?"}
                           fieldName={VISA_APPLICATION_FORM_FILEDS.INVATE_COMPANY}
-                          buttons={VISA_APPLICATION_FORM_ENUMS.BOOL}
+                          buttons={bool2}
         />
         {this.showInvateCompany() &&
         <span>

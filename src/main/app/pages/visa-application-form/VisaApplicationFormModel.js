@@ -167,7 +167,7 @@ export const VISA_APPLICATION_FORM_ENUMS_NAMES = {
 
 var ENUMS_NAMES = VISA_APPLICATION_FORM_ENUMS_NAMES;
 
-export var VISA_APPLICATION_FORM_ENUMS = {
+export const VISA_APPLICATION_FORM_ENUMS = {
   GENDER: [
     { name: ENUMS_NAMES.GENDER.MAN, label: 'мужской' },
     { name: ENUMS_NAMES.GENDER.WOMAN, label: 'женский' }
