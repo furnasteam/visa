@@ -128,22 +128,22 @@ export default function getPrintCoords() {
       [FIELDS.TARGET_COUNTRY]: { x: 90, y: 290 },//'22_targetCountry'
       [FIELDS.ENTRY_COUNTRY]: { x: 350, y: 290 },//'23_enterCountry'
       [FIELDS.ENTRY_TYPE_COUNT]: {//'24_entryCount'
-        "однократного въезда": {
+        "once": {
           x1: 70, y1: 339,
         },
-        "двукратного въезда": {
+        "twice": {
           x1: 148, y1: 339,
         },
-        "многократного въезда": {
+        "multi": {
           x1: 217, y1: 339,
         },
       },
       '25_duration': { x: 485, y: 365 },//'25_duration'
       [FIELDS.SCHENGEN_EXISTS]: {//'26_schengen'
-        "Да": {
+        "yes": {
           x1: 69, y1: 398,
         },
-        "Нет": {
+        "no": {
           x1: 94, y1: 398,
         },
       },
@@ -151,10 +151,10 @@ export default function getPrintCoords() {
       [FIELDS.SCHENGEN_VISA_START_DATE]: { x: 237, y: 413 },//'26_schengenStart'
       [FIELDS.SCHENGEN_VISA_END_DATE]: { x: 345, y: 415 },//'26_schengenEnd'
       [FIELDS.FINGERPRINTS_EXISTS]: {//'27_prints'
-        "Да": {
+        "no": {
           x1: 69, y1: 532,
         },
-        "Нет": {
+        "yes": {
           x1: 94, y1: 532,
         },
       },
