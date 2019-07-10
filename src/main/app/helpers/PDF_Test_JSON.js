@@ -15,12 +15,11 @@ export default function getTestPrintData(pageNumber) {
     "trusteeLastName": "trusteeLastNameValue",
     "trusteeAdress": "trusteeAdressValue",
     "trusteeCitizenship": "trusteeCitizenshipValue",
-    // TRUSTEE_FIRST_NAME : 'trusteeFirstName',
-    // TRUSTEE_LAST_NAME : 'trusteeLastName',
-    // TRUSTEE_ADRESS : 'trusteeAdress',
-    // TRUSTEE_CITIZENSHIP : 'trusteeCitizenship',
 
-
+    "residenceCountry": [{"name":"yes","label":"да","selected":true}],
+    "residenceDocumentCaption": "residenceDocumentCaptionValue",
+    "residenceNumber": "residenceNumberValue",
+    "residenceEndDate": "residenceEndDate",
 
     "maritalStatusDetails": "иное1",
     "number": "89156829261",

@@ -29,7 +29,8 @@ export const VISA_APPLICATION_FORM_FILEDS = {
   ADRESS:'adress',
 
   SCHENGEN_EXISTS: 'schengenExists',
-  RESIDENCE_CAPTION: 'residenceCaption',
+  RESIDENCE_COUNTRY : 'residenceCountry',
+  RESIDENCE_DOCUMENT_CAPTION: 'residenceDocumentCaption',
   RESIDENCE_NUMBER: 'residenceNumber',
   RESIDENCE_ENDDATE: 'residenceEndDate',
   EMPLOYMENT_STATUS :'employmentStatus',

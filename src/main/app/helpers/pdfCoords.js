@@ -74,15 +74,15 @@ export default function getPrintCoords() {
     [FIELDS.INTERNATIONAL_PASSPORT_DELIVERY_STRUCTURE]: { x: 464, y: 785 },//'16_docIssuedBy'
     [FIELDS.EMAIL]: { x: 100, y: 833 },//'17_adress_email'
     [FIELDS.NUMBER]: { x: 435, y: 833 },//'17_telNumber'
-    [FIELDS.RESIDENCE_CAPTION]: {//'18_liveCounty'
-      "Да": {
+    [FIELDS.RESIDENCE_COUNTRY]: {//'18_liveCounty'
+      "yes": {
         x1: 70, y1: 871,
       },
-      "Нет": {
+      "no": {
         x1: 95, y1: 871,
       },
     },
-    [FIELDS.RESIDENCE_CAPTION]: { x: 340, y: 872 },//'18_liveCounty_2'
+    [FIELDS.RESIDENCE_DOCUMENT_CAPTION]: { x: 340, y: 872 },//'18_liveCounty_2'
     [FIELDS.RESIDENCE_NUMBER]: { x: 396, y: 872 },//'18_liveCounty_3'
     [FIELDS.RESIDENCE_ENDDATE]: { x: 535, y: 872 },//'18_liveCounty_4'
     [FIELDS.EMPLOYMENT_STATUS]: { x: 344, y: 941 },//'19_profession'

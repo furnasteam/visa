@@ -91,7 +91,7 @@ export class ContractsScreen extends React.Component {
         />
 
         <RadioButtonField label={"4. Страна пребывания, если не является страной гражданства"}
-                          fieldName={VISA_APPLICATION_FORM_FILEDS.TARGET_COUNTRY}
+                          fieldName={VISA_APPLICATION_FORM_FILEDS.RESIDENCE_COUNTRY}
                           buttons={VISA_APPLICATION_FORM_ENUMS.BOOL}
                           helpText={<div>
                             Если гражданин РФ и проживает в РФ, то напишите нет.
@@ -101,7 +101,7 @@ export class ContractsScreen extends React.Component {
         { this.showTargetCountryDetails() &&
         <span>
         <InputField label={"4.1. Вид на жительство или равноценный документ"}
-                    fieldName={VISA_APPLICATION_FORM_FILEDS.RESIDENCE_CAPTION}
+                    fieldName={VISA_APPLICATION_FORM_FILEDS.RESIDENCE_DOCUMENT_CAPTION}
                     placeholder="Название документа"
                     helpText={<div>
                       Укажите название документа, латинскими буквами.
