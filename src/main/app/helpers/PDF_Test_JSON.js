@@ -36,19 +36,29 @@ export default function getTestPrintData(pageNumber) {
     "internationalPassportEndDate": "11.12.2023.г",
     "internationalPassportdeliveryStructure": "RUSSIA",
     "schengenExists": "schengenExists_Нет",
-    "target": [{"name": "туризм", "selected": true}, {"name": "деловая", "selected": false}, {
-      "name": "спорт",
+    "target": [
+      {"name": "tourism", "selected": true},
+      {"name": "business", "selected": false},
+      {
+      "name": "sport",
       "selected": false
-    }, {"name": "культура", "selected": false}, {"name": "учёба", "selected": false}, {
-      "name": "официальная",
+    }, {"name": "culture", "selected": false},
+      {"name": "study", "selected": false},
+      {
+      "name": "official",
       "selected": false
-    }, {"name": "лечение", "selected": false}, {
-      "name": "транзит",
+    },
+      {"name": "treatment", "selected": false},
+      {
+      "name": "transit",
       "selected": false
-    }, {"name": "посещение родственников или друзей", "selected": false}, {
-      "name": "транзит через аэропорт",
+    },
+      {"name": "visit", "selected": false},
+      {
+      "name": "airport",
       "selected": false
-    }, {"name": "иное", "selected": true}],
+    },
+      {"name": "other", "selected": true}],
     "targetDetails": "иное 3",
     "entryCountry": "Спайн",
     "entryTypeCount": [{"name":"twice","selected":true}],

@@ -77,8 +77,9 @@ export default class PDFPrinter extends React.Component {
     </div>);
   }
   getPrintData() {
-      var {formData} = this.props;
-      return JSON.stringify(formData) === JSON.stringify({})? getTestPrintData() : formData;
+    var {formData} = this.props;
+    return formData;
+      // return JSON.stringify(formData) === JSON.stringify({})? getTestPrintData() : formData;
   }
   addData() {
     var canvasCount = 4;

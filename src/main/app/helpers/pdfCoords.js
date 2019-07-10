@@ -75,10 +75,10 @@ export default function getPrintCoords() {
     [FIELDS.EMAIL]: { x: 100, y: 833 },//'17_adress_email'
     [FIELDS.NUMBER]: { x: 435, y: 833 },//'17_telNumber'
     [FIELDS.RESIDENCE_COUNTRY]: {//'18_liveCounty'
-      "yes": {
+      [ENUMS_NAMES.BOOL.YES]: {
         x1: 70, y1: 871,
       },
-      "no": {
+      [ENUMS_NAMES.BOOL.NO]: {
         x1: 95, y1: 871,
       },
     },
@@ -90,37 +90,38 @@ export default function getPrintCoords() {
     {
       [FIELDS.EMPLOYER_CAPTION]: { x: 90, y: 125 },//'20_employer'
       [FIELDS.TARGET]: {//'21_target'
-        "туризм": {
+
+        [ENUMS_NAMES.TARGET.TOURISM]: {
           x1: 68, y1: 202,
         },
-        "деловая": {
+        [ENUMS_NAMES.TARGET.BUSINESS]: {
           x1: 122, y1: 202,
         },
-        "спорт": {
+        [ENUMS_NAMES.TARGET.SPORT]: {
           x1: 173, y1: 202,
         },
-        "культура": {
+        [ENUMS_NAMES.TARGET.CULTURE]: {
           x1: 337, y1: 202,
         },
-        "учёба": {
+        [ENUMS_NAMES.TARGET.STUDY]: {
           x1: 389, y1: 202,
         },
-        "официальная": {
+        [ENUMS_NAMES.TARGET.OFFICIAL]: {
           x1: 437, y1: 202,
         },
-        "лечение": {
+        [ENUMS_NAMES.TARGET.TREATMENT]: {
           x1: 504, y1: 202,
         },
-        "транзит": {
+        [ENUMS_NAMES.TARGET.TRANSIT]: {
           x1: 69, y1: 227,
         },
-        "посещение родственников или друзей": {
+        [ENUMS_NAMES.TARGET.VISIT]: {
           x1: 119, y1: 227,
         },
-        "транзит через аэропорт": {
+        [ENUMS_NAMES.TARGET.AIRPORT]: {
           x1: 171, y1: 227,
         },
-        "иное": {
+        [ENUMS_NAMES.TARGET.OTHER]: {
           x1: 288, y1: 227,
         },
       },
@@ -128,22 +129,22 @@ export default function getPrintCoords() {
       [FIELDS.TARGET_COUNTRY]: { x: 90, y: 290 },//'22_targetCountry'
       [FIELDS.ENTRY_COUNTRY]: { x: 350, y: 290 },//'23_enterCountry'
       [FIELDS.ENTRY_TYPE_COUNT]: {//'24_entryCount'
-        "once": {
+        [ENUMS_NAMES.ENTRY_TYPE_COUNT.ONCE]: {
           x1: 70, y1: 339,
         },
-        "twice": {
+        [ENUMS_NAMES.ENTRY_TYPE_COUNT.TWICE]: {
           x1: 148, y1: 339,
         },
-        "multi": {
+        [ENUMS_NAMES.ENTRY_TYPE_COUNT.MULTI]: {
           x1: 217, y1: 339,
         },
       },
       '25_duration': { x: 485, y: 365 },//'25_duration'
       [FIELDS.SCHENGEN_EXISTS]: {//'26_schengen'
-        "yes": {
+        [ENUMS_NAMES.BOOL.YES]: {
           x1: 69, y1: 398,
         },
-        "no": {
+        [ENUMS_NAMES.BOOL.NO]: {
           x1: 94, y1: 398,
         },
       },
@@ -154,10 +155,10 @@ export default function getPrintCoords() {
       [FIELDS.SCHENGEN_VISA_START_DATE]: { x: 237, y: 413 },//'26_schengenStart'
       [FIELDS.SCHENGEN_VISA_END_DATE]: { x: 345, y: 415 },//'26_schengenEnd'
       [FIELDS.FINGERPRINTS_EXISTS]: {//'27_prints'
-        "no": {
+        [ENUMS_NAMES.BOOL.NO]: {
           x1: 69, y1: 532,
         },
-        "yes": {
+        [ENUMS_NAMES.BOOL.YES]: {
           x1: 94, y1: 532,
         },
       },
@@ -227,37 +228,40 @@ export default function getPrintCoords() {
           x1: 340, y1: 494,
         },
       },
-      '33_costs_left_details': { x: 89, y: 487 },//'33_costs_left_details'
-      '33_costs_right_details': { x: 458, y: 389 },//'33_costs_right_details'
-      // '34_ES_citizen': { x: 225, y: 545 },//'34_ES_citizen'
+      [FIELDS.FACILITIES_DETAILS]: { x: 89, y: 487 },//'33_costs_left_details'
+      [FIELDS.PAYER_SPONSOR_DETAILS]: { x: 458, y: 389 },//'33_costs_right_details'
+
       [FIELDS.RELATIVE_FAMILY]: { x: 100, y: 595 },//'34_ES_citizen_family'
       [FIELDS.RELATIVE_NAME]: { x: 440, y: 600 },//'34_ES_citizenName'
       [FIELDS.RELATIVE_BIRTH_DATE]: { x: 100, y: 660 },//'34_ES_citizen_birthday'
       [FIELDS.RELATIVE_CITIZENSHIP]: { x: 260, y: 660 },//'34_ES_citizen_citizenship'
       [FIELDS.RELATIVE_PASSPORT]: { x: 440, y: 680 },//'34_ES_citizen_passport'
 
-      [FIELDS.RELATIVE_RANK]: {//'35_citMarried'
-        "spouse": {
-          x1: 68, y1: 721,
-        },
-        "child": {
-          x1: 127, y1: 721,
-        },
-        "grandson": {
-          x1: 174, y1: 721,
-        },
-        "dependent": {
-          x1: 226, y1: 721,
-        },
-      },
-      '36_placeAndDate': { x: 100, y: 800 },//'36_placeAndDate'
-      '37_sign': { x: 400, y: 830 },//'37_sign'
-      'sign_2': { x: 533, y: 876 },//'sign_2'
-      'sign_3': { x: 349, y: 932 }//'sign_3'
+
+    [FIELDS.RELATIVE_RANK]: {//'35_citMarried'
+    [ENUMS_NAMES.RELATIVE_RANK.SPOUSE]: {
+      x1: 68, y1: 721,
+    },
+    [ENUMS_NAMES.RELATIVE_RANK.CHILD]: {
+      x1: 127, y1: 721,
+    },
+    [ENUMS_NAMES.RELATIVE_RANK.GRANDSON]: {
+      x1: 174, y1: 721,
+    },
+    [ENUMS_NAMES.RELATIVE_RANK.DEPENDENT]: {
+      x1: 226, y1: 721,
+    },
+  },
+
+
+      // '36_placeAndDate': { x: 100, y: 800 },//'36_placeAndDate'
+      // '37_sign': { x: 400, y: 830 },//'37_sign'
+      // 'sign_2': { x: 533, y: 876 },//'sign_2'
+      // 'sign_3': { x: 349, y: 932 }//'sign_3'
     },
     {
-      'dateAndPlace': { x: 137, y: 937 },//'dateAndPlace'
-      'sign_1': { x: 433, y: 937 },//'sign_1'
+      // 'dateAndPlace': { x: 137, y: 937 },//'dateAndPlace'
+      // 'sign_1': { x: 433, y: 937 },//'sign_1'
     }
   ]
 }
