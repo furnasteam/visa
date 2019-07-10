@@ -60,9 +60,17 @@ export default function getTestPrintData(pageNumber) {
     "permissionStartDate": "23.23.2333.г",
     "permissionEndDate": "3242343252",
     "placement": "placement_самостоятельное размещение\\n(отель/хостел/апартаменты)",
-    "invateCompany": "invateCompany_Да",
-    "payer": "payer_Спонсор",
-    "payerSponsor": "payerSponsor_Иные",
+    "invateCompany": [{"name":"yes","selected":true}],
+
+    "invateCompanyName": "invateCompanyNameValue",
+    "invateCompanyAdress": "invateCompanyAdressValue",
+    "invateCompanyPhone": "invateCompanyPhoneValue",
+    // INVATE_COMPANY_NAME: 'invateCompanyName',
+    // INVATE_COMPANY_ADRESS: 'invateCompanyAdress',
+    // INVATE_COMPANY_PHONE: 'invateCompanyPhone',
+    "payer": [{"name":"sponsor","selected":true}],
+
+    "payerSponsor": [{"name":"other","selected":true}],
     "payerSponsorDetails": "выаывав",
     "facilities": [{"name": "наличные деньги", "selected": false}, {
       "name": "обеспечивается место пребывания",

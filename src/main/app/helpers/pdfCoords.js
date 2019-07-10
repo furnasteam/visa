@@ -148,6 +148,9 @@ export default function getPrintCoords() {
         },
       },
       // [FIELDS.SCHENGEN_VISA_NUMBER] ??????
+      // "schengenVisaStartDate": "12.12.2012.г",
+      // "schengenVisaEndDate": "12.12.2013.г",
+      // schengenVisaStartDate
       [FIELDS.SCHENGEN_VISA_START_DATE]: { x: 237, y: 413 },//'26_schengenStart'
       [FIELDS.SCHENGEN_VISA_END_DATE]: { x: 345, y: 415 },//'26_schengenEnd'
       [FIELDS.FINGERPRINTS_EXISTS]: {//'27_prints'
@@ -162,15 +165,15 @@ export default function getPrintCoords() {
       [FIELDS.PERMISSION_NAME]: { x: 135, y: 615 },//'28_permExpired'
       [FIELDS.PERMISSION_STARTDATE]: { x: 413, y: 615 },//'28_permStartDate'
       [FIELDS.PERMISSION_ENDDATE]: { x: 511, y: 615 },//'28_permEndDate'
-      '29_entryStartDate': { x: 90, y: 665 },//'29_entryStartDate'
-      '30_entryEndDate': { x: 360, y: 665 },//'30_entryEndDate'
+      'permissionStartDate': { x: 90, y: 665 },//'29_entryStartDate'
+      'permissionEndDate': { x: 360, y: 665 },//'30_entryEndDate'
 
       [FIELDS.INVATE_COMPANY_CONTACT_NAME]: { x: 125, y: 775 },//'31_invatePerson'
       [FIELDS.INVATE_COMPANY_CONTACT_ADRESS]: { x: 125, y: 955 },//'31_invatePersonAdress'
       [FIELDS.INVATE_COMPANY_CONTACT_PHONE]: { x: 435, y: 955 }//'31_invatePersonPhone'
     },
     {
-      [FIELDS.INVATE_COMPANY]: { x: 90, y: 120 },//'32_attractingCompany'
+      [FIELDS.INVATE_COMPANY_NAME]: { x: 90, y: 120 },//'32_attractingCompany'
       [FIELDS.INVATE_COMPANY_PHONE]: { x: 440, y: 120 },//'32_attractingCompanyPhone'
       [FIELDS.INVATE_COMPANY_ADRESS]: { x: 95, y: 220 },//'32_attractingCompanyAdress'
       //[FIELDS.PAYER]
