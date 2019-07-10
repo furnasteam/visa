@@ -43,7 +43,9 @@ export default function getPrintCoords() {
       },
       // "несовершеннолетний" такого поля нет на бланке но есть на веб форме
     },
-    [FIELDS.TRUSTEE_FIRST_NAME]: { x: 85, y: 593 },//'10_TRUSTEE'
+
+    ['trusteeCommon']: { x: 85, y: 593 },//'10_TRUSTEE'
+    // [FIELDS.TRUSTEE_FIRST_NAME]: { x: 85, y: 593 },//'10_TRUSTEE'
     '11_personalNumber': { x: 272, y: 661 },//'11_personalNumber'
     '12_pasportType': {//'12_pasportType'
       0: {

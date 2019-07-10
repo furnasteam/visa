@@ -10,6 +10,7 @@ import {
     VISA_APPLICATION_FORM_ENUMS_NAMES,
     VISA_APPLICATION_FORM_FILEDS
 } from '../../VisaApplicationFormModel';
+import {xlp} from "../../../../helpers/helper";
 
 export class ContractsScreen extends React.Component {
   static propTypes = {
@@ -25,13 +26,13 @@ export class ContractsScreen extends React.Component {
   }
 
   showPupil(){
-      return this.props.formData.maritalStatus == (VISA_APPLICATION_FORM_FILEDS.MARITAL_STATUS + '_' + VISA_APPLICATION_FORM_ENUMS_NAMES.MARITAL_STATUS.NOTADULT);
+      return xlp.isSelected(this.props.formData.maritalStatus, VISA_APPLICATION_FORM_ENUMS_NAMES.MARITAL_STATUS.NOTADULT);
   }
   showTargetCountryDetails(){
-      return this.props.formData.targetCountry == (VISA_APPLICATION_FORM_FILEDS.TARGET_COUNTRY + '_' + VISA_APPLICATION_FORM_ENUMS_NAMES.BOOL.YES);
+      return xlp.isSelected(this.props.formData.targetCountry, VISA_APPLICATION_FORM_ENUMS_NAMES.BOOL.YES);
   }
   showEmploymentStatusDetails(){
-      return this.props.formData.employmentStatus == (VISA_APPLICATION_FORM_FILEDS.EMPLOYMENT_STATUS + '_' + VISA_APPLICATION_FORM_ENUMS_NAMES.EMPLOYMENT_STATUS.OTHER);
+      return xlp.isSelected(this.props.formData.employmentStatus, VISA_APPLICATION_FORM_ENUMS_NAMES.EMPLOYMENT_STATUS.OTHER);
   }
 
   render() {

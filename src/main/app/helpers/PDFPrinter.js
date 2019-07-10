@@ -3,6 +3,7 @@ import getPrintCoords from './pdfCoords';
 import getTestPrintData from './PDF_Test_JSON';
 import {Button} from "../components/button/Button";
 import {object} from "prop-types";
+import {VISA_APPLICATION_FORM_ENUMS} from "../pages/visa-application-form/VisaApplicationFormModel";
 
 let PDFJS;
 let jsPDF;
@@ -84,8 +85,22 @@ export default class PDFPrinter extends React.Component {
     for (var pageNumber = 1; pageNumber <= canvasCount; pageNumber++) {
       var canvas = document.getElementById("canvas_" + pageNumber);
       var pageCoords = getPrintCoords()[pageNumber - 1];
-      this.addDateToCanvas(canvas, this.getPrintData(), pageCoords);
+      this.addDateToCanvas(canvas, this.preparePrintData(this.getPrintData()), pageCoords);
     }
+  }
+  joinFileds(data, resultFieldName, searchString){
+    var filteredArray = Object.getOwnPropertyNames(data).filter((el) => el.includes(searchString));
+    data[resultFieldName] = '';
+    for(var pr in filteredArray){
+      data[resultFieldName] = data[resultFieldName] + " "+ data[filteredArray[pr]];
+      delete data[filteredArray[pr]];
+    }
+
+  }
+  preparePrintData(printData){
+    var result =  JSON.parse(JSON.stringify(printData));
+    this.joinFileds(result,'trusteeCommon', 'trustee');
+    return result;
   }
 
   addDateToCanvas(canvas, json, pageCoords) {

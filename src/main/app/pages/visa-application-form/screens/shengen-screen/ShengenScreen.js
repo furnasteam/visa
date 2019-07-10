@@ -28,43 +28,25 @@ export class ShengenScreen extends React.Component {
   }
   showInvateCompany(){
       return xlp.isSelected(this.props.formData.invateCompany, VISA_APPLICATION_FORM_ENUMS_NAMES.BOOL.YES);
-      // return this.props.formData.invateCompany == (VISA_APPLICATION_FORM_FILEDS.INVATE_COMPANY  + '_' + VISA_APPLICATION_FORM_ENUMS_NAMES.BOOL.YES);
   }
   showPayerSponsor(){
       return xlp.isSelected(this.props.formData.payer, VISA_APPLICATION_FORM_ENUMS_NAMES.PAYER.SPONSOR);
-      // return this.props.formData.payer == (VISA_APPLICATION_FORM_FILEDS.PAYER  + '_' + VISA_APPLICATION_FORM_ENUMS_NAMES.PAYER.SPONSOR);
   }
   showPayerSponsorDetails(){
       return xlp.isSelected(this.props.formData.payerSponsor, VISA_APPLICATION_FORM_ENUMS_NAMES.PAYER_SPONSOR.OTHER);
-      // return this.props.formData.payerSponsor == (VISA_APPLICATION_FORM_FILEDS.PAYER_SPONSOR  + '_' + VISA_APPLICATION_FORM_ENUMS_NAMES.PAYER_SPONSOR.OTHER);
   }
   showFacilitiesDetails(){
       return xlp.isSelected(this.props.formData.facilities, VISA_APPLICATION_FORM_ENUMS_NAMES.FACILITIES.PAYOTHER);
-    // var res;
-    //   if(this.props.formData.facilities){
-    //     res = this.props.formData.facilities.find((el)=>{
-    //       if(el.name == VISA_APPLICATION_FORM_ENUMS_NAMES.FACILITIES.PAYOTHER)
-    //         return el;
-    //     });
-    //   }
-    //   return res && res.selected;
   }
-
   showRelativeDetails(){
-    // return this.props.formData.relativeExists == "relativeExists_Да";
       return xlp.isSelected(this.props.formData.relativeExists, VISA_APPLICATION_FORM_ENUMS_NAMES.BOOL.YES);
   }
   render() {
     var {formData, onChange} = this.props;
-    debugger;
-    // var bool1 = [
-    //     { name: 'yes', label: 'Да' },
-    //     { name: 'no', label: 'Нет' }
-    // ]
-    //   vare v
-      var bool1 = JSON.parse(JSON.stringify(VISA_APPLICATION_FORM_ENUMS.BOOL));//[...VISA_APPLICATION_FORM_ENUMS.BOOL];//VISA_APPLICATION_FORM_ENUMS.BOOL.slice()
-      var bool2 = JSON.parse(JSON.stringify(VISA_APPLICATION_FORM_ENUMS.BOOL));//[...VISA_APPLICATION_FORM_ENUMS.BOOL];
-    return (
+    var bool1 = JSON.parse(JSON.stringify(VISA_APPLICATION_FORM_ENUMS.BOOL));
+    var bool2 = JSON.parse(JSON.stringify(VISA_APPLICATION_FORM_ENUMS.BOOL));
+
+      return (
       <Form onChange={this.onFormChange.bind(this)}
             value={formData}>
         <RadioButtonField label={"1. Предоставляли отпечатки пальцев?"}

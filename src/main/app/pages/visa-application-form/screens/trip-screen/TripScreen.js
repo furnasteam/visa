@@ -10,6 +10,7 @@ import {func, object, string} from 'prop-types';
 import {DateField} from '../../../../components/form/fields/date-field/DateField';
 import {InputField} from '../../../../components/form/fields/input-field/InputField';
 import {RadioButtonField} from '../../../../components/form/fields/radio-button-field/RadioButtonField';
+import {xlp} from "../../../../helpers/helper";
 
 export class TripScreen extends React.Component {
   static propTypes ={
@@ -23,14 +24,7 @@ export class TripScreen extends React.Component {
     }
   }
   showTargetDetails(){
-    var res;
-    if(this.props.formData.target){
-      res = this.props.formData.target.find((el)=>{
-        if(el.name == VISA_APPLICATION_FORM_ENUMS_NAMES.TARGET.OTHER)
-          return el;
-      });
-    }
-    return res && res.selected;
+      return xlp.isSelected(this.props.formData.target, VISA_APPLICATION_FORM_ENUMS_NAMES.TARGET.OTHER);
   }
   render() {
     var {formData, onChange} = this.props;

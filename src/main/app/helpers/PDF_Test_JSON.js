@@ -9,7 +9,19 @@ export default function getTestPrintData(pageNumber) {
     "birthCountry": "Russia",
     "citizenship": "Russia",
     "birthCitizenship": "Russia",
-    "maritalStatus": "maritalStatus_иное",
+    "maritalStatus":[{"name":"other","label":"иное","selected":true}],
+
+    "trusteeFirstName": "trusteeFirstNameValue",
+    "trusteeLastName": "trusteeLastNameValue",
+    "trusteeAdress": "trusteeAdressValue",
+    "trusteeCitizenship": "trusteeCitizenshipValue",
+    // TRUSTEE_FIRST_NAME : 'trusteeFirstName',
+    // TRUSTEE_LAST_NAME : 'trusteeLastName',
+    // TRUSTEE_ADRESS : 'trusteeAdress',
+    // TRUSTEE_CITIZENSHIP : 'trusteeCitizenship',
+
+
+
     "maritalStatusDetails": "иное1",
     "number": "89156829261",
     "email": "riabov.s@yandex.ru",
