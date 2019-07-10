@@ -72,10 +72,9 @@ export default class PDFPrinter extends React.Component {
       {PDFJS && this.renderCanvas()}
       <Button className="visa-application-form__download-PDF-button"
               onClick={this.download.bind(this)}>Скачать</Button>
-      <div id="placer" ></div>
+      <div id="placer" style={{top: -10000, position: "absolute"}}></div>
     </div>);
   }
-    // style={{top: -10000, position: "absolute"}}
   getPrintData() {
       var {formData} = this.props;
       return JSON.stringify(formData) === JSON.stringify({})? getTestPrintData() : formData;
@@ -153,7 +152,7 @@ export default class PDFPrinter extends React.Component {
 
   download() {
     this.addData();
-    // this.generatePDF();
+    this.generatePDF();
   }
 
   addCancvasToPdf(doc, canvasId) {
