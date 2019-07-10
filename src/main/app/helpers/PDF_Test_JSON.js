@@ -80,7 +80,13 @@ export default function getTestPrintData(pageNumber) {
       "selected": false
     }, {"name": "иное", "selected": true}],
     "facilitiesDetails": "иное 4",
-    "relativeExists": "relativeExists_Да",
+    "relativeRank": [{"name":"grandson","selected":true}],
+
+    "relativeName": "relativeNameValue",
+    "relativeFamily": "relativeFamily",
+    "relativeBirthDate": "relativeBirthDateValue",
+    "relativePassport": "relativePassportValue",
+    "relativeCitizenship": "relativeCitizenshipValue",
     "documentsDate": "33.43.4545.г",
     "documentsCity": "павапвпа",
     "documentsEmail": "435345534"

@@ -230,22 +230,23 @@ export default function getPrintCoords() {
       '33_costs_left_details': { x: 89, y: 487 },//'33_costs_left_details'
       '33_costs_right_details': { x: 458, y: 389 },//'33_costs_right_details'
       // '34_ES_citizen': { x: 225, y: 545 },//'34_ES_citizen'
-      [FIELDS.RELATIVE_FAMILY]: { x: 115, y: 595 },//'34_ES_citizen_family'
+      [FIELDS.RELATIVE_FAMILY]: { x: 100, y: 595 },//'34_ES_citizen_family'
       [FIELDS.RELATIVE_NAME]: { x: 440, y: 600 },//'34_ES_citizenName'
       [FIELDS.RELATIVE_BIRTH_DATE]: { x: 100, y: 660 },//'34_ES_citizen_birthday'
-      [FIELDS.RELATIVE_CITIZENSHIP]: { x: 275, y: 660 },//'34_ES_citizen_citizenship'
-      [FIELDS.RELATIVE_PASSPORT]: { x: 475, y: 680 },//'34_ES_citizen_passport'
+      [FIELDS.RELATIVE_CITIZENSHIP]: { x: 260, y: 660 },//'34_ES_citizen_citizenship'
+      [FIELDS.RELATIVE_PASSPORT]: { x: 440, y: 680 },//'34_ES_citizen_passport'
+
       [FIELDS.RELATIVE_RANK]: {//'35_citMarried'
-        "супруг/-а": {
+        "spouse": {
           x1: 68, y1: 721,
         },
-        "ребенок": {
+        "child": {
           x1: 127, y1: 721,
         },
-        "внук/-чка": {
+        "grandson": {
           x1: 174, y1: 721,
         },
-        "иждивенец": {
+        "dependent": {
           x1: 226, y1: 721,
         },
       },
