@@ -64,24 +64,24 @@ export class PasportScreen extends React.Component {
     return (
       <Form onChange={this.onFormChange.bind(this)}
             value={formData}>
-        <InputField label={"3. Номер загран. паспорта"}
+        <InputField label={"Номер загран. паспорта"}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.INTERNATIONAL_PASSPORT_NUMBER}
                     placeholder="IVANOV"
         />
-        <DateField label={"4. Дата выдачи загран. паспорта"}
+        <DateField label={"Дата выдачи загран. паспорта"}
                    fieldName={VISA_APPLICATION_FORM_FILEDS.INTERNATIONAL_PASSPORT_STARTDATE}
                    placeholder="23.04.2014"
         />
-        <DateField label={"5. Загран. паспорт действителен до"}
+        <DateField label={"Загран. паспорт действителен до"}
                    fieldName={VISA_APPLICATION_FORM_FILEDS.INTERNATIONAL_PASSPORT_ENDDATE}
                    placeholder="23.04.2024"
         />
-        <InputField label={"6. Кем выдан"}
+        <InputField label={"Кем выдан"}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.INTERNATIONAL_PASSPORT_DELIVERY_STRUCTURE}
                     placeholder="USSR"
                     helpText={<div>Достаточно указать Russian Federation или FMS 2432?</div>}
         />
-        <RadioButtonField label={"7. Шенгенские визы, выданные за последние \n" +
+        <RadioButtonField label={"Шенгенские визы, выданные за последние \n" +
         "    три года (2016 — 2018)" +
         "Есть шенгенские визы?"}
                           fieldName={VISA_APPLICATION_FORM_FILEDS.SCHENGEN_EXISTS}

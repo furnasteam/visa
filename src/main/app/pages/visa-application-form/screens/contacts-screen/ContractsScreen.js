@@ -43,22 +43,22 @@ export class ContractsScreen extends React.Component {
             value={formData}>
         {this.showPupil() &&
         <span>
-          <InputField label={"0.1. Имя сопровождающего лица"}
+          <InputField label={"Имя сопровождающего лица"}
             fieldName={VISA_APPLICATION_FORM_FILEDS.TRUSTEE_FIRST_NAME}
             placeholder="MARIA"
           />
-          < InputField label={"0.2. Фамилия сопровождающего лица"}
+          < InputField label={"Фамилия сопровождающего лица"}
             fieldName={VISA_APPLICATION_FORM_FILEDS.TRUSTEE_LAST_NAME}
             placeholder="IVANOVA"
           />
-          <InputField label={"0.3. Адрес сопровождающего лица"}
+          <InputField label={"Адрес сопровождающего лица"}
             fieldName={VISA_APPLICATION_FORM_FILEDS.TRUSTEE_ADRESS}
             placeholder="Adress"
             helpText={<div>
             Указать адрес латинскими буквами, если отличается от адреса заявителя.
             </div>}
           />
-          <InputField label={"0.4. Гражданство сопровождающего лица"}
+          <InputField label={"Гражданство сопровождающего лица"}
             fieldName={VISA_APPLICATION_FORM_FILEDS.TRUSTEE_CITIZENSHIP}
             placeholder="RUSSIAN FEDERATION"
             helpText={<div>
@@ -68,21 +68,21 @@ export class ContractsScreen extends React.Component {
         </span>
         }
 
-        <InputField label={"1. Номер телефона"}
+        <InputField label={"Номер телефона"}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.NUMBER}
                     placeholder="+7 (900) 900-90-90"
                     helpText={<div>
                       Укажите телефон, по которому можно с вами связаться.
                     </div>}
         />
-        <InputField label={"2. Email ЗАПОЛНИТЬ ПОСЛЕДНЮЮ СТРАНИЦУ ИМ ПО ДЕФОЛТУ"}
+        <InputField label={"Email ЗАПОЛНИТЬ ПОСЛЕДНЮЮ СТРАНИЦУ ИМ ПО ДЕФОЛТУ"}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.EMAIL}
                     placeholder="email@email.ru"
                     helpText={<div>
                       Укажите email, по которому можно с вами связаться.
                     </div>}
         />
-        <InputField label={"3. Домашний адрес"}
+        <InputField label={"Домашний адрес"}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.ADRESS}
                     placeholder="Adress"
                     helpText={<div>
@@ -90,7 +90,7 @@ export class ContractsScreen extends React.Component {
                     </div>}
         />
 
-        <RadioButtonField label={"4. Страна пребывания, если не является страной гражданства"}
+        <RadioButtonField label={"Страна пребывания, если не является страной гражданства"}
                           fieldName={VISA_APPLICATION_FORM_FILEDS.RESIDENCE_COUNTRY}
                           buttons={VISA_APPLICATION_FORM_ENUMS.BOOL}
                           helpText={<div>
@@ -100,26 +100,26 @@ export class ContractsScreen extends React.Component {
         />
         { this.showTargetCountryDetails() &&
         <span>
-        <InputField label={"4.1. Вид на жительство или равноценный документ"}
+        <InputField label={"Вид на жительство или равноценный документ"}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.RESIDENCE_DOCUMENT_CAPTION}
                     placeholder="Название документа"
                     helpText={<div>
                       Укажите название документа, латинскими буквами.
                     </div>}
         />
-        <InputField label={"4.2. Номер документа"}
+        <InputField label={"Номер документа"}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.RESIDENCE_NUMBER}
                     placeholder="Номер документа"
 
         />
-        <DateField label={"4.3. Действителен до"}
+        <DateField label={"Действителен до"}
                    fieldName={VISA_APPLICATION_FORM_FILEDS.RESIDENCE_ENDDATE}
                    placeholder="23.07.2023г."
 
         />
         </span>}
 
-        <RadioButtonField label={"5. Профессиональная деятельность в настоящее время"}
+        <RadioButtonField label={"Профессиональная деятельность в настоящее время"}
                           fieldName={VISA_APPLICATION_FORM_FILEDS.EMPLOYMENT_STATUS}
                           buttons={VISA_APPLICATION_FORM_ENUMS.EMPLOYMENT_STATUS}
                           helpText={<div>
@@ -141,12 +141,12 @@ export class ContractsScreen extends React.Component {
         />
         }
 
-        <InputField label={"6. Работодатель"}
+        <InputField label={"Работодатель"}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.EMPLOYER_CAPTION}
                     placeholder="Номер документа"
 
         />
-        <InputField label={"7. Адрес работодателя"}
+        <InputField label={"Адрес работодателя"}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.EMPLOYER_ADRESS}
                     placeholder="MOSCVA, UL. LENINA, 194 – 32"
                     helpText={<div>
@@ -154,7 +154,7 @@ export class ContractsScreen extends React.Component {
                     </div>}
 
         />
-        <InputField label={"8. Телефон работодателя"}
+        <InputField label={"Телефон работодателя"}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.EMPLOYER_NUMBER}
                     placeholder="+7 (900) 900-90-90"
 

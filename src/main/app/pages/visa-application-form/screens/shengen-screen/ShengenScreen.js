@@ -49,7 +49,7 @@ export class ShengenScreen extends React.Component {
       return (
       <Form onChange={this.onFormChange.bind(this)}
             value={formData}>
-        <RadioButtonField label={"1. Предоставляли отпечатки пальцев?"}
+        <RadioButtonField label={"Предоставляли отпечатки пальцев?"}
                           fieldName={VISA_APPLICATION_FORM_FILEDS.FINGERPRINTS_EXISTS}
                           buttons={bool1}
         />
@@ -60,93 +60,93 @@ export class ShengenScreen extends React.Component {
                     helpText={<div>Укажите дату, если известно</div>}
         />}
 
-        <InputField label={"2. Разрешение на въезд в страну конечно следования"}
+        <InputField label={"Разрешение на въезд в страну конечно следования"}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.PERMISSION_NAME}
                     placeholder="Название документа"
                     helpText={<div>Укажите латинскими буквами</div>}
         />
 
-        <DateField label={"2.1 Начала действия"}
+        <DateField label={"Начала действия"}
                    fieldName={VISA_APPLICATION_FORM_FILEDS.PERMISSION_STARTDATE}
                    placeholder="23.06.2017г."
                    helpText={<div>Укажите дату</div>}
         />
 
-        <InputField label={"2.2 Окончание действия"}
+        <InputField label={"Окончание действия"}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.PERMISSION_ENDDATE}
                     placeholder="23.06.2027г."
                     helpText={<div>Укажите дату</div>}
         />
 
-        <RadioButtonField label={"3. Где останавливаетесь "}
+        <RadioButtonField label={"Где останавливаетесь "}
                           fieldName={VISA_APPLICATION_FORM_FILEDS.PLACEMENT}
                           buttons={VISA_APPLICATION_FORM_ENUMS.PLACEMENT}
         />
         {this.showPlacementDetails() &&
         <span>
-              <InputField label={"4. Название отеля/хостела/апартаментов"}
+              <InputField label={"Название отеля/хостела/апартаментов"}
                           fieldName={VISA_APPLICATION_FORM_FILEDS.PLACEMENT_NAME}
                           placeholder="VASILII PUPKIN"
                           helpText={<div>Если у апартаментов нет названия — пропустите.</div>}
               />
-              <InputField label={"5. Адрес"}
+              <InputField label={"Адрес"}
                           fieldName={VISA_APPLICATION_FORM_FILEDS.PLACEMENT_ADRESS}
                           placeholder="LATVIA"
               />
-              <InputField label={"6. Электронная почта"}
+              <InputField label={"Электронная почта"}
                           fieldName={VISA_APPLICATION_FORM_FILEDS.PLACEMENT_EMAIL}
                           placeholder="dfsgkftodcgmerwm@gmail.com"
               />
-              <InputField label={"7. Номер телефона и факса"}
+              <InputField label={"Номер телефона и факса"}
                           fieldName={VISA_APPLICATION_FORM_FILEDS.PLACEMENT_PHONE}
                           placeholder="+7 (990) 900-90-90"
               />
         </span>
         }
 
-        <RadioButtonField label={"4. Приглашение от компании?"}
+        <RadioButtonField label={"Приглашение от компании?"}
                           fieldName={VISA_APPLICATION_FORM_FILEDS.INVATE_COMPANY}
                           buttons={bool2}
         />
         {this.showInvateCompany() &&
         <span>
-        <InputField label={"5. Название приглашающей компании"}
+        <InputField label={"Название приглашающей компании"}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.INVATE_COMPANY_NAME}
                     placeholder="SKOLCOVO"
                     helpText={<div>Если была та же самая, оставьте пустым.</div>}
         />
-        <InputField label={"6. Адрес приглашающей компании"}
+        <InputField label={"Адрес приглашающей компании"}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.INVATE_COMPANY_ADRESS}
                     placeholder="MOSCOV"
                     helpText={<div>Если была та же самая, оставьте пустым.</div>}
         />
-        <InputField label={"7. Номер телефона и факса компании"}
+        <InputField label={"Номер телефона и факса компании"}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.INVATE_COMPANY_PHONE}
                     placeholder="+7 (990) 900-90-90"
                     helpText={<div>Если была та же самая, оставьте пустым.</div>}
         />
 
-        <InputField label={"8. Имя"}
+        <InputField label={"Имя"}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.INVATE_COMPANY_CONTACT_NAME}
                     placeholder="VASILII"
                     helpText={<div>Контактного лица компании</div>}
         />
-        <InputField label={"9. Фамилия"}
+        <InputField label={"Фамилия"}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.INVATE_COMPANY_CONTACT_FAMILY}
                     placeholder="PUPKIN"
                     helpText={<div>Контактного лица компании</div>}
         />
-        <InputField label={"10. Номер телефона и факса"}
+        <InputField label={"Номер телефона и факса"}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.INVATE_COMPANY_CONTACT_PHONE}
                     placeholder="+7 (990) 900-90-90"
                     helpText={<div>Контактного лица компании</div>}
         />
-        <InputField label={"11. Адрес"}
+        <InputField label={"Адрес"}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.INVATE_COMPANY_CONTACT_ADRESS}
                     placeholder="LATVIA"
                     helpText={<div>Контактного лица компании</div>}
         />
-        <InputField label={"12. Электронная почта"}
+        <InputField label={"Электронная почта"}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.INVATE_COMPANY_CONTACT_EMAIL}
                     placeholder="dfsgkftodcgmerwm@gmail.com"
                     helpText={<div>Контактного лица компании</div>}
@@ -154,12 +154,12 @@ export class ShengenScreen extends React.Component {
         </span>}
 
 
-        <RadioButtonField label={"13. Расходы заявителя на проезд и на пребывание покрывает"}
+        <RadioButtonField label={"Расходы заявителя на проезд и на пребывание покрывает"}
                           fieldName={VISA_APPLICATION_FORM_FILEDS.PAYER}
                           buttons={VISA_APPLICATION_FORM_ENUMS.PAYER}
         />
         {this.showPayerSponsor() &&
-        <RadioButtonField label={"14. Кто является спонсором?"}
+        <RadioButtonField label={"Кто является спонсором?"}
                            fieldName={VISA_APPLICATION_FORM_FILEDS.PAYER_SPONSOR}
                            buttons={VISA_APPLICATION_FORM_ENUMS.PAYER_SPONSOR}
         />}
@@ -170,7 +170,7 @@ export class ShengenScreen extends React.Component {
         />
         }
 
-        <CheckboxField label={"15.  Средства"}
+        <CheckboxField label={"Средства"}
                        fieldName={VISA_APPLICATION_FORM_FILEDS.FACILITIES}
                        buttons={VISA_APPLICATION_FORM_ENUMS.FACILITIES}
         />
@@ -181,7 +181,7 @@ export class ShengenScreen extends React.Component {
         />
         }
 
-        <RadioButtonField label={"16. Есть ли родство с гражданином Европейского Союза, \n" +
+        <RadioButtonField label={"Есть ли родство с гражданином Европейского Союза, \n" +
         "Европейского Экономического Пространства \n" +
         "или Швейцарии?"}
                           fieldName={VISA_APPLICATION_FORM_FILEDS.RELATIVE_EXISTS}
@@ -189,30 +189,30 @@ export class ShengenScreen extends React.Component {
         />
         {this.showRelativeDetails() &&
         <span>
-        <RadioButtonField label={"17. Степень родства с гражданином Европейского Союза, \n" +
+        <RadioButtonField label={"Степень родства с гражданином Европейского Союза, \n" +
         "Европейского Экономического Пространства \n" +
         "или Швейцарии"}
                           fieldName={VISA_APPLICATION_FORM_FILEDS.RELATIVE_RANK}
                           buttons={VISA_APPLICATION_FORM_ENUMS.RELATIVE_RANK}
         />
 
-        <InputField label={"18. Имя"}
+        <InputField label={"Имя"}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.RELATIVE_NAME}
                     placeholder="IVAN"
         />
-        <InputField label={"19. Фамилия"}
+        <InputField label={"Фамилия"}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.RELATIVE_FAMILY}
                     placeholder="PETROVICH"
         />
-        <DateField label={"20. Дата рождения"}
+        <DateField label={"Дата рождения"}
                    fieldName={VISA_APPLICATION_FORM_FILEDS.RELATIVE_BIRTH_DATE}
                    placeholder="31.05.1990"
         />
-        <InputField label={"21. Номер паспорта или удостоверения личности"}
+        <InputField label={"Номер паспорта или удостоверения личности"}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.RELATIVE_PASSPORT}
                     placeholder="4059 044945"
         />
-        <InputField label={"22. Гражданство "}
+        <InputField label={"Гражданство "}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.RELATIVE_CITIZENSHIP}
                     placeholder="SPAIN"
         />

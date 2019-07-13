@@ -32,7 +32,7 @@ export class ProfileScreen extends React.Component {
     return (
       <Form onChange={this.onFormChange.bind(this)}
             value={formData}>
-        <InputField label={"1. Имя"}
+        <InputField label={"Имя"}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.FIRST_NAME}
                     placeholder="IVAN"
                     helpText={<div>
@@ -41,30 +41,30 @@ export class ProfileScreen extends React.Component {
                     </div>}
         />
 
-        <InputField label={"2. Фамилия"}
+        <InputField label={"Фамилия"}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.LAST_NAME}
                     placeholder="IVANOV"
                     helpText={<div>Фамилия латинскими буквами точно как в загран. паспорте.</div>}
         />
 
-        <DateField label={"3. Дата рождения"}
+        <DateField label={"Дата рождения"}
                    fieldName={VISA_APPLICATION_FORM_FILEDS.BIRTH_DATE}
                    placeholder="Укажите дату рождения"
                    helpText={<div>Если была та же самая, оставьте пустым.</div>}
         />
 
-        <RadioButtonField label={"4. Пол"}
+        <RadioButtonField label={"Пол"}
                           fieldName={VISA_APPLICATION_FORM_FILEDS.GENDER}
                           buttons={VISA_APPLICATION_FORM_ENUMS.GENDER}
         />
 
-        <InputField label={"5. Фамилия при рождении"}
+        <InputField label={"Фамилия при рождении"}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.BIRTH_LAST_NAME}
                     placeholder="IVANOV"
                     helpText={<div>Если была та же самая, оставьте пустым.</div>}
         />
 
-        <InputField label={"6. Место рождения"}
+        <InputField label={"Место рождения"}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.BIRTH_PLACE}
                     placeholder="USSR"
                     helpText={<div>Место рождения латинскими буквами точно как в загран. паспорте.<br/>
@@ -72,7 +72,7 @@ export class ProfileScreen extends React.Component {
                       в Свидетельстве о рождении. Воспользуйтесь таблицей транслитерации.</div>}
         />
 
-        <InputField label={"7. Страна рождения"}
+        <InputField label={"Страна рождения"}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.BIRTH_COUNTRY}
                     placeholder="USSR"
                     helpText={<div>Если родились до 06.02.1991 года (ВКЛЮЧАЯ ИЛИ НЕТ) — указывайте USSR.<br/>
@@ -81,13 +81,13 @@ export class ProfileScreen extends React.Component {
         />
 
 
-        <InputField label={"8.1. Гражданство сейчас"}
+        <InputField label={"Гражданство сейчас"}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.CITIZENSHIP}
                     placeholder="USSR"
                     helpText={<div>Латинскими буквами точно как в загран. паспорте.</div>}
         />
 
-        <InputField label={"8.2. Гражданство при рождении"}
+        <InputField label={"Гражданство при рождении"}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.BIRTH_CITIZENSHIP}
                     placeholder="USSR"
                     helpText={<div>Если было то же самое, оставьте пустым.<br/>
@@ -98,7 +98,7 @@ export class ProfileScreen extends React.Component {
 
 
 
-        <RadioButtonField label={"9. Семейное положение"}
+        <RadioButtonField label={"Семейное положение"}
                           fieldName={VISA_APPLICATION_FORM_FILEDS.MARITAL_STATUS}
                           buttons={VISA_APPLICATION_FORM_ENUMS.MARITAL_STATUS}
         />
