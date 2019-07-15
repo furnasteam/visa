@@ -11,7 +11,7 @@ import {CheckboxField} from '../../../../components/form/fields/checkbox-field/C
 import {DateField} from '../../../../components/form/fields/date-field/DateField';
 import {InputField} from '../../../../components/form/fields/input-field/InputField';
 import {RadioButtonField} from '../../../../components/form/fields/radio-button-field/RadioButtonField';
-import {Button} from '../../../../components/button/Button';
+import {Button, ButtonStyle} from '../../../../components/button/Button';
 import {xlp} from "../../../../helpers/helper";
 
 export class PasportScreen extends React.Component {
@@ -45,7 +45,8 @@ export class PasportScreen extends React.Component {
       return state;
     });
   }
-  deleteSchengenVisa(){
+  deleteSchengenVisa(index){
+      debugger;
     this.setState((state) => {
       state.schengenVisaArr.pop();
       return state;
@@ -61,7 +62,7 @@ export class PasportScreen extends React.Component {
     var {formData, onChange} = this.props;
     var {schengenVisaArr} = this.state;
 
-    var schengenVisaElements = schengenVisaArr.map((schengenVisa, i)=>{ return <SchengenVisa onChange={this.onSchengenVisaChange()} index={i}></SchengenVisa>});
+    var schengenVisaElements = schengenVisaArr.map((schengenVisa, i)=>{ return <SchengenVisa onChange={this.onSchengenVisaChange.bind(this)} key = {i} index={i} deleteSchengenVisa={this.deleteSchengenVisa.bind(this)}></SchengenVisa>});
     return (
       <Form onChange={this.onFormChange.bind(this)}
             value={formData}>
@@ -96,8 +97,11 @@ export class PasportScreen extends React.Component {
         {this.showSchengenVisa() &&
           <span>
             {schengenVisaElements}
-            <Button onClick={this.addSchengenVisa.bind(this) }>Добавить визу</Button>
-             <Button onClick={this.deleteSchengenVisa.bind(this) }>Удалить</Button>
+              <Button onClick={this.addSchengenVisa.bind(this) } buttonStyle={ButtonStyle.YELLOW_ADD_BUTTON} className="visa-application-form__add-schengen-visa-button">
+                  <span className="visa-application-form__add-schengen-visa-button_plus">&#x2b;</span>
+                  Добавить визу
+              </Button>
+            {/*<Button onClick={this.deleteSchengenVisa.bind(this) }>Удалить</Button>*/}
           </span>
         }
 

@@ -8,6 +8,8 @@ import {InputField} from '../../../../components/form/fields/input-field/InputFi
 import {RadioButtonField} from '../../../../components/form/fields/radio-button-field/RadioButtonField';
 import includes from 'lodash/includes';
 import remove from 'lodash/remove';
+import {Button, ButtonStyle} from "../../../../components/button/Button";
+import './pasport-screen.scss';
 
 export class SchengenVisa extends React.Component {
   static propTypes ={
@@ -15,7 +17,7 @@ export class SchengenVisa extends React.Component {
     index: number,
     onChange: func,
   }
-  onSchengenVisaChange(value){
+    onSchengenVisaChange(value){
     handleTagClick = (tag) => {
       const {onChange} = this.props;
       // const tagsWithoutOptions = remove(tags, t => !includes(tagOptions, t));
@@ -25,10 +27,13 @@ export class SchengenVisa extends React.Component {
   }
 
   render() {
-    var {formData, onChange} = this.props;
+    var {formData, onChange, index, deleteSchengenVisa} = this.props;
     return (
       <div>
-        <h2>Виза 1.</h2>
+          <span className="visa-application-form__schengen-visa-header_container">
+            <h2 className="visa-application-form__schengen-visa-header" >Виза {index + 1}.</h2>
+            <Button onClick={() => deleteSchengenVisa(index) } buttonStyle={ButtonStyle.SMALL_PINK}>Удалить</Button>
+          </span>
         <DateField label={"Начало действия"}
                    fieldName={VISA_APPLICATION_FORM_FILEDS.SCHENGEN_VISA_START_DATE}
                    placeholder="25.06.18."

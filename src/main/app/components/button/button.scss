@@ -35,6 +35,30 @@
     }
   }
 
+  &_yellow-add-pink{
+    background: #f5f5f5;
+    mix-blend-mode: normal;
+    border-radius: 23px;
+    color: #FF815F;
+    min-width: 180px;
+    padding: 12px 24px;
+    line-height: 16px;
+    font-size: 18px;
+    @include for-tablet-portrait-up {
+      padding: 19px 24px;
+    }
+  }
+  &_small-pink{
+    height: 21px;
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+
+    color: #FF65B8;
+  }
+
   &_big-blue {
     background-color: #10BBFF;
     color: #ffffff;

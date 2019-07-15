@@ -9,6 +9,8 @@ export const ButtonStyle = {
   BIG_BLUE: 'big-blue',
   GREEN_FULL: 'green-full',
   GREEN_EMPTY: 'green-empty',
+  SMALL_PINK: 'small-pink',
+  YELLOW_ADD_BUTTON: 'yellow-add-pink',
 };
 
 export class Button extends React.Component {
