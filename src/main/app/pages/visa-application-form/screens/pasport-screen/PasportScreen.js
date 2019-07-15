@@ -12,6 +12,7 @@ import {DateField} from '../../../../components/form/fields/date-field/DateField
 import {InputField} from '../../../../components/form/fields/input-field/InputField';
 import {RadioButtonField} from '../../../../components/form/fields/radio-button-field/RadioButtonField';
 import {Button} from '../../../../components/button/Button';
+import {xlp} from "../../../../helpers/helper";
 
 export class PasportScreen extends React.Component {
   static propTypes ={
@@ -54,7 +55,7 @@ export class PasportScreen extends React.Component {
     // debugger
   }
   showSchengenVisa(){
-      return this.props.formData.schengenExists == (VISA_APPLICATION_FORM_FILEDS.SCHENGEN_EXISTS + '_' + VISA_APPLICATION_FORM_ENUMS_NAMES.BOOL.YES);
+      return xlp.isSelected(this.props.formData.schengenExists, VISA_APPLICATION_FORM_ENUMS_NAMES.BOOL.YES);
   }
   render() {
     var {formData, onChange} = this.props;
