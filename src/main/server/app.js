@@ -42,7 +42,7 @@ app.get("*", (req, res) => {
     <div id="root" dangerouslySetInnerHTML={ {__html: appString} }>
     </div>
     <script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript"></script>
-    <script src="/visa.client.js.gz"></script>
+    <script src="/visa.client.js"></script>
     </body>
     </html>));
   res.end();

@@ -1,7 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
 import './input.scss';
-import {string, func} from 'prop-types';
+import {string, func, bool} from 'prop-types';
+import toUpper from 'lodash/toUpper';
 
 export class Input extends React.Component {
 
@@ -11,7 +12,8 @@ export class Input extends React.Component {
     onChange: func,
     placeholder: string,
     inputType :string,
-    dataInputmask: string
+    dataInputmask: string,
+    capitilize: bool
   };
 
   static defaultProps = {
@@ -20,8 +22,8 @@ export class Input extends React.Component {
   };
 
   handleChange = (event) => {
-    const {onChange} = this.props;
-    onChange(event.target.value);
+    const {onChange, capitilize} = this.props;
+    onChange(capitilize ? toUpper(event.target.value) : event.target.value);
   };
 
   render() {

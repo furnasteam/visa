@@ -90,11 +90,10 @@ export class VisaApplicationFormPage extends React.Component {
         </Helmet>,
         <div key="2" className="visa-application-form">
           <Header/>
+          <Title className="visa-application-form__title">Анкета на визу</Title>
           <Steps stepsData={StepsData}
                  activeStep={this.getActiveStep()}/>
           <div className="visa-application-form__content">
-
-            <Title className="visa-application-form__title">Анкета на визу</Title>
             {this.getActiveScreen()}
           </div>
           <div className="visa-application-form__next-button-container">

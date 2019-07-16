@@ -30,10 +30,10 @@ export class DateInput extends React.Component {
     //https://www.npmjs.com/package/react-text-mask
     return (
       <MaskedInput
-        mask={[/\d/, /\d/, '.', /\d/, /\d/, '.', /\d/, /\d/, /\d/, /\d/, '.',, 'г']}
+        mask={[/\d/, /\d/, '.', /\d/, /\d/, '.', /\d/, /\d/, /\d/, /\d/]}
         className="input"
         onChange={this.handleChange}
-        placeholder="dd.mm.yyyy."
+        placeholder="ДД.ММ.ГГГГ"
         guide={false}
         value={value}
         id="my-input-id"

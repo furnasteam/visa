@@ -82,6 +82,10 @@
 
   &__documents-list-button {
     z-index: 1;
+    @include for-phone-only {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   &__title {
@@ -89,6 +93,14 @@
     @include for-phone-only {
       margin-bottom: 32px;
       width: 185px;
+    }
+  }
+
+  &__fill-anketa-button {
+    margin-left: 16px;
+    @include for-phone-only {
+      margin-top: 16px;
+      margin-left: 0;
     }
   }
 }

@@ -21,9 +21,8 @@ export class MobileExplanationScreen extends React.Component {
           <li className="mobile-explanation-screen__list-item">
             <p className="mobile-explanation-screen__list-item-text">актуальный перечень документов для визы</p>
           </li>
-          <li className="mobile-explanation-screen__list-item mobile-explanation-screen__list-item-inactive">
+          <li className="mobile-explanation-screen__list-item">
             <p className="mobile-explanation-screen__list-item-text">бесплатно получаете заполненную анкету</p>
-            <p className="mobile-explanation-screen__list-item-development-mode">в разработке</p>
           </li>
           <li className="mobile-explanation-screen__list-item mobile-explanation-screen__list-item-inactive">
             <p className="mobile-explanation-screen__list-item-text">разбор всех пунктов анкеты</p>

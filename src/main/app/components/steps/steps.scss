@@ -5,14 +5,14 @@
   &__mobile {
     display: flex;
     width: 100%;
-    margin-top: 100px;
+    margin-top: 20px;
     justify-content: center;
     @include for-tablet-portrait-up {
       display: none;
     }
   }
   &__desktop {
-    margin-top: 140px;
+    margin-top: 50px;
     @include for-phone-only {
       display: none;
     }
@@ -60,7 +60,7 @@
     left: 14.69%;
     right: 12.5%;
     //top: 13.14%;
-    top: 110px;
+    top: 132px;
     bottom: 94.78%;
     z-index: 1;
 
@@ -68,7 +68,7 @@
     opacity: 0.5;
     border-bottom: 2px dashed #FF815F;
     @include for-tablet-portrait-up {
-      top: 154px;
+      top: 197px;
       z-index: -1;
       width: 550px;
       margin: auto;

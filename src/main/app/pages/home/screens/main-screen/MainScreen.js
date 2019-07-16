@@ -4,6 +4,7 @@ import {Button} from '../../../../components/button/Button';
 import {Title} from '../../../../components/title/Title';
 import {Picture} from '../../../../components/picture/Picture';
 import {UniversalLink} from '../../../../components/universal-link/UniversalLink';
+import {createVisaApplicationFormRoute} from '../../../../helpers/appRoutes';
 
 export class MainScreen extends React.Component {
   render() {
@@ -14,8 +15,7 @@ export class MainScreen extends React.Component {
           <li className="main-screen__list-item">
             <span className="main-screen__list-item-text">актуальный перечень документов для визы</span>
           </li>
-          <li className="main-screen__list-item main-screen__list-item-inactive">
-            <div className="main-screen__list-item-development-mode">в разработке</div>
+          <li className="main-screen__list-item">
             <span className="main-screen__list-item-text">бесплатно получаете заполненную анкету</span>
           </li>
           <li className="main-screen__list-item main-screen__list-item-inactive">
@@ -27,6 +27,11 @@ export class MainScreen extends React.Component {
           <UniversalLink href="#choose-person"
                          noStyle={true}>
             <Button>Список документов</Button>
+          </UniversalLink>
+          <UniversalLink href={createVisaApplicationFormRoute('profile')}
+                         className="main-screen__fill-anketa-button"
+                         noStyle={true}>
+            <Button>Заполенение анкеты</Button>
           </UniversalLink>
         </div>
         <Picture className="main-screen__main-picture"
