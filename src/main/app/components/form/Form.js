@@ -18,11 +18,12 @@ export class Form extends React.Component {
   mapChildren(children, value, context){
 
     return React.Children.map(children, function(child) {
-      if(!child) return child;
-      if(child && child.props && child.props.children){
+      if(!child || !child.props) return child;
+
+      if(child.props.children && child.type.name != "Button"){
         return context.mapChildren(child.props.children, value, context);
       }
-      if(!child.props) return;
+
       return React.cloneElement(child, {
         value: get(value, child.props.fieldName),
         onChange: (fieldValue) => context.handleFieldChange(fieldValue, child.props.fieldName)});

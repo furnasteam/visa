@@ -57,7 +57,7 @@ export class PasportScreen extends React.Component {
         formData.schengenVisaArr = formData.schengenVisaArr || [];
 
         var show = xlp.isSelected(this.props.formData.schengenExists, VISA_APPLICATION_FORM_ENUMS_NAMES.BOOL.YES);
-        debugger
+
         if(show && formData.schengenVisaArr.length == 0 && show.name == VISA_APPLICATION_FORM_ENUMS_NAMES.BOOL.YES)
             this.addSchengenVisa();
         return show;
@@ -98,13 +98,13 @@ export class PasportScreen extends React.Component {
 
                 {this.showSchengenVisa() &&
                 <span>
-            {this.getSchengenVisaElements()}
+                    {this.getSchengenVisaElements()}
                     <Button onClick={this.addSchengenVisa.bind(this) } buttonStyle={ButtonStyle.YELLOW_ADD_BUTTON} className="visa-application-form__add-schengen-visa-button">
-                  <span className="visa-application-form__add-schengen-visa-button_plus">&#x2b;</span>
-                  Добавить визу
-              </Button>
+                    <span className="visa-application-form__add-schengen-visa-button_plus">&#x2b;</span>
+                    Добавить визу
+                    </Button>
                     {/*<Button onClick={this.deleteSchengenVisa.bind(this) }>Удалить</Button>*/}
-          </span>
+                </span>
                 }
 
             </Form>
