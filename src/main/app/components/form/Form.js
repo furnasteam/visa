@@ -18,11 +18,24 @@ export class Form extends React.Component {
   render() {
     const {children, value} = this.props;
     var context = this;
+
     const extendedChildren = React.Children.map(children, function(child) {
       if(!child) return child;
-      return React.cloneElement(child, {
-        value: get(value, child.props.fieldName),
-        onChange: (fieldValue) => context.handleFieldChange(fieldValue, child.props.fieldName)});
+
+      if(child && child.children){
+        return React.Children.map(child.children, function(grandChild) {
+          if(!grandChild) return grandChild;
+            return React.cloneElement(grandChild, {
+              value: get(value, grandChild.props.fieldName),
+              onChange: (fieldValue) => context.handleFieldChange(fieldValue, grandChild.props.fieldName)});
+
+        });
+      }
+      else{
+        return React.cloneElement(child, {
+          value: get(value, child.props.fieldName),
+          onChange: (fieldValue) => context.handleFieldChange(fieldValue, child.props.fieldName)});
+      }
     });
 
     return (
