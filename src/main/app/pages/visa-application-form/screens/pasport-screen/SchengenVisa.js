@@ -19,7 +19,7 @@ export class SchengenVisa extends React.Component {
   }
     onSchengenVisaChange(value){
         var {formData, onChange} = this.props;
-        debugger
+
         if(formData){
             onChange(value);
         }
