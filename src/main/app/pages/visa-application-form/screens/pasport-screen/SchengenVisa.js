@@ -18,13 +18,12 @@ export class SchengenVisa extends React.Component {
     onChange: func,
   }
     onSchengenVisaChange(value){
-    handleTagClick = (tag) => {
-      const {onChange} = this.props;
-      // const tagsWithoutOptions = remove(tags, t => !includes(tagOptions, t));
-      // onChange([...tagsWithoutOptions, tag]);
-      onChange({...value, [fieldName]: fieldValue});
-    };
-  }
+        var {formData, onChange} = this.props;
+        debugger
+        if(formData){
+            onChange(value);
+        }
+    }
 
   render() {
     var {formData, onChange, index, deleteSchengenVisa} = this.props;
@@ -37,17 +36,19 @@ export class SchengenVisa extends React.Component {
         <DateField label={"Начало действия"}
                    fieldName={VISA_APPLICATION_FORM_FILEDS.SCHENGEN_VISA_START_DATE}
                    placeholder="25.06.18."
-                   onChange={this.onSchengenVisaChange}
+                   onChange = {this.onSchengenVisaChange.bind(this)}
+
+
         />
         <DateField label={"Окончание действия"}
                    fieldName={VISA_APPLICATION_FORM_FILEDS.SCHENGEN_VISA_END_DATE}
                    placeholder="25.06.18."
-                   onChange={this.onSchengenVisaChange}
+                   onChange={this.onSchengenVisaChange.bind(this)}
         />
         <InputField label={"Номер"}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.SCHENGEN_VISA_NUMBER}
                     placeholder="560742329"
-                    onChange={this.onSchengenVisaChange}
+                    onChange={this.onSchengenVisaChange.bind(this)}
         />
       </div>
     );    

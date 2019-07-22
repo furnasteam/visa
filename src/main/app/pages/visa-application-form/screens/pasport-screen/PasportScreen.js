@@ -15,98 +15,100 @@ import {Button, ButtonStyle} from '../../../../components/button/Button';
 import {xlp} from "../../../../helpers/helper";
 
 export class PasportScreen extends React.Component {
-  static propTypes ={
-    formData: object,
-    onChange: func,
-  }
-
-  state = {
-    schengenVisaArr: [{
-      schengenVisaNumber: null,
-      schengenVisaStartDate: null,
-      schengenVisaEndDate: null,
-    }]
-  };
-
-  onFormChange(value) {
-    var {formData, onChange} = this.props;
-    if(formData){
-      onChange(value);
+    static propTypes ={
+        formData: object,
+        onChange: func,
     }
-  }
 
-  addSchengenVisa(){
-    this.setState((state) => {
-      state.schengenVisaArr.push({
-        schengenVisaNumber: null,
-        schengenVisaStartDate: null,
-        schengenVisaEndDate: null,
-      });
-      return state;
-    });
-  }
-  deleteSchengenVisa(index){
-      debugger;
-    this.setState((state) => {
-      state.schengenVisaArr.pop();
-      return state;
-    });
-  }
-  onSchengenVisaChange(value){
-    // debugger
-  }
-  showSchengenVisa(){
-      return xlp.isSelected(this.props.formData.schengenExists, VISA_APPLICATION_FORM_ENUMS_NAMES.BOOL.YES);
-  }
-  render() {
-    var {formData, onChange} = this.props;
-    var {schengenVisaArr} = this.state;
+    onFormChange(value) {
+        // debugger
+        var {formData, onChange} = this.props;
+        if(formData){
+            onChange(value);
+        }
+    }
 
-    var schengenVisaElements = schengenVisaArr.map((schengenVisa, i)=>{ return <SchengenVisa onChange={this.onSchengenVisaChange.bind(this)} key = {i} index={i} deleteSchengenVisa={this.deleteSchengenVisa.bind(this)}></SchengenVisa>});
-    return (
-      <Form onChange={this.onFormChange.bind(this)}
-            value={formData}>
-        <InputField label={"Номер загран. паспорта"}
-                    fieldName={VISA_APPLICATION_FORM_FILEDS.INTERNATIONAL_PASSPORT_NUMBER}
-                    placeholder="IVANOV"
-        />
-        <DateField label={"Дата выдачи загран. паспорта"}
-                   fieldName={VISA_APPLICATION_FORM_FILEDS.INTERNATIONAL_PASSPORT_STARTDATE}
-                   placeholder="23.04.2014"
-        />
-        <DateField label={"Загран. паспорт действителен до"}
-                   fieldName={VISA_APPLICATION_FORM_FILEDS.INTERNATIONAL_PASSPORT_ENDDATE}
-                   placeholder="23.04.2024"
-        />
-        <InputField label={"Кем выдан"}
-                    fieldName={VISA_APPLICATION_FORM_FILEDS.INTERNATIONAL_PASSPORT_DELIVERY_STRUCTURE}
-                    placeholder="USSR"
-                    helpText={<div>Достаточно указать Russian Federation или FMS 2432?</div>}
-        />
-        <RadioButtonField label={"Шенгенские визы, выданные за последние \n" +
-        "    три года (2016 — 2018)" +
-        "Есть шенгенские визы?"}
-                          fieldName={VISA_APPLICATION_FORM_FILEDS.SCHENGEN_EXISTS}
-                          buttons={VISA_APPLICATION_FORM_ENUMS.BOOL}
-                          helpText={<div>
-                            Если гражданин РФ и проживает в РФ, то напишите нет.
-                          </div>}
+    addSchengenVisa(){
+        var {formData, onChange} = this.props;
 
-        />
-        
-        {this.showSchengenVisa() &&
-          <span>
-            {schengenVisaElements}
-              <Button onClick={this.addSchengenVisa.bind(this) } buttonStyle={ButtonStyle.YELLOW_ADD_BUTTON} className="visa-application-form__add-schengen-visa-button">
+        formData.schengenVisaArr = formData.schengenVisaArr || [];
+        formData.schengenVisaArr.push({
+            schengenVisaNumber: null,
+            schengenVisaStartDate: null,
+            schengenVisaEndDate: null,
+        });
+    }
+    deleteSchengenVisa(index){
+        var {formData, onChange} = this.props;
+        if(formData.schengenVisaArr)
+            formData.schengenVisaArr.pop();
+    }
+    getSchengenVisaElements(){
+        var {formData, onChange} = this.props;
+        formData.schengenVisaArr = formData.schengenVisaArr || [];
+        var {schengenVisaArr} = formData;
+
+        return schengenVisaArr.map((schengenVisa, i)=>{
+            return <SchengenVisa onChange={this.onFormChange.bind(this)} formData={schengenVisa} key = {i} index={i} deleteSchengenVisa={this.deleteSchengenVisa.bind(this)}></SchengenVisa>});
+    }
+    showSchengenVisa(){
+        // debugger
+        var {formData, onChange} = this.props;
+        formData.schengenVisaArr = formData.schengenVisaArr || [];
+
+        var show = xlp.isSelected(this.props.formData.schengenExists, VISA_APPLICATION_FORM_ENUMS_NAMES.BOOL.YES);
+        debugger
+        if(show && formData.schengenVisaArr.length == 0 && show.name == VISA_APPLICATION_FORM_ENUMS_NAMES.BOOL.YES)
+            this.addSchengenVisa();
+        return show;
+    }
+    render() {
+        var {formData, onChange} = this.props;
+
+        return (
+            <Form onChange={this.onFormChange.bind(this)}
+                  value={formData}>
+                <InputField label={"Номер загран. паспорта"}
+                            fieldName={VISA_APPLICATION_FORM_FILEDS.INTERNATIONAL_PASSPORT_NUMBER}
+                            placeholder="IVANOV"
+                />
+                <DateField label={"Дата выдачи загран. паспорта"}
+                           fieldName={VISA_APPLICATION_FORM_FILEDS.INTERNATIONAL_PASSPORT_STARTDATE}
+                           placeholder="23.04.2014"
+                />
+                <DateField label={"Загран. паспорт действителен до"}
+                           fieldName={VISA_APPLICATION_FORM_FILEDS.INTERNATIONAL_PASSPORT_ENDDATE}
+                           placeholder="23.04.2024"
+                />
+                <InputField label={"Кем выдан"}
+                            fieldName={VISA_APPLICATION_FORM_FILEDS.INTERNATIONAL_PASSPORT_DELIVERY_STRUCTURE}
+                            placeholder="USSR"
+                            helpText={<div>Достаточно указать Russian Federation или FMS 2432?</div>}
+                />
+                <RadioButtonField label={"Шенгенские визы, выданные за последние \n" +
+                "    три года (2016 — 2018)" +
+                "Есть шенгенские визы?"}
+                                  fieldName={VISA_APPLICATION_FORM_FILEDS.SCHENGEN_EXISTS}
+                                  buttons={VISA_APPLICATION_FORM_ENUMS.BOOL}
+                                  helpText={<div>
+                                      Если гражданин РФ и проживает в РФ, то напишите нет.
+                                  </div>}
+
+                />
+
+                {this.showSchengenVisa() &&
+                <span>
+            {this.getSchengenVisaElements()}
+                    <Button onClick={this.addSchengenVisa.bind(this) } buttonStyle={ButtonStyle.YELLOW_ADD_BUTTON} className="visa-application-form__add-schengen-visa-button">
                   <span className="visa-application-form__add-schengen-visa-button_plus">&#x2b;</span>
                   Добавить визу
               </Button>
-            {/*<Button onClick={this.deleteSchengenVisa.bind(this) }>Удалить</Button>*/}
+                    {/*<Button onClick={this.deleteSchengenVisa.bind(this) }>Удалить</Button>*/}
           </span>
-        }
+                }
 
-      </Form>
-    );    
-  }
+            </Form>
+        );
+    }
 
 }
