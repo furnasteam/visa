@@ -21,7 +21,6 @@ export class PasportScreen extends React.Component {
     }
 
     onFormChange(value) {
-        // debugger
         var {formData, onChange} = this.props;
         if(formData){
             onChange(value);
@@ -37,11 +36,14 @@ export class PasportScreen extends React.Component {
             schengenVisaStartDate: null,
             schengenVisaEndDate: null,
         });
+        onChange(formData);
     }
     deleteSchengenVisa(index){
         var {formData, onChange} = this.props;
-        if(formData.schengenVisaArr)
-            formData.schengenVisaArr.pop();
+        if(formData.schengenVisaArr){
+            formData.schengenVisaArr.splice(index, 1);
+        }
+        onChange(formData);
     }
     getSchengenVisaElements(){
         var {formData, onChange} = this.props;
@@ -52,7 +54,6 @@ export class PasportScreen extends React.Component {
             return <SchengenVisa onChange={this.onFormChange.bind(this)} formData={schengenVisa} key = {i} index={i} deleteSchengenVisa={this.deleteSchengenVisa.bind(this)}></SchengenVisa>});
     }
     showSchengenVisa(){
-        // debugger
         var {formData, onChange} = this.props;
         formData.schengenVisaArr = formData.schengenVisaArr || [];
 

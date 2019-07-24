@@ -36,9 +36,9 @@ export class Form extends React.Component {
     const extendedChildren = this.mapChildren(children, value, context);
 
     return (
-        <form>
+        <div>
           {extendedChildren}
-        </form>
+        </div>
     );
   }
 
