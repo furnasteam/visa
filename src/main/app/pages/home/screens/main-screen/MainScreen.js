@@ -18,8 +18,7 @@ export class MainScreen extends React.Component {
           <li className="main-screen__list-item">
             <span className="main-screen__list-item-text">бесплатно получаете заполненную анкету</span>
           </li>
-          <li className="main-screen__list-item main-screen__list-item-inactive">
-            <div className="main-screen__list-item-development-mode">в разработке</div>
+          <li className="main-screen__list-item">
             <span className="main-screen__list-item-text"> разбор всех пунктов анкеты</span>
           </li>
         </ul>

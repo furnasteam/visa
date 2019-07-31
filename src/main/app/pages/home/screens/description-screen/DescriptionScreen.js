@@ -22,8 +22,7 @@ export class DescriptionScreen extends React.Component {
               Вы отвечаете на 4 вопроса - мы формируем список документов
               Почти для всех документов можно скачать примеры или шаблоны. </p>
           </div>
-          <div className="description-screen__content-block description-screen__content-block_development">
-            <div className="description-screen__content-development-label">в разработке</div>
+          <div className="description-screen__content-block">
             <h3 className="description-screen__content-title">Бесплатно заполнить<br/> анкету на визу</h3>
             <p className="description-screen__content-text">Мы разобрали и проверили все вопросы анкеты на визу.
               Теперь они стали понятнее и на них легко ответить.
@@ -31,8 +30,7 @@ export class DescriptionScreen extends React.Component {
           </div>
         </div>
         <div className="description-screen__flex-container description-screen__flex-container_right">
-          <div className="description-screen__content-block description-screen__content-block_development">
-            <div className="description-screen__content-development-label">в разработке</div>
+          <div className="description-screen__content-block">
             <h3 className="description-screen__content-title">Бесплатная консультация по заполнению</h3>
             <p className="description-screen__content-text">Если вдруг оказалось, что вы все равно запутались и не знаете, что написать в каком пункте - мы вас не бросим. Пишите нам и мы поможем.</p>
           </div>

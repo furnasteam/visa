@@ -91,7 +91,7 @@ export const VISA_APPLICATION_FORM_FILEDS = {
 
   // TRIP_GOAL:'tripGoal',
   // TRIP_GOAL_DETAILS:'tripGoalDetails',
-}
+};
 
 
 export const VISA_APPLICATION_FORM_ENUMS_NAMES = {
@@ -164,7 +164,7 @@ export const VISA_APPLICATION_FORM_ENUMS_NAMES = {
     AIRPORT: 'airport',
     OTHER: 'other'
   }
-}
+};
 
 var ENUMS_NAMES = VISA_APPLICATION_FORM_ENUMS_NAMES;
 
@@ -302,6 +302,6 @@ export const VISA_APPLICATION_FORM_ENUMS = {
       selected: false
     }
   ]
-}
+};
 
 

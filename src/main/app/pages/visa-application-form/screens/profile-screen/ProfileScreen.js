@@ -11,24 +11,24 @@ export class ProfileScreen extends React.Component {
   static propTypes = {
     formData: object,
     onChange: func,
-  }
+  };
 
-  onFormChange(value) {
-    var {formData, onChange} = this.props;
+  onFormChange = (value) => {
+    const {formData, onChange} = this.props;
     if (formData) {
       onChange(value);
     }
-  }
+  };
 
   showMaritalStatusDetails() {
     return xlp.isSelected(this.props.formData.maritalStatus, VISA_APPLICATION_FORM_ENUMS_NAMES.MARITAL_STATUS.OTHER);
   }
 
   render() {
-    var {formData, onChange} = this.props;
+    const {formData, onChange} = this.props;
 
     return (
-      <Form onChange={this.onFormChange.bind(this)}
+      <Form onChange={this.onFormChange}
             value={formData}>
         <InputField label={"Имя"}
                     fieldName={VISA_APPLICATION_FORM_FILEDS.FIRST_NAME}
@@ -49,8 +49,6 @@ export class ProfileScreen extends React.Component {
 
         <DateField label={"Дата рождения"}
                    fieldName={VISA_APPLICATION_FORM_FILEDS.BIRTH_DATE}
-                   placeholder="Укажите дату рождения"
-                   helpText={<div>Если была та же самая, оставьте пустым.</div>}
         />
 
         <RadioButtonField label={"Пол"}
@@ -107,7 +105,8 @@ export class ProfileScreen extends React.Component {
                           buttons={VISA_APPLICATION_FORM_ENUMS.MARITAL_STATUS}
         />
 
-        {this.showMaritalStatusDetails() && <InputField
+        {this.showMaritalStatusDetails() &&
+        <InputField
           fieldName={VISA_APPLICATION_FORM_FILEDS.MARITAL_STATUS_DETAILS}
           placeholder="Уточните семейное положение"
           helpText={<div>Для несовершеннолетних детей — пункт «Холост/не замужем».</div>}/>
