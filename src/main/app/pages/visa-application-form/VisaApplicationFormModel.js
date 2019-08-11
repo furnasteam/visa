@@ -305,3 +305,162 @@ export const VISA_APPLICATION_FORM_ENUMS = {
 };
 
 
+
+export function getEnumOptions(enumType, enumTranslation) {
+  map(keys(enumType), key => ({
+    label: enumTranslation[key],
+    name: enumType[key]
+  }))
+}
+export const VISA_APPLICATION_FORM_ENUMS_LABELS = {
+  GENDER: {
+    [ENUMS_NAMES.GENDER.MAN]: 'мужской',
+    [ENUMS_NAMES.GENDER.WOMAN]: 'женский'
+  },
+  BOOL: {
+    [ENUMS_NAMES.BOOL.YES] : 'Да',
+    [ENUMS_NAMES.BOOL.NO] : 'Нет'
+  },
+  PAYER: {
+    [ENUMS_NAMES.PAYER.DECLARER] : 'Сам заявитель',
+    [ENUMS_NAMES.PAYER.SPONSOR]: 'Спонсор'
+  },
+  PAYER_SPONSOR: {
+    [ENUMS_NAMES.PAYER_SPONSOR.PUNCT4] : 'Указанные в пункте 4',
+    [ENUMS_NAMES.PAYER_SPONSOR.OTHER] : 'Иные'
+  },
+  FACILITIES: {
+    [ENUMS_NAMES.FACILITIES.CASH]: 'наличные деньги',
+    [ENUMS_NAMES.FACILITIES.PAYHOUSE] : 'обеспечивается место пребывания',
+    [ENUMS_NAMES.FACILITIES.PAYFACILITIES]: 'оплачиваются все расходы во время пребывания',
+    [ENUMS_NAMES.FACILITIES.PAYTRANSPORT]: 'Оплачивается транспорт',
+    [ENUMS_NAMES.FACILITIES.PAYOTHER]: 'иное'
+  },
+  RELATIVE_RANK: {
+    [ENUMS_NAMES.RELATIVE_RANK.SPOUSE]: 'супруг/-а',
+    [ENUMS_NAMES.RELATIVE_RANK.CHILD]: 'ребенок',
+    [ENUMS_NAMES.RELATIVE_RANK.GRANDSON]: 'внук/-чка',
+    [ENUMS_NAMES.RELATIVE_RANK.DEPENDENT]: 'иждивенец'
+  },
+  PLACEMENT: {
+    [ENUMS_NAMES.PLACEMENT.INVITATION] : 'Приглашение',
+    [ENUMS_NAMES.PLACEMENT.ITSELF]: "самостоятельное размещение\n" +"(отель/хостел/апартаменты)"
+  },
+  ENTRY_TYPE_COUNT: {
+    [ENUMS_NAMES.ENTRY_TYPE_COUNT.ONCE] : 'однократного въезда',
+    [ENUMS_NAMES.ENTRY_TYPE_COUNT.TWICE] : 'двукратного въезда',
+    [ENUMS_NAMES.ENTRY_TYPE_COUNT.MULTI] : 'многократного въезда'
+  },
+  EMPLOYMENT_STATUS: {
+    [ENUMS_NAMES.EMPLOYMENT_STATUS.UNEMPLOYED]: 'unemployed (безработный)',
+    [ENUMS_NAMES.EMPLOYMENT_STATUS.HOUSEWIFE]: 'housewife (домохозяйка)',
+    [ENUMS_NAMES.EMPLOYMENT_STATUS.RETIREE]: 'retiree (пенсионер)',
+    [ENUMS_NAMES.EMPLOYMENT_STATUS.INDIVIDUAL_BUSINESSMAN]: 'individual businessman (ип)',
+    [ENUMS_NAMES.EMPLOYMENT_STATUS.STUDENT]: 'student (студент)',
+    [ENUMS_NAMES.EMPLOYMENT_STATUS.PUPIL]: 'pupil (школьник)',
+    [ENUMS_NAMES.EMPLOYMENT_STATUS.OTHER] : 'иное'
+  },
+  MARITAL_STATUS: {
+    [ENUMS_NAMES.MARITAL_STATUS.ALONE]: 'холост/незамужем',
+    [ENUMS_NAMES.MARITAL_STATUS.NOTLIVEWITHWIFE ]: 'не проживает с супругой',
+    [ENUMS_NAMES.MARITAL_STATUS.WIDOWER]: 'вдовец/вдова',
+    [ENUMS_NAMES.MARITAL_STATUS.MARRIED]: 'женат/замужем',
+    [ENUMS_NAMES.MARITAL_STATUS.DIVORCED]: 'разведен(а)',
+    [ENUMS_NAMES.MARITAL_STATUS.NOTADULT]: 'несовершеннолетний',
+    [ENUMS_NAMES.MARITAL_STATUS.OTHER]: 'иное'
+  },
+  TARGET : {
+    [ENUMS_NAMES.TARGET.TOURISM]: "туризм",
+    [ENUMS_NAMES.TARGET.BUSINESS]: "деловая",
+    [ENUMS_NAMES.TARGET.SPORT]: "спорт",
+    [ENUMS_NAMES.TARGET.CULTURE]: "культура",
+    [ENUMS_NAMES.TARGET.STUDY]: "учёба",
+    [ENUMS_NAMES.TARGET.OFFICIAL]: "официальная",
+    [ENUMS_NAMES.TARGET.TREATMENT]: "лечение",
+    [ENUMS_NAMES.TARGET.TRANSIT]: "транзит",
+    [ENUMS_NAMES.TARGET.VISIT]: "посещение родственников или друзей",
+    [ENUMS_NAMES.TARGET.AIRPORT]: "транзит через аэропорт",
+    [ENUMS_NAMES.TARGET.OTHER]: "иное"
+  }
+};
+
+
+//
+// export function getEnumOptions(enumType, enumTranslation) {
+//   map(keys(enumType), key => ({
+//     label: enumTranslation[key],
+//     name: enumType[key]
+//   }))
+// }
+// export const VISA_APPLICATION_FORM_ENUMS_LABELS = {
+//   GENDER: {
+//     [ENUMS_NAMES.GENDER.MAN]: 'мужской',
+//     [ENUMS_NAMES.GENDER.WOMAN]: 'женский'
+//   },
+//   BOOL: {
+//     [ENUMS_NAMES.BOOL.YES] : 'Да',
+//     [ENUMS_NAMES.BOOL.NO] : 'Нет'
+//   },
+//   PAYER: {
+//     [ENUMS_NAMES.PAYER.DECLARER] : 'Сам заявитель',
+//     [ENUMS_NAMES.PAYER.SPONSOR]: 'Спонсор'
+//   },
+//   PAYER_SPONSOR: {
+//     [ENUMS_NAMES.PAYER_SPONSOR.PUNCT4] : 'Указанные в пункте 4',
+//     [ENUMS_NAMES.PAYER_SPONSOR.OTHER] : 'Иные'
+//   },
+//   FACILITIES: {
+//     [ENUMS_NAMES.FACILITIES.CASH]: 'наличные деньги',
+//     [ENUMS_NAMES.FACILITIES.PAYHOUSE] : 'обеспечивается место пребывания',
+//     [ENUMS_NAMES.FACILITIES.PAYFACILITIES]: 'оплачиваются все расходы во время пребывания',
+//     [ENUMS_NAMES.FACILITIES.PAYTRANSPORT]: 'Оплачивается транспорт',
+//     [ENUMS_NAMES.FACILITIES.PAYOTHER]: 'иное'
+//   },
+//   RELATIVE_RANK: {
+//     [ENUMS_NAMES.RELATIVE_RANK.SPOUSE]: 'супруг/-а',
+//     [ENUMS_NAMES.RELATIVE_RANK.CHILD]: 'ребенок',
+//     [ENUMS_NAMES.RELATIVE_RANK.GRANDSON]: 'внук/-чка',
+//     [ENUMS_NAMES.RELATIVE_RANK.DEPENDENT]: 'иждивенец'
+//   },
+//   PLACEMENT: {
+//     [ENUMS_NAMES.PLACEMENT.INVITATION] : 'Приглашение',
+//     [ENUMS_NAMES.PLACEMENT.ITSELF]: "самостоятельное размещение\n" +"(отель/хостел/апартаменты)"
+//   },
+//   ENTRY_TYPE_COUNT: {
+//     [ENUMS_NAMES.ENTRY_TYPE_COUNT.ONCE] : 'однократного въезда',
+//     [ENUMS_NAMES.ENTRY_TYPE_COUNT.TWICE] : 'двукратного въезда',
+//     [ENUMS_NAMES.ENTRY_TYPE_COUNT.MULTI] : 'многократного въезда'
+//   },
+//   EMPLOYMENT_STATUS: {
+//     [ENUMS_NAMES.EMPLOYMENT_STATUS.UNEMPLOYED]: 'unemployed (безработный)',
+//     [ENUMS_NAMES.EMPLOYMENT_STATUS.HOUSEWIFE]: 'housewife (домохозяйка)',
+//     [ENUMS_NAMES.EMPLOYMENT_STATUS.RETIREE]: 'retiree (пенсионер)',
+//     [ENUMS_NAMES.EMPLOYMENT_STATUS.INDIVIDUAL_BUSINESSMAN]: 'individual businessman (ип)',
+//     [ENUMS_NAMES.EMPLOYMENT_STATUS.STUDENT]: 'student (студент)',
+//     [ENUMS_NAMES.EMPLOYMENT_STATUS.PUPIL]: 'pupil (школьник)',
+//     [ENUMS_NAMES.EMPLOYMENT_STATUS.OTHER] : 'иное'
+//   },
+//   MARITAL_STATUS: {
+//     [ENUMS_NAMES.MARITAL_STATUS.ALONE]: 'холост/незамужем',
+//     [ENUMS_NAMES.MARITAL_STATUS.NOTLIVEWITHWIFE ]: 'не проживает с супругой',
+//     [ENUMS_NAMES.MARITAL_STATUS.WIDOWER]: 'вдовец/вдова',
+//     [ENUMS_NAMES.MARITAL_STATUS.MARRIED]: 'женат/замужем',
+//     [ENUMS_NAMES.MARITAL_STATUS.DIVORCED]: 'разведен(а)',
+//     [ENUMS_NAMES.MARITAL_STATUS.NOTADULT]: 'несовершеннолетний',
+//     [ENUMS_NAMES.MARITAL_STATUS.OTHER]: 'иное'
+//   },
+//   TARGET : {
+//     [ENUMS_NAMES.TARGET.TOURISM]: "туризм",
+//     [ENUMS_NAMES.TARGET.BUSINESS]: "деловая",
+//     [ENUMS_NAMES.TARGET.SPORT]: "спорт",
+//     [ENUMS_NAMES.TARGET.CULTURE]: "культура",
+//     [ENUMS_NAMES.TARGET.STUDY]: "учёба",
+//     [ENUMS_NAMES.TARGET.OFFICIAL]: "официальная",
+//     [ENUMS_NAMES.TARGET.TREATMENT]: "лечение",
+//     [ENUMS_NAMES.TARGET.TRANSIT]: "транзит",
+//     [ENUMS_NAMES.TARGET.VISIT]: "посещение родственников или друзей",
+//     [ENUMS_NAMES.TARGET.AIRPORT]: "транзит через аэропорт",
+//     [ENUMS_NAMES.TARGET.OTHER]: "иное"
+//   }
+// };
+
