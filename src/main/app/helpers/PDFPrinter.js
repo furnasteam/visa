@@ -4,6 +4,10 @@ import getTestPrintData from './PDF_Test_JSON';
 import {Button} from "../components/button/Button";
 import {object} from "prop-types";
 import {VISA_APPLICATION_FORM_ENUMS} from "../pages/visa-application-form/VisaApplicationFormModel";
+import {mainSchema} from "./ValidationSchemas/MainSchema";
+
+var Ajv = require('ajv');
+var ajv = new Ajv({allErrors: true});
 
 let PDFJS;
 let jsPDF;
@@ -165,33 +169,40 @@ export default class PDFPrinter extends React.Component {
 
     doc.save('VisaProfile.pdf');
   }
+  validateData(){
+  // debugger
 
-  download() {
-debugger
-    var Ajv = require('ajv');
-    var ajv = new Ajv({allErrors: true});
+      // var ajv = new Ajv({allErrors: true});
 
-    var schema = {
-      "properties": {
-        "foo": { "type": "string" },
-        "bar": { "type": "number", "maximum": 3 }
+      // var schema = {
+      //   "properties": {
+      //     "foo": { "type": "string" },
+      //     "bar": { "type": "number", "maximum": 3 }
+      //   }
+      // };
+
+      var validate = ajv.compile(mainSchema);
+
+      // test({"foo": "abc", "bar": 2});
+      // test({"foo": 2, "bar": 4});
+
+
+    // formData} = this.props;
+    debugger;
+    test(this.props.formData);
+
+
+      function test(data) {
+        var valid = validate(data);
+        if (valid) console.log('Valid!');
+        else console.log('Invalid: ' + ajv.errorsText(validate.errors));
       }
-    };
-
-    var validate = ajv.compile(schema);
-
-    test({"foo": "abc", "bar": 2});
-    test({"foo": 2, "bar": 4});
-
-    function test(data) {
-      var valid = validate(data);
-      if (valid) console.log('Valid!');
-      else console.log('Invalid: ' + ajv.errorsText(validate.errors));
-    }
-return;
-
-    this.addData();
-    this.generatePDF();
+  // return;
+  }
+  download() {
+    this.validateData();
+    // this.addData();
+    // this.generatePDF();
   }
 
   addCancvasToPdf(doc, canvasId) {

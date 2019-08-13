@@ -7,11 +7,12 @@ export class AbstractFormField extends React.Component {
   static propTypes = {
     label: string,
     helpText: element,
+    errorText: element,
     fieldName: string
   };
 
   render() {
-    const {children, label, helpText} = this.props;
+    const {children, label, helpText, errorText} = this.props;
     return (
       <div className="abstract-form-field" style={{marginTop: label? "": "0px"}}>
         {label &&
@@ -19,6 +20,9 @@ export class AbstractFormField extends React.Component {
           {label}
         </div>}
         {children}
+        <div className="abstract-form-field__error-text">
+          {errorText}
+        </div>
         <div className="abstract-form-field__help-text">
           {helpText}
         </div>

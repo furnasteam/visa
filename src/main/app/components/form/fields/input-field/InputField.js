@@ -9,6 +9,7 @@ export class InputField extends React.Component {
   static propTypes = {
     label: string,
     helpText: element,
+    errorText: element,
     value: string,
     onChange: func,
     placeholder : string,
@@ -17,11 +18,12 @@ export class InputField extends React.Component {
   };
 
   render() {
-    const {label, helpText, value, onChange, placeholder, capitilize} = this.props;
+    const {label, helpText, value, onChange, placeholder, capitilize, errorText} = this.props;
 
     return (
       <AbstractFormField label={label}
-                         helpText={helpText}>
+                         helpText={helpText}
+                         errorText={errorText}>
         <Input value={value}
                onChange={onChange}
                capitilize={capitilize}
