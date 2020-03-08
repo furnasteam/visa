@@ -9,6 +9,7 @@ const {Helmet} = require('react-helmet');
 const app = express();
 app.get('*.gz', function(req, res, next) {
   res.set('Content-Encoding', 'gzip');
+  res.set('Content-Type', 'application/javascript');
   next();
 });
 app.use(express.static('public'));
